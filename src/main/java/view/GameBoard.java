@@ -55,17 +55,17 @@ public class GameBoard extends JFrame implements ActionListener {
         String action = actionEvent.getActionCommand();
         switch (action) {
             case "INCREASE" :
-                game.increasePoints();
+                game.increaseHP();
                 break;
             case "DECREASE" :
-                game.decreasePoints();
+                game.decreaseHP();
                 break;
         }
         updateScreen();
     }
 
     private void updateScreen() {
-        pointsLabel.setText("Points : "+game.getPoints());
+        pointsLabel.setText("HP : " + game.getHero().getHp());
     }
 
 
@@ -83,7 +83,7 @@ public class GameBoard extends JFrame implements ActionListener {
         decreaseButtonPanel.add(decreaseButton);
         masterPanel.add(decreaseButtonPanel);
         pointsPanel = new GamePanel(500, 300, 250, 120);
-        pointsLabel = new GameLabel("Points : ", Color.white, normalFont);
+        pointsLabel = new GameLabel("HP : " + game.getHero().getHp(), Color.white, normalFont);
         pointsPanel.add(pointsLabel);
         masterPanel.add(pointsPanel);
 
