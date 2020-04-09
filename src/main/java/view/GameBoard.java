@@ -24,6 +24,7 @@ public class GameBoard extends JFrame implements ActionListener {
     GameButton decreaseButton;
     GameLabel pointsLabel;
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
+    HeroPanel heroPanel;
 
 
 
@@ -69,6 +70,8 @@ public class GameBoard extends JFrame implements ActionListener {
 
 
     private void buildGameBoard() {
+        heroPanel = new HeroPanel();
+        masterPanel.add(heroPanel);
         increaseButtonPanel = new GamePanel(500, 600, 250, 120);
         increaseButton = new GameButton("INCREASE");
         increaseButton.addActionListener(this);
