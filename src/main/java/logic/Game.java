@@ -2,6 +2,7 @@ package logic;
 
 import view.GameBoard;
 
+
 public class Game {
 
     public static final String TITLE = "L'aventure n'attend pas";
@@ -9,13 +10,15 @@ public class Game {
     GameBoard gameBoard;
     private int points;
 
+    //private Hero hero;
+
     public Game(GameBoard parentGameBoard) {
         gameBoard = parentGameBoard;
 
     }
 
     public void increasePoints() {
-        points ++;
+        points++;
     }
 
     public void decreasePoints() {
