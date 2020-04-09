@@ -32,15 +32,11 @@ public class GameBoard extends JFrame implements ActionListener {
     public GameBoard() {
         super(TITLE);
 
-//        setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
-//        setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        getContentPane().setBackground(Color.black);
+
        masterPanel = new MasterPanel();
         setContentPane(masterPanel);
         setLayout(null);
-
-
 
         game = new Game(this);
 
@@ -56,11 +52,13 @@ public class GameBoard extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         String action = actionEvent.getActionCommand();
-        if (action.equals("INCREASE")) {
-            game.increasePoints();
-        }
-        else if (action.equals("DECREASE")) {
-            game.decreasePoints();
+        switch (action) {
+            case "INCREASE" :
+                game.increasePoints();
+                break;
+            case "DECREASE" :
+                game.decreasePoints();
+                break;
         }
         updateScreen();
     }
@@ -83,12 +81,9 @@ public class GameBoard extends JFrame implements ActionListener {
         masterPanel.add(decreaseButtonPanel);
         pointsPanel = new GamePanel(500, 300, 250, 120);
         pointsLabel = new GameLabel("Points : ", Color.white, normalFont);
-        pointsLabel.setForeground(Color.white);
         pointsPanel.add(pointsLabel);
         masterPanel.add(pointsPanel);
 
-
-//add(masterPanel);
         pack();
     }
 }
