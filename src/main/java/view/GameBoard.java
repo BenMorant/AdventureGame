@@ -12,11 +12,14 @@ import static logic.Game.TITLE;
 public class GameBoard extends JFrame implements ActionListener {
 
 
-
     Game game;
 
-    MasterPanel masterPanel;
 
+    MasterPanel titlePanel;
+    TitleNamePanel titleNamePanel;
+
+
+    MasterPanel mainPanel;
     GamePanel increaseButtonPanel;
     GamePanel decreaseButtonPanel;
     GamePanel pointsPanel;
@@ -35,8 +38,10 @@ public class GameBoard extends JFrame implements ActionListener {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-       masterPanel = new MasterPanel();
-        setContentPane(masterPanel);
+        mainPanel = new MasterPanel();
+        //   setContentPane(mainPanel);
+        titlePanel = new MasterPanel();
+        setContentPane(titlePanel);
         setLayout(null);
 
         game = new Game(this);
@@ -70,22 +75,26 @@ public class GameBoard extends JFrame implements ActionListener {
 
 
     private void buildGameBoard() {
+        titleNamePanel = new TitleNamePanel();
+        titlePanel.add(titleNamePanel);
+
+
         heroPanel = new HeroPanel();
-        masterPanel.add(heroPanel);
+        mainPanel.add(heroPanel);
         increaseButtonPanel = new GamePanel(500, 600, 250, 120);
         increaseButton = new GameButton("INCREASE");
         increaseButton.addActionListener(this);
         increaseButtonPanel.add(increaseButton);
-        masterPanel.add(increaseButtonPanel);
+        mainPanel.add(increaseButtonPanel);
         decreaseButtonPanel = new GamePanel(500, 750, 250, 120);
         decreaseButton = new GameButton("DECREASE");
         decreaseButton.addActionListener(this);
         decreaseButtonPanel.add(decreaseButton);
-        masterPanel.add(decreaseButtonPanel);
+        mainPanel.add(decreaseButtonPanel);
         pointsPanel = new GamePanel(500, 300, 250, 120);
         pointsLabel = new GameLabel("HP : " + game.getHero().getHp(), Color.white, normalFont);
         pointsPanel.add(pointsLabel);
-        masterPanel.add(pointsPanel);
+        mainPanel.add(pointsPanel);
 
         pack();
     }
