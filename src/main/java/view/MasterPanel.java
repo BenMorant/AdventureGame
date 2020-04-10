@@ -11,6 +11,7 @@ public class MasterPanel extends JPanel {
     public MasterPanel() {
         setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
+        setMaximumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setBackground(Color.black);
 
     }
