@@ -14,12 +14,18 @@ public class GameBoard extends JFrame implements ActionListener {
 
     Game game;
 
-
+    //
     MasterPanel titlePanel;
     TitleNamePanel titleNamePanel;
+    StartButtonPanel startButtonPanel;
 
 
     MasterPanel mainPanel;
+    HeroPanel heroPanel;
+    ChoiceButtonPanel choiceButtonPanel;
+    MainTextPanel mainTextPanel;
+
+
     GamePanel increaseButtonPanel;
     GamePanel decreaseButtonPanel;
     GamePanel pointsPanel;
@@ -27,7 +33,7 @@ public class GameBoard extends JFrame implements ActionListener {
     GameButton decreaseButton;
     GameLabel pointsLabel;
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
-    HeroPanel heroPanel;
+
 
 
 
@@ -39,9 +45,9 @@ public class GameBoard extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         mainPanel = new MasterPanel();
-        //   setContentPane(mainPanel);
+        setContentPane(mainPanel);
         titlePanel = new MasterPanel();
-        setContentPane(titlePanel);
+        //  setContentPane(titlePanel);
         setLayout(null);
 
         game = new Game(this);
@@ -76,11 +82,19 @@ public class GameBoard extends JFrame implements ActionListener {
 
     private void buildGameBoard() {
         titleNamePanel = new TitleNamePanel();
+        startButtonPanel = new StartButtonPanel();
         titlePanel.add(titleNamePanel);
+        titlePanel.add(startButtonPanel);
 
 
         heroPanel = new HeroPanel();
+        choiceButtonPanel = new ChoiceButtonPanel();
+        mainTextPanel = new MainTextPanel();
         mainPanel.add(heroPanel);
+        mainPanel.add(choiceButtonPanel);
+        mainPanel.add(mainTextPanel);
+
+
         increaseButtonPanel = new GamePanel(500, 600, 250, 120);
         increaseButton = new GameButton("INCREASE");
         increaseButton.addActionListener(this);
