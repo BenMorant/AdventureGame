@@ -24,6 +24,8 @@ public class GameBoard extends JFrame implements ActionListener {
     HeroPanel heroPanel;
     ChoiceButtonPanel choiceButtonPanel;
     MainTextPanel mainTextPanel;
+    ImagePanelHeroPicture imagePanelHeroPicture;
+    ImagePanelMain imagePanelMain;
 
 
     GamePanel increaseButtonPanel;
@@ -90,9 +92,14 @@ public class GameBoard extends JFrame implements ActionListener {
         heroPanel = new HeroPanel();
         choiceButtonPanel = new ChoiceButtonPanel();
         mainTextPanel = new MainTextPanel();
+        imagePanelHeroPicture = new ImagePanelHeroPicture();
+        imagePanelMain = new ImagePanelMain();
+
         mainPanel.add(heroPanel);
         mainPanel.add(choiceButtonPanel);
-        mainPanel.add(mainTextPanel);
+        //  mainPanel.add(mainTextPanel);
+        mainPanel.add(imagePanelHeroPicture);
+        //   mainPanel.add(imagePanelMain);
 
 
         increaseButtonPanel = new GamePanel(500, 600, 250, 120);
