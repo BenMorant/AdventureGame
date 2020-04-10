@@ -10,8 +10,8 @@ public class HeroPanel extends GamePanel {
 
     private final Font heroPanelFont = new Font("Times New Roman", Font.PLAIN, 22);
 
-    private final GameLabel hpLabel;
-    private final GameLabel hpLabelNumber;
+    private GameLabel hpLabel;
+    private GameLabel hpLabelNumber;
     private GameLabel hpMaxLabel;
     private GameLabel hpMaxLabelNumber;
     private GameLabel weaponLabel;
@@ -288,6 +288,22 @@ public class HeroPanel extends GamePanel {
 
     public void setStrengthMaxLabelNumber(GameLabel strengthMaxLabelNumber) {
         this.strengthMaxLabelNumber = strengthMaxLabelNumber;
+    }
+
+    public Hero getHero() {
+        return hero;
+    }
+
+    public void setHero(Hero hero) {
+        this.hero = hero;
+    }
+
+    public void setHpLabel(GameLabel hpLabel) {
+        this.hpLabel = hpLabel;
+    }
+
+    public void setHpLabelNumber(GameLabel hpLabelNumber) {
+        this.hpLabelNumber = hpLabelNumber;
     }
 
     @Override
