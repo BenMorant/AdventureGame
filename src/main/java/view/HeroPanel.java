@@ -96,4 +96,223 @@ public class HeroPanel extends GamePanel {
 //        add(abilityMaxLabelNumber);
 
     }
+
+    public Font getHeroPanelFont() {
+        return heroPanelFont;
+    }
+
+    public GameLabel getHpLabel() {
+        return hpLabel;
+    }
+
+    public GameLabel getHpLabelNumber() {
+        return hpLabelNumber;
+    }
+
+    public GameLabel getHpMaxLabel() {
+        return hpMaxLabel;
+    }
+
+    public void setHpMaxLabel(GameLabel hpMaxLabel) {
+        this.hpMaxLabel = hpMaxLabel;
+    }
+
+    public GameLabel getHpMaxLabelNumber() {
+        return hpMaxLabelNumber;
+    }
+
+    public void setHpMaxLabelNumber(GameLabel hpMaxLabelNumber) {
+        this.hpMaxLabelNumber = hpMaxLabelNumber;
+    }
+
+    public GameLabel getWeaponLabel() {
+        return weaponLabel;
+    }
+
+    public void setWeaponLabel(GameLabel weaponLabel) {
+        this.weaponLabel = weaponLabel;
+    }
+
+    public GameLabel getWeaponLabelName() {
+        return weaponLabelName;
+    }
+
+    public void setWeaponLabelName(GameLabel weaponLabelName) {
+        this.weaponLabelName = weaponLabelName;
+    }
+
+    public GameLabel getWeaponLabelDamageMax() {
+        return weaponLabelDamageMax;
+    }
+
+    public void setWeaponLabelDamageMax(GameLabel weaponLabelDamageMax) {
+        this.weaponLabelDamageMax = weaponLabelDamageMax;
+    }
+
+    public GameLabel getWeaponLabelDamageMaxNumber() {
+        return weaponLabelDamageMaxNumber;
+    }
+
+    public void setWeaponLabelDamageMaxNumber(GameLabel weaponLabelDamageMaxNumber) {
+        this.weaponLabelDamageMaxNumber = weaponLabelDamageMaxNumber;
+    }
+
+    public GameLabel getAbilityLabel() {
+        return abilityLabel;
+    }
+
+    public void setAbilityLabel(GameLabel abilityLabel) {
+        this.abilityLabel = abilityLabel;
+    }
+
+    public GameLabel getStrengthLabel() {
+        return strengthLabel;
+    }
+
+    public void setStrengthLabel(GameLabel strengthLabel) {
+        this.strengthLabel = strengthLabel;
+    }
+
+    public GameLabel getMpLabel() {
+        return mpLabel;
+    }
+
+    public void setMpLabel(GameLabel mpLabel) {
+        this.mpLabel = mpLabel;
+    }
+
+    public GameLabel getMpLabelNumber() {
+        return mpLabelNumber;
+    }
+
+    public void setMpLabelNumber(GameLabel mpLabelNumber) {
+        this.mpLabelNumber = mpLabelNumber;
+    }
+
+    public GameLabel getMpMaxLabel() {
+        return mpMaxLabel;
+    }
+
+    public void setMpMaxLabel(GameLabel mpMaxLabel) {
+        this.mpMaxLabel = mpMaxLabel;
+    }
+
+    public GameLabel getMpMaxLabelNumber() {
+        return mpMaxLabelNumber;
+    }
+
+    public void setMpMaxLabelNumber(GameLabel mpMaxLabelNumber) {
+        this.mpMaxLabelNumber = mpMaxLabelNumber;
+    }
+
+    public GameLabel getStrengthLabelNumber() {
+        return strengthLabelNumber;
+    }
+
+    public void setStrengthLabelNumber(GameLabel strengthLabelNumber) {
+        this.strengthLabelNumber = strengthLabelNumber;
+    }
+
+    public GameLabel getAbilityMaxLabel() {
+        return abilityMaxLabel;
+    }
+
+    public void setAbilityMaxLabel(GameLabel abilityMaxLabel) {
+        this.abilityMaxLabel = abilityMaxLabel;
+    }
+
+    public GameLabel getAbilityMaxLabelNumber() {
+        return abilityMaxLabelNumber;
+    }
+
+    public void setAbilityMaxLabelNumber(GameLabel abilityMaxLabelNumber) {
+        this.abilityMaxLabelNumber = abilityMaxLabelNumber;
+    }
+
+    public GameLabel getWeaponLabelWear() {
+        return weaponLabelWear;
+    }
+
+    public void setWeaponLabelWear(GameLabel weaponLabelWear) {
+        this.weaponLabelWear = weaponLabelWear;
+    }
+
+    public GameLabel getWeaponLabelWearNumber() {
+        return weaponLabelWearNumber;
+    }
+
+    public void setWeaponLabelWearNumber(GameLabel weaponLabelWearNumber) {
+        this.weaponLabelWearNumber = weaponLabelWearNumber;
+    }
+
+    public GameLabel getWeaponLabelWearMaxLabel() {
+        return weaponLabelWearMaxLabel;
+    }
+
+    public void setWeaponLabelWearMaxLabel(GameLabel weaponLabelWearMaxLabel) {
+        this.weaponLabelWearMaxLabel = weaponLabelWearMaxLabel;
+    }
+
+    public GameLabel getWeaponLabelWearMaxLabelNumber() {
+        return weaponLabelWearMaxLabelNumber;
+    }
+
+    public void setWeaponLabelWearMaxLabelNumber(GameLabel weaponLabelWearMaxLabelNumber) {
+        this.weaponLabelWearMaxLabelNumber = weaponLabelWearMaxLabelNumber;
+    }
+
+    public GameLabel getAbilityLabelNumber() {
+        return abilityLabelNumber;
+    }
+
+    public void setAbilityLabelNumber(GameLabel abilityLabelNumber) {
+        this.abilityLabelNumber = abilityLabelNumber;
+    }
+
+    public GameLabel getStrengthMaxLabel() {
+        return strengthMaxLabel;
+    }
+
+    public void setStrengthMaxLabel(GameLabel strengthMaxLabel) {
+        this.strengthMaxLabel = strengthMaxLabel;
+    }
+
+    public GameLabel getStrengthMaxLabelNumber() {
+        return strengthMaxLabelNumber;
+    }
+
+    public void setStrengthMaxLabelNumber(GameLabel strengthMaxLabelNumber) {
+        this.strengthMaxLabelNumber = strengthMaxLabelNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "HeroPanel{" +
+                "heroPanelFont=" + heroPanelFont +
+                ", hpLabel=" + hpLabel +
+                ", hpLabelNumber=" + hpLabelNumber +
+                ", hpMaxLabel=" + hpMaxLabel +
+                ", hpMaxLabelNumber=" + hpMaxLabelNumber +
+                ", weaponLabel=" + weaponLabel +
+                ", weaponLabelName=" + weaponLabelName +
+                ", weaponLabelDamageMax=" + weaponLabelDamageMax +
+                ", weaponLabelDamageMaxNumber=" + weaponLabelDamageMaxNumber +
+                ", abilityLabel=" + abilityLabel +
+                ", strengthLabel=" + strengthLabel +
+                ", mpLabel=" + mpLabel +
+                ", mpLabelNumber=" + mpLabelNumber +
+                ", mpMaxLabel=" + mpMaxLabel +
+                ", mpMaxLabelNumber=" + mpMaxLabelNumber +
+                ", strengthLabelNumber=" + strengthLabelNumber +
+                ", abilityMaxLabel=" + abilityMaxLabel +
+                ", abilityMaxLabelNumber=" + abilityMaxLabelNumber +
+                ", weaponLabelWear=" + weaponLabelWear +
+                ", weaponLabelWearNumber=" + weaponLabelWearNumber +
+                ", weaponLabelWearMaxLabel=" + weaponLabelWearMaxLabel +
+                ", weaponLabelWearMaxLabelNumber=" + weaponLabelWearMaxLabelNumber +
+                ", abilityLabelNumber=" + abilityLabelNumber +
+                ", strengthMaxLabel=" + strengthMaxLabel +
+                ", strengthMaxLabelNumber=" + strengthMaxLabelNumber +
+                '}';
+    }
 }

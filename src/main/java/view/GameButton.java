@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class GameButton extends JButton {
 
-    private Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
+    private final Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
    // private ChoiceHandler choiceHandler;
 
     public GameButton(String text) { //, String actionCommand
@@ -16,5 +16,20 @@ public class GameButton extends JButton {
         setFocusPainted(false);
         // addActionListener(choiceHandler);
         //setActionCommand(actionCommand);
+    }
+
+    @Override
+    public String toString() {
+        return "GameButton{" +
+                "normalFont=" + normalFont +
+                ", model=" + model +
+                ", changeListener=" + changeListener +
+                ", actionListener=" + actionListener +
+                ", itemListener=" + itemListener +
+                ", changeEvent=" + changeEvent +
+                ", ui=" + ui +
+                ", listenerList=" + listenerList +
+                ", accessibleContext=" + accessibleContext +
+                '}';
     }
 }

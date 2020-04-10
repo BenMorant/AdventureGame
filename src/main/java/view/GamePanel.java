@@ -11,4 +11,13 @@ public class GamePanel extends JPanel {
         setBounds(x, y, width, height);
         setBackground(Color.black);
     }
+
+    @Override
+    public String toString() {
+        return "GamePanel{" +
+                "ui=" + ui +
+                ", listenerList=" + listenerList +
+                ", accessibleContext=" + accessibleContext +
+                '}';
+    }
 }

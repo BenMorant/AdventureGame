@@ -6,9 +6,9 @@ import static logic.Game.TITLE;
 
 public class TitleNamePanel extends GamePanel {
 
-    private final Font titleFont = new Font("Times New Roman", Font.BOLD, 52);
+    private Font titleFont = new Font("Times New Roman", Font.BOLD, 52);
 
-    private final GameLabel titleNameLabel;
+    private GameLabel titleNameLabel;
 
     public TitleNamePanel() {
         super(250, 250, 800, 150);
@@ -23,5 +23,32 @@ public class TitleNamePanel extends GamePanel {
 
     private void buildTitleNamePanel() {
         add(titleNameLabel);
+    }
+
+    public Font getTitleFont() {
+        return titleFont;
+    }
+
+    public void setTitleFont(Font titleFont) {
+        this.titleFont = titleFont;
+    }
+
+    public GameLabel getTitleNameLabel() {
+        return titleNameLabel;
+    }
+
+    public void setTitleNameLabel(GameLabel titleNameLabel) {
+        this.titleNameLabel = titleNameLabel;
+    }
+
+    @Override
+    public String toString() {
+        return "TitleNamePanel{" +
+                "titleFont=" + titleFont +
+                ", titleNameLabel=" + titleNameLabel +
+                ", ui=" + ui +
+                ", listenerList=" + listenerList +
+                ", accessibleContext=" + accessibleContext +
+                '}';
     }
 }

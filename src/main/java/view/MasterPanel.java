@@ -15,4 +15,12 @@ public class MasterPanel extends JPanel {
 
     }
 
+    @Override
+    public String toString() {
+        return "MasterPanel{" +
+                "ui=" + ui +
+                ", listenerList=" + listenerList +
+                ", accessibleContext=" + accessibleContext +
+                '}';
+    }
 }

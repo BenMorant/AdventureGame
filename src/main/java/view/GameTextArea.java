@@ -17,4 +17,14 @@ public class GameTextArea extends JTextArea {
         setWrapStyleWord(true);
         setEditable(false);
     }
+
+    @Override
+    public String toString() {
+        return "GameTextArea{" +
+                "normalFont=" + normalFont +
+                ", ui=" + ui +
+                ", listenerList=" + listenerList +
+                ", accessibleContext=" + accessibleContext +
+                '}';
+    }
 }

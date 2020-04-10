@@ -2,7 +2,7 @@ package view;
 
 public class MainTextPanel extends GamePanel {
 
-    private final GameTextArea mainTextArea;
+    private GameTextArea mainTextArea;
 
 
     public MainTextPanel() {
@@ -18,5 +18,23 @@ public class MainTextPanel extends GamePanel {
 
     private void buildMainTextPanel() {
         add(mainTextArea);
+    }
+
+    public GameTextArea getMainTextArea() {
+        return mainTextArea;
+    }
+
+    public void setMainTextArea(GameTextArea mainTextArea) {
+        this.mainTextArea = mainTextArea;
+    }
+
+    @Override
+    public String toString() {
+        return "MainTextPanel{" +
+                "mainTextArea=" + mainTextArea +
+                ", ui=" + ui +
+                ", listenerList=" + listenerList +
+                ", accessibleContext=" + accessibleContext +
+                '}';
     }
 }
