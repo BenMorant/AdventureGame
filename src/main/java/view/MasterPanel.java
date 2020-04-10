@@ -6,7 +6,7 @@ import java.awt.*;
 public class MasterPanel extends JPanel {
 
     public static final int DEFAULT_WIDTH = 1280;
-    public static final int DEFAULT_HEIGHT = 960;
+    public static final int DEFAULT_HEIGHT = DEFAULT_WIDTH / 12 * 9;
 
     public MasterPanel() {
         setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
