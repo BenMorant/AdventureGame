@@ -89,7 +89,7 @@ public class GameBoard extends JFrame implements ActionListener {
         titlePanel.add(startButtonPanel);
 
 
-        heroPanel = new HeroPanel();
+        heroPanel = new HeroPanel(game.getHero());
         choiceButtonPanel = new ChoiceButtonPanel();
         mainTextPanel = new MainTextPanel();
         imagePanelHeroPicture = new ImagePanelHeroPicture();
