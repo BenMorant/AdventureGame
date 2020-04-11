@@ -3,12 +3,8 @@ package view;
 import java.awt.*;
 
 public class ChoiceButtonPanel extends GamePanel {
-//    private GameButton choice1;
-//    private GameButton choice2;
-//    private GameButton choice3;
-//    private GameButton choice4;
 
-    private final GameButton[] choiceButtons;
+    private GameButton[] choiceButtons;
 
 
     public ChoiceButtonPanel() {
@@ -19,7 +15,13 @@ public class ChoiceButtonPanel extends GamePanel {
             choiceButtons[i] = new GameButton("Choix " + (i + 1));
             add(choiceButtons[i]);
         }
-
     }
 
+    public GameButton[] getChoiceButtons() {
+        return choiceButtons;
+    }
+
+    public void setChoiceButtons(GameButton[] choiceButtons) {
+        this.choiceButtons = choiceButtons;
+    }
 }

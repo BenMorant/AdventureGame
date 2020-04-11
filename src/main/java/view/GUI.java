@@ -8,7 +8,6 @@ public final class GUI {
 
     private final ActionListener choiceHandler;
     private final ActionListener titleScreenHandler;
-    private final Font normalFont = new Font("Times New Roman", Font.PLAIN, 28);
     private Container container;
     TitleNamePanel titleNamePanel;
     StartButtonPanel startButtonPanel;
@@ -21,8 +20,6 @@ public final class GUI {
     private JTextArea mainTextArea;
 
 
-    private JButton[] choiceButtons;
-
     public GUI(ActionListener choiceHandler, ActionListener titleScreenHandler) {
         this.choiceHandler = choiceHandler;
         this.titleScreenHandler = titleScreenHandler;
@@ -30,51 +27,27 @@ public final class GUI {
 
     public void initializeStartScreen() {
         Window window = new Window();
-
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel();
-
-
         startButtonPanel.getStartButton().addActionListener(titleScreenHandler);
 
-        // Add to Container
         container = window.getContentPane();
         container.add(titleNamePanel);
         container.add(startButtonPanel);
-
         window.setVisible(true);
     }
 
     public void createGameScreen() {
         titleNamePanel.setVisible(false);
         startButtonPanel.setVisible(false);
-
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
         choiceButtonPanel = new ChoiceButtonPanel();
+        for (int i = 0; i < choiceButtonPanel.getChoiceButtons().length; i++) {
+            choiceButtonPanel.getChoiceButtons()[i].addActionListener(choiceHandler);
+            choiceButtonPanel.getChoiceButtons()[i].setActionCommand("c" + (i + 1));
+        }
 
-//        JPanel choiceButtonPanel = new JPanel();
-//        choiceButtonPanel.setBounds(250, 350, 300, 150);
-//        choiceButtonPanel.setBackground(Color.BLACK);
-//        choiceButtonPanel.setLayout(new GridLayout(4, 1));
-//
-//        choiceButtons = new JButton[4];
-//        for (int i = 0; i < choiceButtons.length; i++) {
-//            choiceButtons[i] = new JButton("Choice " + (i + 1));
-//            choiceButtons[i].setOpaque(true);
-//            choiceButtons[i].setBorderPainted(false);
-//            choiceButtons[i].setFocusPainted(false);
-//            choiceButtons[i].setBackground(Color.BLACK);
-//            choiceButtons[i].setForeground(Color.WHITE);
-//            choiceButtons[i].setFont(normalFont);
-//            choiceButtons[i].addActionListener(choiceHandler);
-//            choiceButtons[i].setActionCommand("c" + (i + 1));
-//
-//            choiceButtonPanel.add(choiceButtons[i]);
-//        }
-
-        // Add to Container
-        //  container.add(playerPanel);
         container.add(heroPanel);
         container.add(mainTextPanel);
         container.add(choiceButtonPanel);
@@ -93,21 +66,21 @@ public final class GUI {
     }
 
     public void updateChoiceButtons(String choice1, String choice2, String choice3, String choice4) {
-        choiceButtons[0].setText(choice1);
-        choiceButtons[1].setText(choice2);
-        choiceButtons[2].setText(choice3);
-        choiceButtons[3].setText(choice4);
+        choiceButtonPanel.getChoiceButtons()[0].setText(choice1);
+        choiceButtonPanel.getChoiceButtons()[1].setText(choice2);
+        choiceButtonPanel.getChoiceButtons()[2].setText(choice3);
+        choiceButtonPanel.getChoiceButtons()[3].setText(choice4);
     }
 
     public void updateChoiceButtonsNoActions() {
-        choiceButtons[0].setText(">");
-        choiceButtons[1].setText("");
-        choiceButtons[2].setText("");
-        choiceButtons[3].setText("");
+        choiceButtonPanel.getChoiceButtons()[0].setText(">");
+        choiceButtonPanel.getChoiceButtons()[1].setText("");
+        choiceButtonPanel.getChoiceButtons()[2].setText("");
+        choiceButtonPanel.getChoiceButtons()[3].setText("");
     }
 
     public void hideChoiceButtons() {
-        for (JButton choiceButton : choiceButtons) {
+        for (GameButton choiceButton : choiceButtonPanel.getChoiceButtons()) {
             choiceButton.setText("");
             choiceButton.setVisible(false);
         }
