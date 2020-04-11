@@ -12,36 +12,12 @@ public class Game {
     GameBoard gameBoard;
     private int points;
 
-    private Hero hero;
+    private final Hero hero;
 
     public Game(GameBoard parentGameBoard) {
         gameBoard = parentGameBoard;
         hero = new Hero(2, "Loup Ardent", "rambo.jpg", "Seriez vous l'élu ?", new Knife(), null);
 
 
-    }
-
-    public void increaseHP() {
-        hero.setHp(hero.getHp() + 1);
-    }
-
-    public void decreaseHP() {
-        hero.setHp(hero.getHp() - 1);
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
-    public Hero getHero() {
-        return hero;
-    }
-
-    public void setHero(Hero hero) {
-        this.hero = hero;
     }
 }
