@@ -1,6 +1,5 @@
 package view;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
@@ -16,8 +15,8 @@ public final class GUI {
     MainTextPanel mainTextPanel;
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
-    private JLabel currentHPLabel, currentWeaponLabel;
-    private JTextArea mainTextArea;
+//    private JLabel currentHPLabel, currentWeaponLabel;
+//    private JTextArea mainTextArea;
 
 
     public GUI(ActionListener choiceHandler, ActionListener titleScreenHandler) {
@@ -54,15 +53,15 @@ public final class GUI {
     }
 
     public void updateCurrentHPLabel(int currentHP) {
-        currentHPLabel.setText(Integer.toString(currentHP));
+        heroPanel.getHpLabelNumber().setText(Integer.toString(currentHP));
     }
 
     public void updateCurrentWeaponLabel(String weapon) {
-        currentWeaponLabel.setText(weapon);
+        heroPanel.getWeaponLabelName().setText(weapon);
     }
 
     public void updateMainTextArea(String mainText) {
-        mainTextArea.setText(mainText);
+        mainTextPanel.getMainTextArea().setText(mainText);
     }
 
     public void updateChoiceButtons(String choice1, String choice2, String choice3, String choice4) {
