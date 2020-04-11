@@ -1,5 +1,6 @@
 package app;
 
+import logic.GameWorld;
 import view.GUI;
 
 import java.awt.event.ActionEvent;
@@ -32,7 +33,7 @@ public final class Game {
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
 
-            switch (world.getPlayerPosition()) {
+            switch (world.getHeroPosition()) {
                 case "townGate":
                     switch (choice) {
                         case "c1":

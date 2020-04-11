@@ -1,5 +1,7 @@
 package view;
 
+import model.items.weapons.Weapon;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 
@@ -56,8 +58,8 @@ public final class GUI {
         heroPanel.getHpLabelNumber().setText(Integer.toString(currentHP));
     }
 
-    public void updateCurrentWeaponLabel(String weapon) {
-        heroPanel.getWeaponLabelName().setText(weapon);
+    public void updateCurrentWeaponLabel(Weapon weapon) {
+        heroPanel.getWeaponLabelName().setText(weapon.getName());
     }
 
     public void updateMainTextArea(String mainText) {

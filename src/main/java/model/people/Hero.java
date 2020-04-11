@@ -13,6 +13,7 @@ public class Hero extends People {
     private int strengthMax = 0;
     private Weapon currentWeapon = null;
     private Item currentItem = null;
+    private String position;
 
     public Hero(int gender, String name, String image, String description, Weapon currentWeapon, Item currentItem) {
         super(gender, name, image, description, 0, 0, 0);
@@ -27,6 +28,7 @@ public class Hero extends People {
         this.currentWeapon = currentWeapon;
         this.currentItem = currentItem;
         this.image = "./src/main/resources/pix/people/hero/" + image;
+        this.position = null;
     }
 
     public int getHpMax() {
@@ -83,6 +85,32 @@ public class Hero extends People {
 
     public void setCurrentItem(Item currentItem) {
         this.currentItem = currentItem;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    //TODO : rework these 4 methods
+
+    public void receiveDamage(int damage) {
+        hp -= damage;
+    }
+
+    public void receiveHealing(int healing) {
+        hp += healing;
+    }
+
+    public void movePosition(String position) {
+        this.position = position;
+    }
+
+    public void equipWeapon(Weapon weapon) {
+        this.currentWeapon = weapon;
     }
 
     @Override
