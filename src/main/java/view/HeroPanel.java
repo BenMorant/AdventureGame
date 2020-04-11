@@ -35,13 +35,13 @@ public class HeroPanel extends GamePanel {
     private GameLabel strengthMaxLabel;
     private GameLabel strengthMaxLabelNumber;
 
-    public HeroPanel(Hero hero) {
+    public HeroPanel() {
         super(850, 260, 400, 320);
         setLayout(new GridLayout(12, 2));
 
 
         hpLabel = new GameLabel("HP : ", Color.white, heroPanelFont);
-        hpLabelNumber = new GameLabel(String.valueOf(hero.getHp()), Color.white, heroPanelFont);
+        hpLabelNumber = new GameLabel("test", Color.white, heroPanelFont);
 //        hpMaxLabel = new GameLabel("HP Max : ", Color.yellow, heroPanelFont);
 //        hpMaxLabelNumber = new GameLabel("", Color.yellow, heroPanelFont);
 //        weaponLabel = new GameLabel("Arme : ", Color.white, heroPanelFont);
@@ -68,12 +68,8 @@ public class HeroPanel extends GamePanel {
         createHeroPanel();
     }
 
-    public void createHeroPanel() {
-        buildHeroPanel();
-        setVisible(true);
-    }
 
-    private void buildHeroPanel() {
+    public void createHeroPanel() {
 
         add(hpLabel);
         add(hpLabelNumber);

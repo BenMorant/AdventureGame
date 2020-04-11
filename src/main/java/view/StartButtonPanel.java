@@ -6,17 +6,10 @@ public class StartButtonPanel extends GamePanel {
 
     public StartButtonPanel() {
         super(500, 600, 250, 120);
-        createStartButtonPanel();
-    }
-
-    public void createStartButtonPanel() {
-        buildStartButtonPanel();
-        setVisible(true);
-    }
-
-    private void buildStartButtonPanel() {
         add(startButton);
     }
+
+
 
     public GameButton getStartButton() {
         return startButton;
