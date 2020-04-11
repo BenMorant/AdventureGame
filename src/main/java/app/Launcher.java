@@ -2,7 +2,7 @@ package app;
 
 import view.GameBoard;
 
-public class Launcher {
+public final class Launcher {
 
     public static void main(String[] args) {
 
