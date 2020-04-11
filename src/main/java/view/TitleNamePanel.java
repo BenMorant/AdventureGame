@@ -17,11 +17,6 @@ public class TitleNamePanel extends GamePanel {
     }
 
     public void createTitleNamePanel() {
-        buildTitleNamePanel();
-        setVisible(true);
-    }
-
-    private void buildTitleNamePanel() {
         add(titleNameLabel);
     }
 

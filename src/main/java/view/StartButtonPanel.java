@@ -9,8 +9,6 @@ public class StartButtonPanel extends GamePanel {
         add(startButton);
     }
 
-
-
     public GameButton getStartButton() {
         return startButton;
     }

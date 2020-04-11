@@ -3,7 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-public class GamePanel extends JPanel {
+public abstract class GamePanel extends JPanel {
 
 
     public GamePanel(int x, int y, int width, int height) {

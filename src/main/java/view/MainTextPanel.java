@@ -12,11 +12,6 @@ public class MainTextPanel extends GamePanel {
     }
 
     public void createMainTextPanel() {
-        buildMainTextPanel();
-        setVisible(true);
-    }
-
-    private void buildMainTextPanel() {
         add(mainTextArea);
     }
 
