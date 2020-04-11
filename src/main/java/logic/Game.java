@@ -2,20 +2,20 @@ package logic;
 
 import model.items.weapons.Knife;
 import model.people.Hero;
-import view.GameBoard;
+import view.Window;
 
 
 public class Game {
 
     public static final String TITLE = "L'aventure n'attend pas";
 
-    GameBoard gameBoard;
+    Window window;
     private int points;
 
     private final Hero hero;
 
-    public Game(GameBoard parentGameBoard) {
-        gameBoard = parentGameBoard;
+    public Game(Window parentWindow) {
+        window = parentWindow;
         hero = new Hero(2, "Loup Ardent", "rambo.jpg", "Seriez vous l'élu ?", new Knife(), null);
 
 

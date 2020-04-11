@@ -1,5 +1,7 @@
 package app;
 
+import view.GUI;
+
 public final class GameWorld {
 
     private final GUI gui;
