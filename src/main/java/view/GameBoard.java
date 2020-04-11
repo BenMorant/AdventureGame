@@ -11,22 +11,19 @@ import static logic.Game.TITLE;
 
 public class GameBoard extends JFrame implements ActionListener {
 
+    public static final int DEFAULT_WIDTH = 1280;
+    public static final int DEFAULT_HEIGHT = DEFAULT_WIDTH / 12 * 9;
 
     Game game;
 
-    //
-    MasterPanel titlePanel;
     TitleNamePanel titleNamePanel;
     StartButtonPanel startButtonPanel;
 
-
-    MasterPanel mainPanel;
     HeroPanel heroPanel;
     ChoiceButtonPanel choiceButtonPanel;
     MainTextPanel mainTextPanel;
     ImagePanelHeroPicture imagePanelHeroPicture;
     ImagePanelMain imagePanelMain;
-
 
     GamePanel increaseButtonPanel;
     GamePanel decreaseButtonPanel;
@@ -36,29 +33,30 @@ public class GameBoard extends JFrame implements ActionListener {
     GameLabel pointsLabel;
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
 
-
-
-
-
-
     public GameBoard() {
         super(TITLE);
-
+        setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
+        setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
+        setMaximumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        mainPanel = new MasterPanel();
-        setContentPane(mainPanel);
-        titlePanel = new MasterPanel();
-        //  setContentPane(titlePanel);
+        getContentPane().setBackground(Color.black);
         setLayout(null);
 
         game = new Game(this);
+
+        titleNamePanel = new TitleNamePanel();
+        startButtonPanel = new StartButtonPanel();
+
+        heroPanel = new HeroPanel(game.getHero());
+        choiceButtonPanel = new ChoiceButtonPanel();
+        mainTextPanel = new MainTextPanel();
+        imagePanelHeroPicture = new ImagePanelHeroPicture();
+        imagePanelMain = new ImagePanelMain();
 
         createGameBoard();
     }
 
     public void createGameBoard() {
-
         buildGameBoard();
         setVisible(true);
     }
@@ -83,40 +81,39 @@ public class GameBoard extends JFrame implements ActionListener {
 
 
     private void buildGameBoard() {
-        titleNamePanel = new TitleNamePanel();
-        startButtonPanel = new StartButtonPanel();
-        titlePanel.add(titleNamePanel);
-        titlePanel.add(startButtonPanel);
+        //      showTitleScreen();
 
-
-        heroPanel = new HeroPanel(game.getHero());
-        choiceButtonPanel = new ChoiceButtonPanel();
-        mainTextPanel = new MainTextPanel();
-        imagePanelHeroPicture = new ImagePanelHeroPicture();
-        imagePanelMain = new ImagePanelMain();
-
-        mainPanel.add(heroPanel);
-        mainPanel.add(choiceButtonPanel);
-        //  mainPanel.add(mainTextPanel);
-        mainPanel.add(imagePanelHeroPicture);
-        //   mainPanel.add(imagePanelMain);
+        //   showMainScreen();
 
 
         increaseButtonPanel = new GamePanel(500, 600, 250, 120);
         increaseButton = new GameButton("INCREASE");
         increaseButton.addActionListener(this);
         increaseButtonPanel.add(increaseButton);
-        mainPanel.add(increaseButtonPanel);
+        add(increaseButtonPanel);
         decreaseButtonPanel = new GamePanel(500, 750, 250, 120);
         decreaseButton = new GameButton("DECREASE");
         decreaseButton.addActionListener(this);
         decreaseButtonPanel.add(decreaseButton);
-        mainPanel.add(decreaseButtonPanel);
+        add(decreaseButtonPanel);
         pointsPanel = new GamePanel(500, 300, 250, 120);
         pointsLabel = new GameLabel("HP : " + game.getHero().getHp(), Color.white, normalFont);
         pointsPanel.add(pointsLabel);
-        mainPanel.add(pointsPanel);
+        add(pointsPanel);
 
         pack();
+    }
+
+    private void showMainScreen() {
+        add(heroPanel);
+        add(choiceButtonPanel);
+        add(mainTextPanel);
+        add(imagePanelHeroPicture);
+        add(imagePanelMain);
+    }
+
+    private void showTitleScreen() {
+        add(titleNamePanel);
+        add(startButtonPanel);
     }
 }
