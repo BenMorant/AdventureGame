@@ -52,7 +52,7 @@ public final class GUI {
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
         choiceButtonPanel = new ChoiceButtonPanel();
-        
+
 //        JPanel choiceButtonPanel = new JPanel();
 //        choiceButtonPanel.setBounds(250, 350, 300, 150);
 //        choiceButtonPanel.setBackground(Color.BLACK);
