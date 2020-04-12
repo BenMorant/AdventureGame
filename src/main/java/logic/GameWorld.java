@@ -25,7 +25,7 @@ public final class GameWorld {
 
     public boolean playerHasSilverRing() {
         if (this.silverRing) {
-            gui.updateMainTextArea("Guard: Oh you killed that goblin?\nThank you so much. You are true hero!\nWelcome to our town!\n\n<THE END>");
+            gui.updateMainTextArea("Garde : Oh vous avez tué ce gobelin ?\nMerci du fond du coeur. Vous êtes un véritable héros !\nBienvenue dans notre ville !\n\n<FIN>");
             gui.hideChoiceButtons();
         }
         return silverRing;
@@ -35,7 +35,7 @@ public final class GameWorld {
         boolean isAlive = hero.getHp() > 0;
 
         if (!isAlive) {
-            gui.updateMainTextArea("You are dead!\n\n<GAME OVER>");
+            gui.updateMainTextArea("Vous êtes mort !\n\n<GAME OVER>");
             gui.hideChoiceButtons();
         }
         return isAlive;
@@ -47,8 +47,8 @@ public final class GameWorld {
         if (!isAlive) {
             hero.movePosition("playedKilledGoblin");
 
-            gui.updateMainTextArea("You defeated the goblin!\nThe goblin dropped a ring!\n\n(You obtained a Silver Ring)");
-            gui.updateChoiceButtons("Go East", "", "", "");
+            gui.updateMainTextArea("Vous avez vaincu le gobelin !\nLa gobelin a jeté un anneau !\n\n(Vous avez obtenu un anneau d'argent)");
+            gui.updateChoiceButtons("Aller à l'Est", "", "", "");
 
             silverRing = true;
         }
@@ -65,21 +65,21 @@ public final class GameWorld {
     public void townGate() {
         hero.movePosition("townGate");
 
-        gui.updateMainTextArea("You are at the gate of the town.\nA guard is standing in front of you.\n\nWhat do you do?");
-        gui.updateChoiceButtons("Talk to the guard", "Attack the guard", "Leave", "");
+        gui.updateMainTextArea("Vous êtes à la Porte de la Cité.\nUn garde est devant vous.\n\nQu'est-ce que vous faîtes ?");
+        gui.updateChoiceButtons("Parler au garde", "Attaquer le garde", "Partir", "");
     }
 
     public void talkToGuard() {
         hero.movePosition("playerTalkedToGuard");
 
-        gui.updateMainTextArea("Guard: Hello stranger. I have never seen your face.\nI'm sorry but we cannot let a stranger enter our town.");
+        gui.updateMainTextArea("Garde: Bonjour Etranger. Je n'ai jamais vu votre tête.\nJe suis désolé mais je ne peux pas laisser un étranger entrer dans notre Cité .");
         gui.updateChoiceButtonsNoActions();
     }
 
     public void attackGuard() {
         hero.movePosition("playerAttackedGuard");
 
-        gui.updateMainTextArea("Guard: Hey don't be stupid!!\n\nThe guard fought back and hit you hard.\n(You receive 3 damage)");
+        gui.updateMainTextArea("Garde: Hey ! Ne soyez pas stupide !\n\nLe garde attaque en retour et vous frappe fort.\n(Vous recevez 3 points de dommage)");
         gui.updateChoiceButtonsNoActions();
 
         updatePlayerHP(3, true);
@@ -88,15 +88,15 @@ public final class GameWorld {
     public void crossRoad() {
         hero.movePosition("crossRoad");
 
-        gui.updateMainTextArea("You are at a cross road.\nIf you go south, you will go back to the town.");
-        gui.updateChoiceButtons("Go North", "Go East", "Go South", "Go West");
+        gui.updateMainTextArea("Vous êtes à un carrefour.\nSi vous allez au Sud, vous serez de retour à la Cité.");
+        gui.updateChoiceButtons("Aller au Nord", "Aller à l'Est", "Aller au Sud", "Allez à l'Ouest");
     }
 
     public void north() {
         hero.movePosition("north");
 
-        gui.updateMainTextArea("There is a river.\nYou drink the water and rest and the riverside.\n(Your HP is recovered by 2)");
-        gui.updateChoiceButtons("Go South", "", "", "");
+        gui.updateMainTextArea("Il y a une rivière.\nVous buvez l'eau et vous vous reposez sur le rivage.\n(Vos points de vie sont recouvrés +2)");
+        gui.updateChoiceButtons("Aller au Sud", "", "", "");
 
         updatePlayerHP(2, false);
     }
@@ -104,20 +104,20 @@ public final class GameWorld {
     public void east() {
         hero.movePosition("east");
 
-        gui.updateMainTextArea("You walked into a forest and found a long sword!\n\n(You obtained a Long Sword)");
-        gui.updateChoiceButtons("Go West", "", "", "");
+        gui.updateMainTextArea("Vous marchez dans la forêt et trouvez une longue épée!\n\n(Vous obbtenez une Longue Epée)");
+        gui.updateChoiceButtons("Aller à l'Ouest", "", "", "");
 
-        // updatePlayerWeapon("Long Sword");
+        updatePlayerWeapon("Long Sword");
     }
 
     public void west() {
         hero.movePosition("west");
 
         if (goblinHP > 0) {
-            gui.updateMainTextArea("You encounter a goblin!");
-            gui.updateChoiceButtons("Fight", "Run", "", "");
+            gui.updateMainTextArea("Vous rencontrez un Gobelin !");
+            gui.updateChoiceButtons("Combattre", "Fuir", "", "");
         } else {
-            gui.updateMainTextArea("There is a dead goblin on the ground.");
+            gui.updateMainTextArea("Il y a un Gobelin mort sur le sol.");
             gui.updateChoiceButtonsNoActions();
         }
     }
@@ -125,8 +125,8 @@ public final class GameWorld {
     public void fightGoblin() {
         hero.movePosition("goblinBattle");
 
-        gui.updateMainTextArea("Goblin's HP: " + goblinHP + "\n\nWhat do you do?");
-        gui.updateChoiceButtons("Fight", "Run", "", "");
+        gui.updateMainTextArea("HP du Gobelin : " + goblinHP + "\n\nQue faîtes vous ?");
+        gui.updateChoiceButtons("Combattre", "Fuir", "", "");
     }
 
     public void attackGoblin() {
@@ -139,7 +139,7 @@ public final class GameWorld {
             playerDamage = new java.util.Random().nextInt(10);
         }
 
-        gui.updateMainTextArea("You attacked the goblin and gave " + playerDamage + " damage!");
+        gui.updateMainTextArea("Vous attaquez le Gobelin et lui donnez " + playerDamage + " points de dommage !");
         gui.updateChoiceButtonsNoActions();
 
         goblinHP -= playerDamage;
@@ -150,7 +150,7 @@ public final class GameWorld {
 
         int goblinDamage = new java.util.Random().nextInt(6);
 
-        gui.updateMainTextArea("The goblin attacked you and gave " + goblinDamage + " damage!");
+        gui.updateMainTextArea("Le Gobelin vous attaque et vous donne " + goblinDamage + " points de dommage !");
         gui.updateChoiceButtonsNoActions();
 
         updatePlayerHP(goblinDamage, true);
