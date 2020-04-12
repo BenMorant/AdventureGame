@@ -1,6 +1,7 @@
 package logic;
 
 import model.items.weapons.Knife;
+import model.items.weapons.LongSword;
 import model.items.weapons.Weapon;
 import model.people.Hero;
 import view.GUI;
@@ -107,7 +108,7 @@ public final class GameWorld {
         gui.updateMainTextArea("Vous marchez dans la forêt et trouvez une longue épée!\n\n(Vous obbtenez une Longue Epée)");
         gui.updateChoiceButtons("Aller à l'Ouest", "", "", "");
 
-        updatePlayerWeapon("Long Sword");
+        updatePlayerWeapon(new LongSword());
     }
 
     public void west() {
