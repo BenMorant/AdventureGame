@@ -4,6 +4,7 @@ import model.items.weapons.Knife;
 import model.items.weapons.LongSword;
 import model.items.weapons.Weapon;
 import model.people.Hero;
+import model.people.monsters.Goblin;
 import view.GUI;
 
 public final class GameWorld {
@@ -11,10 +12,9 @@ public final class GameWorld {
     private final GUI gui;
 
     private final Hero hero = new Hero(2, "Loup Ardent", "rambo.jpg", "Seriez vous l'élu ?", new Knife(), null);
-
-    // private final Player hero = new Player(15, "Knife");
+    private final Goblin goblin = new Goblin();
     private boolean silverRing = false;
-    private int goblinHP = 20;
+    // private int goblinHP = 20;
 
     public GameWorld(GUI gui) {
         this.gui = gui;
@@ -43,7 +43,7 @@ public final class GameWorld {
     }
 
     public boolean goblinIsAlive() {
-        boolean isAlive = goblinHP > 0;
+        boolean isAlive = goblin.getHp() > 0;
 
         if (!isAlive) {
             hero.setPosition("playedKilledGoblin");
@@ -114,7 +114,7 @@ public final class GameWorld {
     public void west() {
         hero.setPosition("west");
 
-        if (goblinHP > 0) {
+        if (goblin.getHp() > 0) {
             gui.updateMainTextArea("Vous rencontrez un Gobelin !");
             gui.updateChoiceButtons("Combattre", "Fuir", "", "");
         } else {
@@ -126,7 +126,7 @@ public final class GameWorld {
     public void fightGoblin() {
         hero.setPosition("goblinBattle");
 
-        gui.updateMainTextArea("HP du Gobelin : " + goblinHP + "\n\nQue faîtes vous ?");
+        gui.updateMainTextArea("HP du Gobelin : " + goblin.getHp() + "\n\nQue faîtes vous ?");
         gui.updateChoiceButtons("Combattre", "Fuir", "", "");
     }
 
@@ -143,7 +143,7 @@ public final class GameWorld {
         gui.updateMainTextArea("Vous attaquez le Gobelin et lui donnez " + playerDamage + " points de dommage !");
         gui.updateChoiceButtonsNoActions();
 
-        goblinHP -= playerDamage;
+        goblin.setHp(goblin.getHp() - playerDamage);
     }
 
     public void goblinAttacks() {
