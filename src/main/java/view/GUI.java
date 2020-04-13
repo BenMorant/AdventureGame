@@ -27,11 +27,7 @@ public final class GUI {
             startButtonPanel = new StartButtonPanel(choiceHandler);
             heroPanel = new HeroPanel();
             mainTextPanel = new MainTextPanel();
-            choiceButtonPanel = new ChoiceButtonPanel();
-            for (int i = 0; i < choiceButtonPanel.getChoiceButtons().length; i++) {
-                choiceButtonPanel.getChoiceButtons()[i].addActionListener(choiceHandler);
-                choiceButtonPanel.getChoiceButtons()[i].setActionCommand("c" + (i + 1));
-            }
+            choiceButtonPanel = new ChoiceButtonPanel(choiceHandler);
             addPanels();
             window.setVisible(true);
         }
