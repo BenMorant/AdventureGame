@@ -14,7 +14,6 @@ public final class Game {
     private final GameWorld world = new GameWorld(gui);
 
     private Game() {
-//        gui.showTitleScreen();
         visibilityManager.showTitleScreen();
     }
 
@@ -27,7 +26,6 @@ public final class Game {
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
             if (choice.equals("start")) {
-//                gui.showMainScreen();
                 visibilityManager.showMainScreen();
                 world.startGame();
             }
