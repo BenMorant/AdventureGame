@@ -14,7 +14,6 @@ public final class GameWorld {
     private final Hero hero = new Hero(2, "Loup Ardent", "rambo.jpg", "Seriez vous l'élu ?", new Knife(), null);
     private final Goblin goblin = new Goblin();
     private boolean silverRing = false;
-    // private int goblinHP = 20;
 
     public GameWorld(GUI gui) {
         this.gui = gui;
