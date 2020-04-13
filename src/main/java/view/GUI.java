@@ -41,21 +41,21 @@ public final class GUI {
         container.add(choiceButtonPanel);
     }
 
-    public void showTitleScreen() {
-        titleNamePanel.setVisible(true);
-        startButtonPanel.setVisible(true);
-        heroPanel.setVisible(false);
-        mainTextPanel.setVisible(false);
-        choiceButtonPanel.setVisible(false);
-    }
-
-    public void showMainScreen() {
-        titleNamePanel.setVisible(false);
-        startButtonPanel.setVisible(false);
-        heroPanel.setVisible(true);
-        mainTextPanel.setVisible(true);
-        choiceButtonPanel.setVisible(true);
-    }
+//    public void showTitleScreen() {
+//        titleNamePanel.setVisible(true);
+//        startButtonPanel.setVisible(true);
+//        heroPanel.setVisible(false);
+//        mainTextPanel.setVisible(false);
+//        choiceButtonPanel.setVisible(false);
+//    }
+//
+//    public void showMainScreen() {
+//        titleNamePanel.setVisible(false);
+//        startButtonPanel.setVisible(false);
+//        heroPanel.setVisible(true);
+//        mainTextPanel.setVisible(true);
+//        choiceButtonPanel.setVisible(true);
+//    }
 
     public void updateCurrentHPLabel(int currentHP) {
         heroPanel.getHpLabelNumber().setText(Integer.toString(currentHP));
