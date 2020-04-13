@@ -134,9 +134,9 @@ public final class GameWorld {
         hero.setPosition("playerAttackedGoblin");
 
         int playerDamage = 0;
-        if (hero.getCurrentWeapon().getName().equals("Knife")) {
+        if (hero.getCurrentWeapon().getName().equals("couteau")) {
             playerDamage = new java.util.Random().nextInt(3);
-        } else if (hero.getCurrentWeapon().getName().equals("Long Sword")) {
+        } else if (hero.getCurrentWeapon().getName().equals("longue épée")) {
             playerDamage = new java.util.Random().nextInt(10);
         }
 
