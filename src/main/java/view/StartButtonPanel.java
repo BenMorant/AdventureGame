@@ -1,11 +1,15 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 public class StartButtonPanel extends GamePanel {
 
     private GameButton startButton = new GameButton("C'EST PARTI !");
 
-    public StartButtonPanel() {
+    public StartButtonPanel(ActionListener choiceHandler) {
         super(500, 600, 250, 120);
+        startButton.addActionListener(choiceHandler);
+        startButton.setActionCommand("start");
         add(startButton);
     }
 

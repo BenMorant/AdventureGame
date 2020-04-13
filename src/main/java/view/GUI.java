@@ -24,9 +24,7 @@ public final class GUI {
             this.choiceHandler = choiceHandler;
             window = new Window();
             titleNamePanel = new TitleNamePanel();
-            startButtonPanel = new StartButtonPanel();
-            startButtonPanel.getStartButton().addActionListener(choiceHandler);
-            startButtonPanel.getStartButton().setActionCommand("start");
+            startButtonPanel = new StartButtonPanel(choiceHandler);
             heroPanel = new HeroPanel();
             mainTextPanel = new MainTextPanel();
             choiceButtonPanel = new ChoiceButtonPanel();
