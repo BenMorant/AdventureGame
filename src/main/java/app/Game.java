@@ -12,7 +12,7 @@ public final class Game {
     private final GameWorld world = new GameWorld(gui);
 
     private Game() {
-        gui.initializeStartScreen();
+        gui.showTitleScreen();
     }
 
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public final class Game {
     private class TitleScreenHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
-            gui.createGameScreen();
+            gui.showMainScreen();
             world.startGame();
         }
 

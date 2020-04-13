@@ -9,6 +9,7 @@ public final class GUI {
 
     private final ActionListener choiceHandler;
     private final ActionListener titleScreenHandler;
+    Window window;
     private Container container;
     TitleNamePanel titleNamePanel;
     StartButtonPanel startButtonPanel;
@@ -24,23 +25,10 @@ public final class GUI {
     public GUI(ActionListener choiceHandler, ActionListener titleScreenHandler) {
         this.choiceHandler = choiceHandler;
         this.titleScreenHandler = titleScreenHandler;
-    }
-
-    public void initializeStartScreen() {
-        Window window = new Window();
+        window = new Window();
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel();
         startButtonPanel.getStartButton().addActionListener(titleScreenHandler);
-
-        container = window.getContentPane();
-        container.add(titleNamePanel);
-        container.add(startButtonPanel);
-        window.setVisible(true);
-    }
-
-    public void createGameScreen() {
-        titleNamePanel.setVisible(false);
-        startButtonPanel.setVisible(false);
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
         choiceButtonPanel = new ChoiceButtonPanel();
@@ -48,10 +36,33 @@ public final class GUI {
             choiceButtonPanel.getChoiceButtons()[i].addActionListener(choiceHandler);
             choiceButtonPanel.getChoiceButtons()[i].setActionCommand("c" + (i + 1));
         }
+        addPanels();
+        window.setVisible(true);
+    }
 
+    public void addPanels() {
+        container = window.getContentPane();
+        container.add(titleNamePanel);
+        container.add(startButtonPanel);
         container.add(heroPanel);
         container.add(mainTextPanel);
         container.add(choiceButtonPanel);
+    }
+
+    public void showTitleScreen() {
+        titleNamePanel.setVisible(true);
+        startButtonPanel.setVisible(true);
+        heroPanel.setVisible(false);
+        mainTextPanel.setVisible(false);
+        choiceButtonPanel.setVisible(false);
+    }
+
+    public void showMainScreen() {
+        titleNamePanel.setVisible(false);
+        startButtonPanel.setVisible(false);
+        heroPanel.setVisible(true);
+        mainTextPanel.setVisible(true);
+        choiceButtonPanel.setVisible(true);
     }
 
     public void updateCurrentHPLabel(int currentHP) {
