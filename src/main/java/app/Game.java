@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public final class Game {
 
-    private final GUI gui = new GUI(new ChoiceHandler(), new TitleScreenHandler());
+    private final GUI gui = new GUI(new ChoiceHandler());
     private final GameWorld world = new GameWorld(gui);
 
     private Game() {
@@ -19,19 +19,14 @@ public final class Game {
         new Game();
     }
 
-    private class TitleScreenHandler implements ActionListener {
-
-        public void actionPerformed(ActionEvent actionEvent) {
-            gui.showMainScreen();
-            world.startGame();
-        }
-
-    }
-
     private class ChoiceHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
+            if (choice.equals("start")) {
+                gui.showMainScreen();
+                world.startGame();
+            }
 
             switch (world.getHeroPosition()) {
                 case "townGate":

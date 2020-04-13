@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 public final class GUI {
 
     private final ActionListener choiceHandler;
-    private final ActionListener titleScreenHandler;
     Window window;
     private Container container;
     TitleNamePanel titleNamePanel;
@@ -21,24 +20,23 @@ public final class GUI {
 //    private JLabel currentHPLabel, currentWeaponLabel;
 //    private JTextArea mainTextArea;
 
-
-    public GUI(ActionListener choiceHandler, ActionListener titleScreenHandler) {
-        this.choiceHandler = choiceHandler;
-        this.titleScreenHandler = titleScreenHandler;
-        window = new Window();
-        titleNamePanel = new TitleNamePanel();
-        startButtonPanel = new StartButtonPanel();
-        startButtonPanel.getStartButton().addActionListener(titleScreenHandler);
-        heroPanel = new HeroPanel();
-        mainTextPanel = new MainTextPanel();
-        choiceButtonPanel = new ChoiceButtonPanel();
-        for (int i = 0; i < choiceButtonPanel.getChoiceButtons().length; i++) {
-            choiceButtonPanel.getChoiceButtons()[i].addActionListener(choiceHandler);
-            choiceButtonPanel.getChoiceButtons()[i].setActionCommand("c" + (i + 1));
+        public GUI(ActionListener choiceHandler) {
+            this.choiceHandler = choiceHandler;
+            window = new Window();
+            titleNamePanel = new TitleNamePanel();
+            startButtonPanel = new StartButtonPanel();
+            startButtonPanel.getStartButton().addActionListener(choiceHandler);
+            startButtonPanel.getStartButton().setActionCommand("start");
+            heroPanel = new HeroPanel();
+            mainTextPanel = new MainTextPanel();
+            choiceButtonPanel = new ChoiceButtonPanel();
+            for (int i = 0; i < choiceButtonPanel.getChoiceButtons().length; i++) {
+                choiceButtonPanel.getChoiceButtons()[i].addActionListener(choiceHandler);
+                choiceButtonPanel.getChoiceButtons()[i].setActionCommand("c" + (i + 1));
+            }
+            addPanels();
+            window.setVisible(true);
         }
-        addPanels();
-        window.setVisible(true);
-    }
 
     public void addPanels() {
         container = window.getContentPane();
