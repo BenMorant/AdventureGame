@@ -95,7 +95,7 @@ public class Hero extends People {
         this.position = position;
     }
 
-    //TODO : rework these 4 methods
+    //TODO : rework these 3 methods
 
     public void receiveDamage(int damage) {
         hp -= damage;
@@ -105,14 +105,7 @@ public class Hero extends People {
         hp += healing;
     }
 
-    public void movePosition(String position) {
-        this.position = position;
-    }
-
-    public void equipWeapon(Weapon weapon) {
-        this.currentWeapon = weapon;
-    }
-
+    
     @Override
     public String toString() {
         return "Hero{" +
