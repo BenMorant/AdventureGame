@@ -2,7 +2,7 @@ package view;
 
 public class VisibilityManager {
 
-    GUI gui;
+    private final GUI gui;
 
     public VisibilityManager(GUI gui) {
         this.gui = gui;

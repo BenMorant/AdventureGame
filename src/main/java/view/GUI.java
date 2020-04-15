@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public final class GUI {
 
     private final ActionListener choiceHandler;
+    private final ActionListener screenHandler;
     Window window;
     private Container container;
     TitleNamePanel titleNamePanel;
@@ -17,19 +18,19 @@ public final class GUI {
     MainTextPanel mainTextPanel;
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
-//    private JLabel currentHPLabel, currentWeaponLabel;
-//    private JTextArea mainTextArea;
 
-        public GUI(ActionListener choiceHandler) {
-            this.choiceHandler = choiceHandler;
-            window = new Window();
-            titleNamePanel = new TitleNamePanel();
-            startButtonPanel = new StartButtonPanel(choiceHandler);
-            heroPanel = new HeroPanel();
-            mainTextPanel = new MainTextPanel();
-            choiceButtonPanel = new ChoiceButtonPanel(choiceHandler);
-            addPanels();
-            window.setVisible(true);
+
+    public GUI(ActionListener choiceHandler, ActionListener screenHandler) {
+        this.choiceHandler = choiceHandler;
+        this.screenHandler = screenHandler;
+        window = new Window();
+        titleNamePanel = new TitleNamePanel();
+        startButtonPanel = new StartButtonPanel(screenHandler);
+        heroPanel = new HeroPanel();
+        mainTextPanel = new MainTextPanel();
+        choiceButtonPanel = new ChoiceButtonPanel(choiceHandler);
+        addPanels();
+        window.setVisible(true);
         }
 
     public void addPanels() {

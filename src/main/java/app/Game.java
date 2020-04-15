@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public final class Game {
 
-    private final GUI gui = new GUI(new ChoiceHandler());
+    private final GUI gui = new GUI(new ChoiceHandler(), new ScreenHandler());
     private final VisibilityManager visibilityManager = new VisibilityManager(gui);
     private final GameWorld world = new GameWorld(gui);
 
@@ -21,7 +21,8 @@ public final class Game {
         new Game();
     }
 
-    private class ChoiceHandler implements ActionListener {
+
+    private class ScreenHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
@@ -29,6 +30,18 @@ public final class Game {
                 visibilityManager.showMainScreen();
                 world.startGame();
             }
+
+        }
+    }
+
+    private class ChoiceHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent actionEvent) {
+            String choice = actionEvent.getActionCommand();
+//            if (choice.equals("start")) {
+//              //  visibilityManager.showMainScreen();
+//                world.startGame();
+//            }
 
             switch (world.getHeroPosition()) {
                 case "townGate":
