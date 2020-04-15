@@ -1,10 +1,10 @@
-package model.items;
+package model.entity.items;
 
-import model.GenericModel;
+import model.entity.GenericModelEntity;
 
 import java.util.List;
 
-public abstract class Inventory extends GenericModel {
+public abstract class Inventory extends GenericModelEntity {
 
     protected List<Item> Items = null;
     protected int capacity = 0;

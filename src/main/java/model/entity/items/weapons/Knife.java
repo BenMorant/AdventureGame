@@ -1,14 +1,14 @@
-package model.items.weapons;
+package model.entity.items.weapons;
 
-public class LongSword extends Weapon {
+public class Knife extends Weapon {
 
-    public LongSword() {
-        super(1, "longue épée", "sword.jpg", "C'est une bien longue épée", 7, 10, 10);
+    public Knife() {
+        super(2, "couteau", "knife.jpg", "un petit couteau de cuisine", 3, 5, 5);
     }
 
     @Override
     public String toString() {
-        return "LongSword{" +
+        return "Knife{" +
                 "damageMax=" + damageMax +
                 ", wearMax=" + wearMax +
                 ", wear=" + wear +

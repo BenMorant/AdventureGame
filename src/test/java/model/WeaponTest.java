@@ -1,6 +1,6 @@
 package model;
 
-import model.items.weapons.Weapon;
+import model.entity.items.weapons.Weapon;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

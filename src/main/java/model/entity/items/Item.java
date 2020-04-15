@@ -1,8 +1,8 @@
-package model.items;
+package model.entity.items;
 
-import model.GenericModel;
+import model.entity.GenericModelEntity;
 
-public abstract class Item extends GenericModel {
+public abstract class Item extends GenericModelEntity {
 
     protected int weight = 0;
 

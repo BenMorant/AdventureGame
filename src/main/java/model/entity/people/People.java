@@ -1,8 +1,8 @@
-package model.people;
+package model.entity.people;
 
-import model.GenericModel;
+import model.entity.GenericModelEntity;
 
-public abstract class People extends GenericModel {
+public abstract class People extends GenericModelEntity {
 
     protected int hp = 0;
     protected int mp = 0;

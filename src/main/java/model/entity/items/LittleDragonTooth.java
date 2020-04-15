@@ -1,4 +1,4 @@
-package model.items;
+package model.entity.items;
 
 public class LittleDragonTooth extends Item {
 

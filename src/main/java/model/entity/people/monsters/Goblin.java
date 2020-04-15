@@ -1,13 +1,17 @@
-package model.people.monsters;
+package model.entity.people.monsters;
 
-public class Guard extends Monster {
-    public Guard() {
-        super(2, "Garde", "people/monsters/guard.png", "un garde qui n'a pas l'air affable...", 15, 0, 3, "Le garde vous pique le derrière avec la pointe de son mousquet !", 10, null);
+import model.entity.items.SilverRing;
+
+
+public class Goblin extends Monster {
+
+    public Goblin() {
+        super(2, "Gobelin", "goblin.jpg", "Il est laid le Gobelin", 20, 0, 6, "Le gobelin vous touche avec son baton !", 5, new SilverRing());
     }
 
     @Override
     public String toString() {
-        return "Guard{" +
+        return "Goblin{" +
                 "attackMessage='" + attackMessage + '\'' +
                 ", stealDifficulty=" + stealDifficulty +
                 ", monsterItem=" + monsterItem +
@@ -20,4 +24,6 @@ public class Guard extends Monster {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+
 }

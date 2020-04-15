@@ -1,12 +1,10 @@
 package model;
 
-import model.items.weapons.Knife;
-import model.items.weapons.Weapon;
-import model.people.Hero;
+import model.entity.items.weapons.Knife;
+import model.entity.items.weapons.Weapon;
+import model.entity.people.Hero;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 
 class HeroTest {

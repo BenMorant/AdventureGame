@@ -1,7 +1,7 @@
-package model.items.weapons;
+package model.entity.items.weapons;
 
-import model.items.Item;
-import model.utils.ModelHelper;
+import model.entity.items.Item;
+import model.entity.utils.ModelHelper;
 
 public abstract class Weapon extends Item {
 

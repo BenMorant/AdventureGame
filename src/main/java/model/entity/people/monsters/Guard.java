@@ -1,15 +1,13 @@
-package model.people.monsters;
+package model.entity.people.monsters;
 
-import model.items.MandragoreClove;
-
-public class Mandragore extends Monster {
-    public Mandragore() {
-        super(1, "Mandragore", "people/monsters/mandragore.jpg", "une mandragore qui a l'air inoffensif...", 25, 0, 4, "La Mandragore pousse son cri mortel !", 3, new MandragoreClove());
+public class Guard extends Monster {
+    public Guard() {
+        super(2, "Garde", "people/monsters/guard.png", "un garde qui n'a pas l'air affable...", 15, 0, 3, "Le garde vous pique le derrière avec la pointe de son mousquet !", 10, null);
     }
 
     @Override
     public String toString() {
-        return "Mandragore{" +
+        return "Guard{" +
                 "attackMessage='" + attackMessage + '\'' +
                 ", stealDifficulty=" + stealDifficulty +
                 ", monsterItem=" + monsterItem +

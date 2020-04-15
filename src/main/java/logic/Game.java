@@ -1,7 +1,7 @@
 package logic;
 
-import model.items.weapons.Knife;
-import model.people.Hero;
+import model.entity.items.weapons.Knife;
+import model.entity.people.Hero;
 import view.Window;
 
 

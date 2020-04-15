@@ -1,6 +1,6 @@
 package view;
 
-import model.items.weapons.Weapon;
+import model.entity.items.weapons.Weapon;
 
 import java.awt.*;
 import java.awt.event.ActionListener;

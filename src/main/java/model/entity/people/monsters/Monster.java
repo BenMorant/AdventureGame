@@ -1,7 +1,7 @@
-package model.people.monsters;
+package model.entity.people.monsters;
 
-import model.items.Item;
-import model.people.People;
+import model.entity.items.Item;
+import model.entity.people.People;
 
 public abstract class Monster extends People {
 

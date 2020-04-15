@@ -1,17 +1,17 @@
-package model;
+package model.entity;
 
-public abstract class GenericModel {
+public abstract class GenericModelEntity {
 
     protected int gender = 0;
     protected String name = null;
     protected String image = null;
     protected String description = null;
 
-    public GenericModel() {
+    public GenericModelEntity() {
 
     }
 
-    public GenericModel(int gender, String name, String image, String description) {
+    public GenericModelEntity(int gender, String name, String image, String description) {
         this.gender = gender;
         this.name = name;
         this.image = "./src/main/resources/pix/" + image;

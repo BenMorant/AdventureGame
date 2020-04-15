@@ -1,17 +1,15 @@
-package model.people.monsters;
+package model.entity.people.monsters;
 
-import model.items.SilverRing;
+import model.entity.items.MandragoreClove;
 
-
-public class Goblin extends Monster {
-
-    public Goblin() {
-        super(2, "Gobelin", "goblin.jpg", "Il est laid le Gobelin", 20, 0, 6, "Le gobelin vous touche avec son baton !", 5, new SilverRing());
+public class Mandragore extends Monster {
+    public Mandragore() {
+        super(1, "Mandragore", "people/monsters/mandragore.jpg", "une mandragore qui a l'air inoffensif...", 25, 0, 4, "La Mandragore pousse son cri mortel !", 3, new MandragoreClove());
     }
 
     @Override
     public String toString() {
-        return "Goblin{" +
+        return "Mandragore{" +
                 "attackMessage='" + attackMessage + '\'' +
                 ", stealDifficulty=" + stealDifficulty +
                 ", monsterItem=" + monsterItem +
@@ -24,6 +22,4 @@ public class Goblin extends Monster {
                 ", description='" + description + '\'' +
                 '}';
     }
-
-
 }

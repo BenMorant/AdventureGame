@@ -1,6 +1,6 @@
-package model.people.monsters;
+package model.entity.people.monsters;
 
-import model.items.LittleDragonTooth;
+import model.entity.items.LittleDragonTooth;
 
 public class LittleDragon extends Monster {
     public LittleDragon() {

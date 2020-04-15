@@ -1,8 +1,8 @@
-package model.places;
+package model.entity.places;
 
-import model.GenericModel;
+import model.entity.GenericModelEntity;
 
-public abstract class Place extends GenericModel {
+public abstract class Place extends GenericModelEntity {
 
 
     public Place(int gender, String name, String image, String description) {

@@ -1,8 +1,8 @@
-package model.people;
+package model.entity.people;
 
-import model.items.Item;
-import model.items.weapons.Weapon;
-import model.utils.ModelHelper;
+import model.entity.items.Item;
+import model.entity.items.weapons.Weapon;
+import model.entity.utils.ModelHelper;
 
 public class Hero extends People {
 
@@ -90,6 +90,8 @@ public class Hero extends People {
     public String getPosition() {
         return position;
     }
+    ++
+
 
     public void setPosition(String position) {
         this.position = position;

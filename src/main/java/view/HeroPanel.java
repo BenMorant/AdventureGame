@@ -1,6 +1,6 @@
 package view;
 
-import model.people.Hero;
+import model.entity.people.Hero;
 
 import java.awt.*;
 

@@ -1,10 +1,10 @@
 package logic;
 
-import model.items.weapons.Knife;
-import model.items.weapons.LongSword;
-import model.items.weapons.Weapon;
-import model.people.Hero;
-import model.people.monsters.Goblin;
+import model.entity.items.weapons.Knife;
+import model.entity.items.weapons.LongSword;
+import model.entity.items.weapons.Weapon;
+import model.entity.people.Hero;
+import model.entity.people.monsters.Goblin;
 import view.GUI;
 
 public final class GameWorld {
