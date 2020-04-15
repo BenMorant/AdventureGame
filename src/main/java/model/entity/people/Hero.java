@@ -2,7 +2,7 @@ package model.entity.people;
 
 import model.entity.items.Item;
 import model.entity.items.weapons.Weapon;
-import model.entity.utils.ModelHelper;
+import model.entity.utils.ModelEntityHelper;
 
 public class Hero extends People {
 
@@ -17,9 +17,9 @@ public class Hero extends People {
 
     public Hero(int gender, String name, String image, String description, Weapon currentWeapon, Item currentItem) {
         super(gender, name, image, description, 0, 0, 0);
-        this.strengthMax = ModelHelper.getRandomNumberBetweenTwoBounds(0, 10);
-        this.hpMax = ModelHelper.getRandomNumberBetweenTwoBounds(7, 15);
-        this.mpMax = ModelHelper.getRandomNumberBetweenTwoBounds(0, 0);
+        this.strengthMax = ModelEntityHelper.getRandomNumberBetweenTwoBounds(0, 10);
+        this.hpMax = ModelEntityHelper.getRandomNumberBetweenTwoBounds(7, 15);
+        this.mpMax = ModelEntityHelper.getRandomNumberBetweenTwoBounds(0, 0);
         this.abilityMax = 10 - this.strengthMax;
         this.hp = this.hpMax;
         this.mp = this.mpMax;
@@ -90,7 +90,6 @@ public class Hero extends People {
     public String getPosition() {
         return position;
     }
-    ++
 
 
     public void setPosition(String position) {

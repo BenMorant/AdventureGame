@@ -1,7 +1,7 @@
 package model.entity.items.weapons;
 
 import model.entity.items.Item;
-import model.entity.utils.ModelHelper;
+import model.entity.utils.ModelEntityHelper;
 
 public abstract class Weapon extends Item {
 
@@ -14,7 +14,7 @@ public abstract class Weapon extends Item {
         this.image = "./src/main/resources/pix/items/weapons/" + image;
         this.damageMax = damageMax;
         this.wearMax = wearMax;
-        this.wear = ModelHelper.getRandomNumberBetweenTwoBounds(0, wearMax - 1);
+        this.wear = ModelEntityHelper.getRandomNumberBetweenTwoBounds(0, wearMax - 1);
     }
 
     public static int giveDamage(int strength, int strengthMax, int weaponDamageMax) {

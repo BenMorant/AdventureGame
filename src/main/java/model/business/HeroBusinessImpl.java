@@ -1,6 +1,7 @@
 package model.business;
 
-import Hero;
+
+import model.entity.people.Hero;
 
 public class HeroBusinessImpl implements HeroBusiness {
 
