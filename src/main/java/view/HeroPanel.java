@@ -1,12 +1,9 @@
 package view;
 
-import model.entity.people.Hero;
-
 import java.awt.*;
 
 public class HeroPanel extends GamePanel {
 
-    private Hero hero;
 
     private final Font heroPanelFont = new Font("Times New Roman", Font.PLAIN, 22);
 
@@ -38,7 +35,6 @@ public class HeroPanel extends GamePanel {
     public HeroPanel() {
         super(850, 260, 400, 320);
         setLayout(new GridLayout(12, 2));
-
 
         hpLabel = new GameLabel("HP : ", Color.white, heroPanelFont);
         hpLabelNumber = new GameLabel("test", Color.white, heroPanelFont);
@@ -286,13 +282,6 @@ public class HeroPanel extends GamePanel {
         this.strengthMaxLabelNumber = strengthMaxLabelNumber;
     }
 
-    public Hero getHero() {
-        return hero;
-    }
-
-    public void setHero(Hero hero) {
-        this.hero = hero;
-    }
 
     public void setHpLabel(GameLabel hpLabel) {
         this.hpLabel = hpLabel;
@@ -301,6 +290,7 @@ public class HeroPanel extends GamePanel {
     public void setHpLabelNumber(GameLabel hpLabelNumber) {
         this.hpLabelNumber = hpLabelNumber;
     }
+
 
     @Override
     public String toString() {
@@ -332,4 +322,6 @@ public class HeroPanel extends GamePanel {
                 ", strengthMaxLabelNumber=" + strengthMaxLabelNumber +
                 '}';
     }
+
 }
+

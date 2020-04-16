@@ -38,11 +38,6 @@ public final class Game {
 
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
-//            if (choice.equals("start")) {
-//              //  visibilityManager.showMainScreen();
-//                world.startGame();
-//            }
-
             switch (world.getHeroPosition()) {
                 case "townGate":
                     switch (choice) {

@@ -2,7 +2,7 @@ package view;
 
 import java.awt.*;
 
-import static logic.Game.TITLE;
+import static view.Window.TITLE;
 
 public class TitleNamePanel extends GamePanel {
 
