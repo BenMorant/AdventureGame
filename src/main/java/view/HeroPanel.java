@@ -1,9 +1,12 @@
 package view;
 
+import model.entity.people.Hero;
+
 import java.awt.*;
 
 public class HeroPanel extends GamePanel {
 
+    private Hero hero;
 
     private final Font heroPanelFont = new Font("Times New Roman", Font.PLAIN, 22);
 
@@ -37,7 +40,7 @@ public class HeroPanel extends GamePanel {
         setLayout(new GridLayout(12, 2));
 
         hpLabel = new GameLabel("HP : ", Color.white, heroPanelFont);
-        hpLabelNumber = new GameLabel("test", Color.white, heroPanelFont);
+        hpLabelNumber = new GameLabel("", Color.white, heroPanelFont);
         hpMaxLabel = new GameLabel("HP Max : ", Color.yellow, heroPanelFont);
         hpMaxLabelNumber = new GameLabel("", Color.yellow, heroPanelFont);
         weaponLabel = new GameLabel("Arme : ", Color.white, heroPanelFont);

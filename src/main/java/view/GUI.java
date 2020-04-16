@@ -1,6 +1,6 @@
 package view;
 
-import model.entity.items.weapons.Weapon;
+import model.entity.people.Hero;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -23,6 +23,7 @@ public final class GUI {
     public GUI(ActionListener choiceHandler, ActionListener screenHandler) {
         this.choiceHandler = choiceHandler;
         this.screenHandler = screenHandler;
+
         window = new Window();
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel(screenHandler);
@@ -41,13 +42,18 @@ public final class GUI {
         container.add(mainTextPanel);
         container.add(choiceButtonPanel);
     }
-    
-    public void updateCurrentHPLabel(int currentHP) {
-        heroPanel.getHpLabelNumber().setText(Integer.toString(currentHP));
-    }
 
-    public void updateCurrentWeaponLabel(Weapon weapon) {
-        heroPanel.getWeaponLabelName().setText(weapon.getName());
+//    public void updateCurrentHPLabel(int currentHP) {
+//        heroPanel.getHpLabelNumber().setText(Integer.toString(currentHP));
+//    }
+//
+//    public void updateCurrentWeaponLabel(Weapon weapon) {
+//        heroPanel.getWeaponLabelName().setText(weapon.getName());
+//    }
+
+    public void updateHeroPanel(Hero heroToUpdate) {
+        heroPanel.getHpLabelNumber().setText(Integer.toString(heroToUpdate.getHp()));
+        heroPanel.getWeaponLabelName().setText(heroToUpdate.getCurrentWeapon().getName());
     }
 
     public void updateMainTextArea(String mainText) {

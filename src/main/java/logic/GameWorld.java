@@ -56,8 +56,9 @@ public final class GameWorld {
     }
 
     public void startGame() {
-        gui.updateCurrentHPLabel(hero.getHp());
-        gui.updateCurrentWeaponLabel(hero.getCurrentWeapon());
+//        gui.updateCurrentHPLabel(hero.getHp());
+//        gui.updateCurrentWeaponLabel(hero.getCurrentWeapon());
+        gui.updateHeroPanel(hero);
 
         townGate();
     }
@@ -162,12 +163,14 @@ public final class GameWorld {
         } else {
             hero.receiveHealing(hp);
         }
-        gui.updateCurrentHPLabel(hero.getHp());
+        //gui.updateCurrentHPLabel(hero.getHp());
+        gui.updateHeroPanel(hero);
     }
 
     private void updatePlayerWeapon(Weapon weapon) {
         hero.setCurrentWeapon(weapon);
-        gui.updateCurrentWeaponLabel(weapon);
+        //   gui.updateCurrentWeaponLabel(weapon);
+        gui.updateHeroPanel(hero);
     }
 
 }
