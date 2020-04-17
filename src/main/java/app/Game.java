@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 
 public final class Game {
 
-    //    private final GUI gui = new GUI(new ChoiceHandler(), new ScreenHandler());
     private final GUI gui = new GUI(new ChoiceHandler());
     private final VisibilityManager visibilityManager = new VisibilityManager(gui);
     private final GameWorld world = new GameWorld(gui);

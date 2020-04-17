@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 public final class GUI {
 
     private final ActionListener choiceHandler;
-    //    private final ActionListener screenHandler;
     private Window window;
     private Container container;
     private TitleNamePanel titleNamePanel;
@@ -19,15 +18,10 @@ public final class GUI {
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
 
-
-    //    public GUI(ActionListener choiceHandler, ActionListener screenHandler) {
     public GUI(ActionListener choiceHandler) {
         this.choiceHandler = choiceHandler;
-//        this.screenHandler = screenHandler;
-
         window = new Window();
         titleNamePanel = new TitleNamePanel();
-//        startButtonPanel = new StartButtonPanel(screenHandler);
         startButtonPanel = new StartButtonPanel();
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
@@ -87,10 +81,6 @@ public final class GUI {
     public ActionListener getChoiceHandler() {
         return choiceHandler;
     }
-
-//    public ActionListener getScreenHandler() {
-//        return screenHandler;
-//    }
 
     public Window getWindow() {
         return window;

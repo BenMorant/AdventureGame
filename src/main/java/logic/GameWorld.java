@@ -55,14 +55,6 @@ public final class GameWorld {
         return isAlive;
     }
 
-//    public void startGame() {
-////        gui.updateCurrentHPLabel(hero.getHp());
-////        gui.updateCurrentWeaponLabel(hero.getCurrentWeapon());
-//        gui.updateHeroPanel(hero);
-//
-//        townGate();
-//    }
-
     public void townGate() {
         hero.setPosition("start");
         gui.updateHeroPanel(hero);
