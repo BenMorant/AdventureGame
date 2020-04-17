@@ -4,7 +4,6 @@ import logic.GameWorld;
 import logic.TitleScreenController;
 import model.entity.screens.Titlescreen;
 import view.GUI;
-import view.VisibilityManager;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,13 +11,14 @@ import java.awt.event.ActionListener;
 public final class Game {
 
     private final GUI gui = new GUI(new ChoiceHandler());
-    private final VisibilityManager visibilityManager = new VisibilityManager(gui);
+   // private final VisibilityManager visibilityManager = new VisibilityManager(gui);
     private final GameWorld world = new GameWorld(gui);
     private final TitleScreenController titleScreenController;
 
     private Game() {
-        titleScreenController = new TitleScreenController(new Titlescreen(), gui, visibilityManager, world);
-        visibilityManager.showTitleScreen();
+        //  titleScreenController = new TitleScreenController(new Titlescreen(), gui, visibilityManager, world);
+        titleScreenController = new TitleScreenController(new Titlescreen(), gui, world);
+        gui.getVisibilityManager().showTitleScreen();
     }
 
     public static void main(String[] args) {

@@ -4,8 +4,12 @@ public class VisibilityManager {
 
     private final GUI gui;
 
-    public VisibilityManager(GUI gui) {
-        this.gui = gui;
+//    public VisibilityManager(GUI gui) {
+//        this.gui = gui;
+//    }
+
+    public VisibilityManager(GUI parentGui) {
+        gui = parentGui;
     }
 
     public void showTitleScreen() {

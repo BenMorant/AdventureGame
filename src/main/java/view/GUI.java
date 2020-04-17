@@ -15,6 +15,7 @@ public final class GUI {
     private HeroPanel heroPanel;
     private ChoiceButtonPanel choiceButtonPanel;
     private MainTextPanel mainTextPanel;
+    private VisibilityManager visibilityManager;
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
 
@@ -28,6 +29,7 @@ public final class GUI {
         choiceButtonPanel = new ChoiceButtonPanel(choiceHandler);
         addPanels();
         window.setVisible(true);
+        visibilityManager = new VisibilityManager(this);
     }
 
     public void addPanels() {
@@ -136,5 +138,13 @@ public final class GUI {
 
     public void setMainTextPanel(MainTextPanel mainTextPanel) {
         this.mainTextPanel = mainTextPanel;
+    }
+
+    public VisibilityManager getVisibilityManager() {
+        return visibilityManager;
+    }
+
+    public void setVisibilityManager(VisibilityManager visibilityManager) {
+        this.visibilityManager = visibilityManager;
     }
 }
