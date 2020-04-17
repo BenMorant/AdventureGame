@@ -2,7 +2,7 @@ package view;
 
 import java.awt.*;
 
-import static view.Window.TITLE;
+import static model.entity.screens.Titlescreen.TITLE;
 
 public class TitleNamePanel extends GamePanel {
 

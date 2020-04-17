@@ -3,11 +3,12 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
+import static model.entity.screens.Titlescreen.TITLE;
+
 public class Window extends JFrame {
 
     public static final int DEFAULT_WIDTH = 1280;
     public static final int DEFAULT_HEIGHT = DEFAULT_WIDTH / 12 * 9;
-    public static final String TITLE = "L'aventure n'attend pas";
 
     public Window() {
         super(TITLE);
