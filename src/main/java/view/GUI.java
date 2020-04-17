@@ -8,31 +8,33 @@ import java.awt.event.ActionListener;
 public final class GUI {
 
     private final ActionListener choiceHandler;
-    private final ActionListener screenHandler;
-    Window window;
+    //    private final ActionListener screenHandler;
+    private Window window;
     private Container container;
-    TitleNamePanel titleNamePanel;
-    StartButtonPanel startButtonPanel;
-    HeroPanel heroPanel;
-    ChoiceButtonPanel choiceButtonPanel;
-    MainTextPanel mainTextPanel;
+    private TitleNamePanel titleNamePanel;
+    private StartButtonPanel startButtonPanel;
+    private HeroPanel heroPanel;
+    private ChoiceButtonPanel choiceButtonPanel;
+    private MainTextPanel mainTextPanel;
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
 
 
-    public GUI(ActionListener choiceHandler, ActionListener screenHandler) {
+    //    public GUI(ActionListener choiceHandler, ActionListener screenHandler) {
+    public GUI(ActionListener choiceHandler) {
         this.choiceHandler = choiceHandler;
-        this.screenHandler = screenHandler;
+//        this.screenHandler = screenHandler;
 
         window = new Window();
         titleNamePanel = new TitleNamePanel();
-        startButtonPanel = new StartButtonPanel(screenHandler);
+//        startButtonPanel = new StartButtonPanel(screenHandler);
+        startButtonPanel = new StartButtonPanel();
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
         choiceButtonPanel = new ChoiceButtonPanel(choiceHandler);
         addPanels();
         window.setVisible(true);
-        }
+    }
 
     public void addPanels() {
         container = window.getContentPane();
@@ -42,6 +44,7 @@ public final class GUI {
         container.add(mainTextPanel);
         container.add(choiceButtonPanel);
     }
+
 
 //    public void updateCurrentHPLabel(int currentHP) {
 //        heroPanel.getHpLabelNumber().setText(Integer.toString(currentHP));
@@ -81,4 +84,67 @@ public final class GUI {
         }
     }
 
+    public ActionListener getChoiceHandler() {
+        return choiceHandler;
+    }
+
+//    public ActionListener getScreenHandler() {
+//        return screenHandler;
+//    }
+
+    public Window getWindow() {
+        return window;
+    }
+
+    public void setWindow(Window window) {
+        this.window = window;
+    }
+
+    public Container getContainer() {
+        return container;
+    }
+
+    public void setContainer(Container container) {
+        this.container = container;
+    }
+
+    public TitleNamePanel getTitleNamePanel() {
+        return titleNamePanel;
+    }
+
+    public void setTitleNamePanel(TitleNamePanel titleNamePanel) {
+        this.titleNamePanel = titleNamePanel;
+    }
+
+    public StartButtonPanel getStartButtonPanel() {
+        return startButtonPanel;
+    }
+
+    public void setStartButtonPanel(StartButtonPanel startButtonPanel) {
+        this.startButtonPanel = startButtonPanel;
+    }
+
+    public HeroPanel getHeroPanel() {
+        return heroPanel;
+    }
+
+    public void setHeroPanel(HeroPanel heroPanel) {
+        this.heroPanel = heroPanel;
+    }
+
+    public ChoiceButtonPanel getChoiceButtonPanel() {
+        return choiceButtonPanel;
+    }
+
+    public void setChoiceButtonPanel(ChoiceButtonPanel choiceButtonPanel) {
+        this.choiceButtonPanel = choiceButtonPanel;
+    }
+
+    public MainTextPanel getMainTextPanel() {
+        return mainTextPanel;
+    }
+
+    public void setMainTextPanel(MainTextPanel mainTextPanel) {
+        this.mainTextPanel = mainTextPanel;
+    }
 }

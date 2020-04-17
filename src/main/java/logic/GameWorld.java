@@ -55,16 +55,17 @@ public final class GameWorld {
         return isAlive;
     }
 
-    public void startGame() {
-//        gui.updateCurrentHPLabel(hero.getHp());
-//        gui.updateCurrentWeaponLabel(hero.getCurrentWeapon());
-        gui.updateHeroPanel(hero);
-
-        townGate();
-    }
+//    public void startGame() {
+////        gui.updateCurrentHPLabel(hero.getHp());
+////        gui.updateCurrentWeaponLabel(hero.getCurrentWeapon());
+//        gui.updateHeroPanel(hero);
+//
+//        townGate();
+//    }
 
     public void townGate() {
-        hero.setPosition("townGate");
+        hero.setPosition("start");
+        gui.updateHeroPanel(hero);
 
         gui.updateMainTextArea("Vous êtes à la Porte de la Cité.\nUn garde est devant vous.\n\nQu'est-ce que vous faîtes ?");
         gui.updateChoiceButtons("Parler au garde", "Attaquer le garde", "Partir", "");

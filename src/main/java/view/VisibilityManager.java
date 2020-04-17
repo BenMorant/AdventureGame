@@ -9,19 +9,19 @@ public class VisibilityManager {
     }
 
     public void showTitleScreen() {
-        gui.titleNamePanel.setVisible(true);
-        gui.startButtonPanel.setVisible(true);
-        gui.heroPanel.setVisible(false);
-        gui.mainTextPanel.setVisible(false);
-        gui.choiceButtonPanel.setVisible(false);
+        gui.getTitleNamePanel().setVisible(true);
+        gui.getStartButtonPanel().setVisible(true);
+        gui.getHeroPanel().setVisible(false);
+        gui.getMainTextPanel().setVisible(false);
+        gui.getChoiceButtonPanel().setVisible(false);
     }
 
     public void showMainScreen() {
-        gui.titleNamePanel.setVisible(false);
-        gui.startButtonPanel.setVisible(false);
-        gui.heroPanel.setVisible(true);
-        gui.mainTextPanel.setVisible(true);
-        gui.choiceButtonPanel.setVisible(true);
+        gui.getTitleNamePanel().setVisible(false);
+        gui.getStartButtonPanel().setVisible(false);
+        gui.getHeroPanel().setVisible(true);
+        gui.getMainTextPanel().setVisible(true);
+        gui.getChoiceButtonPanel().setVisible(true);
     }
 
 }

@@ -6,11 +6,21 @@ public class StartButtonPanel extends GamePanel {
 
     private GameButton startButton = new GameButton("C'EST PARTI !");
 
-    public StartButtonPanel(ActionListener choiceHandler) {
+//    public StartButtonPanel(ActionListener choiceHandler) {
+//        super(500, 600, 250, 120);
+//        startButton.addActionListener(choiceHandler);
+//        startButton.setActionCommand("start");
+//        add(startButton);
+//    }
+
+    public StartButtonPanel() {
         super(500, 600, 250, 120);
-        startButton.addActionListener(choiceHandler);
-        startButton.setActionCommand("start");
         add(startButton);
+    }
+
+    public void addStartButtonListener(ActionListener screenHandler, String actionCommand) {
+        startButton.addActionListener(screenHandler);
+        startButton.setActionCommand(actionCommand);
     }
 
     public GameButton getStartButton() {

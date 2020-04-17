@@ -1,6 +1,8 @@
 package app;
 
 import logic.GameWorld;
+import logic.TitleScreenController;
+import model.entity.screens.Titlescreen;
 import view.GUI;
 import view.VisibilityManager;
 
@@ -9,11 +11,14 @@ import java.awt.event.ActionListener;
 
 public final class Game {
 
-    private final GUI gui = new GUI(new ChoiceHandler(), new ScreenHandler());
+    //    private final GUI gui = new GUI(new ChoiceHandler(), new ScreenHandler());
+    private final GUI gui = new GUI(new ChoiceHandler());
     private final VisibilityManager visibilityManager = new VisibilityManager(gui);
     private final GameWorld world = new GameWorld(gui);
+    private final TitleScreenController titleScreenController;
 
     private Game() {
+        titleScreenController = new TitleScreenController(new Titlescreen(), gui, visibilityManager, world);
         visibilityManager.showTitleScreen();
     }
 
@@ -21,25 +26,12 @@ public final class Game {
         new Game();
     }
 
-
-    private class ScreenHandler implements ActionListener {
-
-        public void actionPerformed(ActionEvent actionEvent) {
-            String choice = actionEvent.getActionCommand();
-            if (choice.equals("start")) {
-                visibilityManager.showMainScreen();
-                world.startGame();
-            }
-
-        }
-    }
-
-    private class ChoiceHandler implements ActionListener {
+    public class ChoiceHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
             switch (world.getHeroPosition()) {
-                case "townGate":
+                case "start":
                     switch (choice) {
                         case "c1":
                             if (!world.playerHasSilverRing()) {
