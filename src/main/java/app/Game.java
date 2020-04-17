@@ -23,7 +23,7 @@ public final class Game {
         new Game();
     }
 
-    public class ChoiceHandler implements ActionListener {
+    private class ChoiceHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
