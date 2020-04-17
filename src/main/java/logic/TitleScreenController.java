@@ -10,14 +10,11 @@ public class TitleScreenController {
 
     private final Titlescreen titlescreen;
     private final GUI gui;
-   // private final VisibilityManager visibilityManager;
     private final GameWorld world;
 
-    //    public TitleScreenController(Titlescreen titlescreen, GUI gui, VisibilityManager visibilityManager, GameWorld world) {
     public TitleScreenController(Titlescreen titlescreen, GUI gui, GameWorld world) {
         this.titlescreen = titlescreen;
         this.gui = gui;
-        //    this.visibilityManager = visibilityManager;
         this.gui.getStartButtonPanel().addStartButtonListener(new ScreenHandler(), "start");
         this.world = world;
     }

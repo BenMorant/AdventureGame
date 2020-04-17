@@ -156,13 +156,11 @@ public final class GameWorld {
         } else {
             hero.receiveHealing(hp);
         }
-        //gui.updateCurrentHPLabel(hero.getHp());
         gui.updateHeroPanel(hero);
     }
 
     private void updatePlayerWeapon(Weapon weapon) {
         hero.setCurrentWeapon(weapon);
-        //   gui.updateCurrentWeaponLabel(weapon);
         gui.updateHeroPanel(hero);
     }
 

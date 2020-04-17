@@ -11,12 +11,10 @@ import java.awt.event.ActionListener;
 public final class Game {
 
     private final GUI gui = new GUI(new ChoiceHandler());
-   // private final VisibilityManager visibilityManager = new VisibilityManager(gui);
     private final GameWorld world = new GameWorld(gui);
     private final TitleScreenController titleScreenController;
 
     private Game() {
-        //  titleScreenController = new TitleScreenController(new Titlescreen(), gui, visibilityManager, world);
         titleScreenController = new TitleScreenController(new Titlescreen(), gui, world);
         gui.getVisibilityManager().showTitleScreen();
     }
