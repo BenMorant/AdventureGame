@@ -1,10 +1,10 @@
 package model.entity.screens;
 
-public class Titlescreen {
+public class TitleScreen {
 
     public static final String TITLE = "L'aventure n'attend pas";
 
-    public Titlescreen() {
+    public TitleScreen() {
     }
 
     @Override

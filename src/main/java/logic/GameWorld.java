@@ -56,7 +56,7 @@ public final class GameWorld {
     }
 
     public void townGate() {
-        hero.setPosition("start");
+        hero.setPosition("townGate");
         gui.updateHeroPanel(hero);
 
         gui.updateMainTextArea("Vous êtes à la Porte de la Cité.\nUn garde est devant vous.\n\nQu'est-ce que vous faîtes ?");

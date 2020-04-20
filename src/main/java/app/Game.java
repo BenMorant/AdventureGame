@@ -2,7 +2,7 @@ package app;
 
 import logic.GameWorld;
 import logic.TitleScreenController;
-import model.entity.screens.Titlescreen;
+import model.entity.screens.TitleScreen;
 import view.GUI;
 
 import java.awt.event.ActionEvent;
@@ -15,7 +15,7 @@ public final class Game {
     private final TitleScreenController titleScreenController;
 
     private Game() {
-        titleScreenController = new TitleScreenController(new Titlescreen(), gui, world);
+        titleScreenController = new TitleScreenController(new TitleScreen(), gui, world);
         gui.getVisibilityManager().showTitleScreen();
     }
 
@@ -28,7 +28,7 @@ public final class Game {
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
             switch (world.getHeroPosition()) {
-                case "start":
+                case "townGate":
                     switch (choice) {
                         case "c1":
                             if (!world.playerHasSilverRing()) {

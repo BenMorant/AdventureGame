@@ -3,7 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-import static model.entity.screens.Titlescreen.TITLE;
+import static model.entity.screens.TitleScreen.TITLE;
 
 public class Window extends JFrame {
 
