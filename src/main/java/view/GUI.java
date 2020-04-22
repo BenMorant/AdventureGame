@@ -6,7 +6,6 @@ import java.awt.*;
 
 public final class GUI {
 
-//    private final ActionListener choiceHandler;
     private Window window;
     private Container container;
     private TitleNamePanel titleNamePanel;
@@ -18,16 +17,12 @@ public final class GUI {
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
 
-    // public GUI(ActionListener choiceHandler) {
-
     public GUI() {
-//        this.choiceHandler = choiceHandler;
         window = new Window();
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel();
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
-        //  choiceButtonPanel = new ChoiceButtonPanel(choiceHandler);
         choiceButtonPanel = new ChoiceButtonPanel();
         addPanels();
         window.setVisible(true);
@@ -81,10 +76,6 @@ public final class GUI {
             choiceButton.setVisible(false);
         }
     }
-
-//    public ActionListener getChoiceHandler() {
-//        return choiceHandler;
-//    }
 
     public Window getWindow() {
         return window;
