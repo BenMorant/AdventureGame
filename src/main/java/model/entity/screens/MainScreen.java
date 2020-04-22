@@ -7,9 +7,16 @@ import java.util.Arrays;
 public class MainScreen {
 
     private Hero hero;
-    private String storyBlock;
+    private String storyBlock = "Il était une fois dans la ville de Foix";
     private String mainImage;
     private String[] choices;
+
+    public MainScreen() {
+        this.hero = hero;
+        this.storyBlock = storyBlock;
+        this.mainImage = mainImage;
+        this.choices = choices;
+    }
 
     public void populateStringArray(int nbChoices, String choice1, String choice2, String choice3, String choice4) {
         choices = new String[nbChoices];

@@ -16,6 +16,7 @@ public class Window extends JFrame {
         setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setMaximumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setResizable(false);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.black);
         setLayout(null);

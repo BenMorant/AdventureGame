@@ -10,13 +10,15 @@ public class TitleScreenController {
 
     private final TitleScreen titleScreen;
     private final GUI gui;
-    private final GameWorld world;
+  //  private final GameWorld world;
 
-    public TitleScreenController(TitleScreen titleScreen, GUI gui, GameWorld world) {
+    //    public TitleScreenController(TitleScreen titleScreen, GUI gui, GameWorld world) {
+    public TitleScreenController(TitleScreen titleScreen, GUI gui) {
         this.titleScreen = titleScreen;
         this.gui = gui;
+        gui.getVisibilityManager().showTitleScreen();
         this.gui.getStartButtonPanel().addStartButtonListener(new ScreenHandler(), "start");
-        this.world = world;
+        //  this.world = world;
     }
 
     private class ScreenHandler implements ActionListener {
@@ -25,7 +27,7 @@ public class TitleScreenController {
             String action = actionEvent.getActionCommand();
             if (action.equals("start")) {
                 gui.getVisibilityManager().showMainScreen();
-                world.townGate();
+                //   world.townGate();
 
             }
 
