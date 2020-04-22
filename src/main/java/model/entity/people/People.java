@@ -2,11 +2,11 @@ package model.entity.people;
 
 import model.entity.GenericModelEntity;
 
-public class People extends GenericModelEntity {
+public abstract class People extends GenericModelEntity {
 
-    private int hp = 0;
-    private int mp = 0;
-    private int strength = 0;
+    protected int hp = 0;
+    protected int mp = 0;
+    protected int strength = 0;
 
 
     public People(int gender, String name, String image, String description, int hp, int mp, int strength) {
