@@ -1,19 +1,23 @@
 package logic;
 
-import model.entity.screens.MainScreen;
+import model.entity.screens.Screen;
 import view.GUI;
 
 public class MainScreenController {
 
-    private final MainScreen mainScreen;
+    // private final MainScreen mainScreen;
+    private final Screen screen;
     private final GUI gui;
-   // private final GameWorld world;
+    // private final GameWorld world;
 
     //    public MainScreenController(MainScreen mainScreen, GUI gui, GameWorld world) {
-    public MainScreenController(MainScreen mainScreen, GUI gui) {
-        this.mainScreen = mainScreen;
+    // public MainScreenController(MainScreen mainScreen, GUI gui) {
+    public MainScreenController(Screen screen, GUI gui) {
+        this.screen = screen;
+        // this.mainScreen = mainScreen;
         this.gui = gui;
-        gui.updateMainTextArea(mainScreen.getStoryBlock());
+//        gui.updateMainTextArea(mainScreen.getStoryBlock());
+        gui.updateMainTextArea(screen.getMainScreen().getStoryBlock());
         //  this.gui.getChoiceButtonPanel().addChoiceButtonListener(new ChoiceHandler());
         // this.world = world;
     }

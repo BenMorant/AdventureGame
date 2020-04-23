@@ -1,15 +1,16 @@
 package view;
 
 import model.entity.people.Hero;
-import model.entity.screens.MainScreen;
-import model.entity.screens.TitleScreen;
+import model.entity.screens.Screen;
 
 import java.awt.*;
 
 public final class GUI {
 
-    private final TitleScreen titleScreen;
-    private final MainScreen mainScreen;
+//    private final TitleScreen titleScreen;
+//    private final MainScreen mainScreen;
+
+    private final Screen screen;
 
     private Window window;
     private Container container;
@@ -22,9 +23,12 @@ public final class GUI {
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
 
-    public GUI(TitleScreen titleScreen, MainScreen mainScreen) {
-        this.titleScreen = titleScreen;
-        this.mainScreen = mainScreen;
+    //    public GUI(TitleScreen titleScreen, MainScreen mainScreen) {
+//        this.titleScreen = titleScreen;
+//        this.mainScreen = mainScreen;
+    public GUI(Screen screen) {
+        this.screen = screen;
+        //this.mainScreen = mainScreen;
         window = new Window();
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel();

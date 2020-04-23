@@ -19,10 +19,8 @@ package app;
 //
 //}
 
-import logic.MainScreenController;
-import logic.TitleScreenController;
-import model.entity.screens.MainScreen;
-import model.entity.screens.TitleScreen;
+import logic.Controller;
+import model.entity.screens.Screen;
 import view.GUI;
 
 public final class Game implements Runnable {
@@ -45,11 +43,14 @@ public final class Game implements Runnable {
     }
 
     public static void runGame() {
-        TitleScreen titleScreen = new TitleScreen();
-        MainScreen mainScreen = new MainScreen();
-        GUI gui = new GUI(titleScreen, mainScreen);
-        TitleScreenController titleScreenController = new TitleScreenController(titleScreen, gui);
-        MainScreenController mainScreenController = new MainScreenController(mainScreen, gui);
+//        TitleScreen titleScreen = new TitleScreen();
+//        MainScreen mainScreen = new MainScreen();
+        Screen screen = new Screen();
+        //  GUI gui = new GUI(titleScreen, mainScreen);
+        GUI gui = new GUI(screen);
+//        TitleScreenController titleScreenController = new TitleScreenController(titleScreen, gui);
+//        MainScreenController mainScreenController = new MainScreenController(mainScreen, gui);
+        Controller controller = new Controller(screen, gui);
     }
 
     @Override

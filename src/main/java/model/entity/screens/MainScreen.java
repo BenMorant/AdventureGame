@@ -7,10 +7,11 @@ import java.util.Arrays;
 public class MainScreen {
 
     private Hero hero;
-    private String storyBlock = "Il était une fois dans la ville de Foix";
+    private String storyBlock;
     private String mainImage;
     private String[] choices;
 
+    //  public MainScreen(Hero hero, String storyBlock, String mainImage, String[] choices) {
     public MainScreen() {
         this.hero = hero;
         this.storyBlock = storyBlock;
