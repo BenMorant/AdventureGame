@@ -8,15 +8,12 @@ import java.awt.event.ActionListener;
 
 public class TitleScreenController {
 
-    // private final TitleScreen titleScreen;
     private final Screen screen;
     private final GUI gui;
     //  private final GameWorld world;
 
     //    public TitleScreenController(TitleScreen titleScreen, GUI gui, GameWorld world) {
-//    public TitleScreenController(TitleScreen titleScreen, GUI gui) {
     public TitleScreenController(Screen screen, GUI gui) {
-        //  this.titleScreen = titleScreen;
         this.screen = screen;
         this.gui = gui;
         gui.getVisibilityManager().showTitleScreen();

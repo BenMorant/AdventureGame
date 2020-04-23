@@ -5,18 +5,14 @@ import view.GUI;
 
 public class MainScreenController {
 
-    // private final MainScreen mainScreen;
     private final Screen screen;
     private final GUI gui;
     // private final GameWorld world;
 
     //    public MainScreenController(MainScreen mainScreen, GUI gui, GameWorld world) {
-    // public MainScreenController(MainScreen mainScreen, GUI gui) {
     public MainScreenController(Screen screen, GUI gui) {
         this.screen = screen;
-        // this.mainScreen = mainScreen;
         this.gui = gui;
-//        gui.updateMainTextArea(mainScreen.getStoryBlock());
         gui.updateMainTextArea(screen.getMainScreen().getStoryBlock());
         //  this.gui.getChoiceButtonPanel().addChoiceButtonListener(new ChoiceHandler());
         // this.world = world;
