@@ -14,6 +14,7 @@ public class MainScreenController {
         this.screen = screen;
         this.gui = gui;
         gui.updateMainTextArea(screen.getMainScreen().getStoryBlock());
+        gui.updateChoiceButtons(screen.getMainScreen().getChoices());
         //  this.gui.getChoiceButtonPanel().addChoiceButtonListener(new ChoiceHandler());
         // this.world = world;
     }

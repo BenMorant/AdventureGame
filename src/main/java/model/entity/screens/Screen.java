@@ -11,7 +11,8 @@ public class Screen {
 
     public void addAllScreens() {
         titleScreen = new TitleScreen();
-        mainScreen = new MainScreen();
+        //    mainScreen = new MainScreen();
+        mainScreen = new TownGate();
     }
 
     public TitleScreen getTitleScreen() {
