@@ -5,6 +5,8 @@ public class MainWindow extends Window {
     private HeroPanel heroPanel;
     private ChoiceButtonPanel choiceButtonPanel;
     private MainTextPanel mainTextPanel;
+//    private ImagePanelHeroPicture imagePanelHeroPicture;
+//    private ImagePanelMain imagePanelMain;
 
     public MainWindow() {
         super();

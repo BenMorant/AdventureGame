@@ -3,33 +3,26 @@ package view;
 import model.entity.people.Hero;
 import model.entity.screens.Screen;
 
-import java.awt.*;
-
 public final class GUI {
 
     private final Screen screen;
 
     private TitleWindow titleWindow;
     private MainWindow mainWindow;
-    private Container titleContainer;
-    private Container mainContainer;
     private VisibilityManager visibilityManager;
-    //    ImagePanelHeroPicture imagePanelHeroPicture;
-//    ImagePanelMain imagePanelMain;
-
 
     public GUI(Screen screen) {
         this.screen = screen;
         titleWindow = new TitleWindow();
         mainWindow = new MainWindow();
-        addPanels();
+        getAllContentPanes();
         visibilityManager = new VisibilityManager(this);
     }
 
 
-    public void addPanels() {
-        titleContainer = titleWindow.getContentPane();
-        mainContainer = mainWindow.getContentPane();
+    public void getAllContentPanes() {
+        titleWindow.getContentPane();
+        mainWindow.getContentPane();
     }
 
 
@@ -80,14 +73,13 @@ public final class GUI {
         this.titleWindow = titleWindow;
     }
 
-    public Container getTitleContainer() {
-        return titleContainer;
+    public MainWindow getMainWindow() {
+        return mainWindow;
     }
 
-    public void setTitleContainer(Container titleContainer) {
-        this.titleContainer = titleContainer;
+    public void setMainWindow(MainWindow mainWindow) {
+        this.mainWindow = mainWindow;
     }
-
 
     public VisibilityManager getVisibilityManager() {
         return visibilityManager;
@@ -99,21 +91,5 @@ public final class GUI {
 
     public Screen getScreen() {
         return screen;
-    }
-
-//    public TitleWindow getTitlePanel() {
-//        return titlePanel;
-//    }
-//
-//    public void setTitlePanel(TitleWindow titlePanel) {
-//        this.titlePanel = titlePanel;
-//    }
-
-    public MainWindow getMainWindow() {
-        return mainWindow;
-    }
-
-    public void setMainWindow(MainWindow mainWindow) {
-        this.mainWindow = mainWindow;
     }
 }
