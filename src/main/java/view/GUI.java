@@ -57,17 +57,17 @@ public final class GUI {
         heroPanel.getWeaponLabelName().setText(heroToUpdate.getCurrentWeapon().getName());
     }
 
-    public void updateMainTextArea(String mainText) {
+    public void updateStoryBlock(String mainText) {
         mainTextPanel.getMainTextArea().setText(mainText);
     }
 
-//    public void updateChoiceButtons(String choice1, String choice2, String choice3, String choice4) {
-public void updateChoiceButtons(String[] choices) {
-    choiceButtonPanel.getChoiceButtons()[0].setText(choices[0]);
-    choiceButtonPanel.getChoiceButtons()[1].setText(choices[1]);
-    choiceButtonPanel.getChoiceButtons()[2].setText(choices[2]);
-    choiceButtonPanel.getChoiceButtons()[3].setText(choices[3]);
-}
+    //    public void updateChoiceButtons(String choice1, String choice2, String choice3, String choice4) {
+    public void updateChoices(String[] choices) {
+        choiceButtonPanel.getChoiceButtons()[0].setText(choices[0]);
+        choiceButtonPanel.getChoiceButtons()[1].setText(choices[1]);
+        choiceButtonPanel.getChoiceButtons()[2].setText(choices[2]);
+        choiceButtonPanel.getChoiceButtons()[3].setText(choices[3]);
+    }
 
     public void updateChoiceButtonsNoActions() {
         choiceButtonPanel.getChoiceButtons()[0].setText(">");

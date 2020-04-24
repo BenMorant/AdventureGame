@@ -3,9 +3,8 @@ package model.entity.screens;
 import model.entity.people.Hero;
 
 import java.util.Arrays;
-import java.util.List;
 
-public class MainScreen {
+public class Position {
 
     protected Hero hero;
     protected String storyBlock;
@@ -14,33 +13,33 @@ public class MainScreen {
 
     //  public MainScreen(Hero hero, String storyBlock, String mainImage, String[] choices) {
     // public MainScreen(Hero hero, String storyBlock, String mainImage, String choices) {
-    public MainScreen() {
+    public Position() {
         //      this.hero = hero;
         //   this.storyBlock = storyBlock;
         this.mainImage = mainImage;
         this.choices = choices;
     }
 
-//    public String[] populateStringArray(int nbChoices, String choice1, String choice2, String choice3, String choice4) {
-//        choices = new String[nbChoices];
-//        choices[0] = choice1;
-//        choices[1] = choice2;
-//        choices[2] = choice3;
-//        choices[3] = choice4;
-//        return choices;
-//    }
-//
+    public String[] populateStringArray(int nbChoices, String choice1, String choice2, String choice3, String choice4) {
+        choices = new String[nbChoices];
+        choices[0] = choice1;
+        choices[1] = choice2;
+        choices[2] = choice3;
+        choices[3] = choice4;
+        return choices;
+    }
+
 //    private class Command {
 //        String label;
 //        void doStuff() {
 //            System.out.println("yooooo");
 //        }
 //    }
-
-    public void populateStringArray(List<String> choices) {
-        this.choices = choices.toArray(new String[0]);
-
-    }
+//
+//    public void populateStringArray(List<String> choices) {
+//        this.choices = choices.toArray(new String[0]);
+//
+//    }
 
     public void populateHeroAttributes(Hero hero) {
         hero.getHp();
