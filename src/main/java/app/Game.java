@@ -19,7 +19,7 @@ public final class Game implements Runnable {
         Controller controller = new Controller(screen, gui);
         screen.addObserver(gui);
         screen.setProperty("new");
-  
+
     }
 
     @Override
