@@ -1,7 +1,7 @@
 package app;
 
 
-import logic.Controller;
+import controller.Controller;
 import model.entity.screens.Screen;
 import view.GUI;
 

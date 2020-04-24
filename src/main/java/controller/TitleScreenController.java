@@ -1,4 +1,4 @@
-package logic;
+package controller;
 
 import model.entity.screens.Screen;
 import view.GUI;

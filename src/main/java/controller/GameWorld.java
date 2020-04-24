@@ -1,4 +1,4 @@
-//package logic;
+//package controller;
 //
 //import model.entity.items.weapons.Knife;
 //import model.entity.items.weapons.LongSword;
