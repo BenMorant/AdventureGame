@@ -3,7 +3,10 @@ package view;
 import model.entity.people.Hero;
 import model.entity.screens.Screen;
 
-public final class GUI {
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+public final class GUI implements PropertyChangeListener {
 
     private final Screen screen;
 
@@ -91,5 +94,14 @@ public final class GUI {
 
     public Screen getScreen() {
         return screen;
+    }
+
+
+    @Override
+    public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
+        System.out.println("Variation of " + propertyChangeEvent.getPropertyName());
+        System.out.println("\t(" + propertyChangeEvent.getOldValue() +
+                " -> " + propertyChangeEvent.getNewValue() + ")");
+        System.out.println("Property in object " + propertyChangeEvent.getSource());
     }
 }
