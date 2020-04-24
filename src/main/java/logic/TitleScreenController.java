@@ -17,7 +17,8 @@ public class TitleScreenController {
         this.screen = screen;
         this.gui = gui;
         gui.getVisibilityManager().showTitleScreen();
-        this.gui.getStartButtonPanel().addStartButtonListener(new ScreenHandler(), "start");
+        this.gui.getTitleWindow().getStartButtonPanel().addStartButtonListener(new ScreenHandler(), "start");
+        //  this.gui.getStartButtonPanel().addStartButtonListener(new ScreenHandler(), "start");
         //  this.world = world;
     }
 
