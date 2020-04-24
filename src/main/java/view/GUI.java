@@ -13,12 +13,6 @@ public final class GUI {
     private MainWindow mainWindow;
     private Container titleContainer;
     private Container mainContainer;
-    // private TitlePanel titlePanel;
-//    private TitleNamePanel titleNamePanel;
-//    private StartButtonPanel startButtonPanel;
-//    private HeroPanel heroPanel;
-//    private ChoiceButtonPanel choiceButtonPanel;
-//    private MainTextPanel mainTextPanel;
     private VisibilityManager visibilityManager;
     //    ImagePanelHeroPicture imagePanelHeroPicture;
 //    ImagePanelMain imagePanelMain;
@@ -28,14 +22,7 @@ public final class GUI {
         this.screen = screen;
         titleWindow = new TitleWindow();
         mainWindow = new MainWindow();
-        // titlePanel = new TitlePanel();
-//        titleNamePanel = new TitleNamePanel();
-//        startButtonPanel = new StartButtonPanel();
-//        heroPanel = new HeroPanel();
-//        mainTextPanel = new MainTextPanel();
-//        choiceButtonPanel = new ChoiceButtonPanel();
         addPanels();
-        //   window.setVisible(true);
         visibilityManager = new VisibilityManager(this);
     }
 
@@ -43,13 +30,6 @@ public final class GUI {
     public void addPanels() {
         titleContainer = titleWindow.getContentPane();
         mainContainer = mainWindow.getContentPane();
-//        container.add(titlePanel);
-//        System.out.println(titlePanel);
-//        container.add(titleNamePanel);
-//        container.add(startButtonPanel);
-//        container.add(heroPanel);
-//        container.add(mainTextPanel);
-//        container.add(choiceButtonPanel);
     }
 
 
@@ -108,45 +88,6 @@ public final class GUI {
         this.titleContainer = titleContainer;
     }
 
-//    public TitleNamePanel getTitleNamePanel() {
-//        return titleNamePanel;
-//    }
-//
-//    public void setTitleNamePanel(TitleNamePanel titleNamePanel) {
-//        this.titleNamePanel = titleNamePanel;
-//    }
-//
-//    public StartButtonPanel getStartButtonPanel() {
-//        return startButtonPanel;
-//    }
-//
-//    public void setStartButtonPanel(StartButtonPanel startButtonPanel) {
-//        this.startButtonPanel = startButtonPanel;
-//    }
-
-//    public HeroPanel getHeroPanel() {
-//        return heroPanel;
-//    }
-//
-//    public void setHeroPanel(HeroPanel heroPanel) {
-//        this.heroPanel = heroPanel;
-//    }
-//
-//    public ChoiceButtonPanel getChoiceButtonPanel() {
-//        return choiceButtonPanel;
-//    }
-//
-//    public void setChoiceButtonPanel(ChoiceButtonPanel choiceButtonPanel) {
-//        this.mainWindow.getChoiceButtonPanel(choiceButtonPanel);
-//    }
-//
-//    public MainTextPanel getMainTextPanel() {
-//        return mainTextPanel;
-//    }
-//
-//    public void setMainTextPanel(MainTextPanel mainTextPanel) {
-//        this.mainTextPanel = mainTextPanel;
-//    }
 
     public VisibilityManager getVisibilityManager() {
         return visibilityManager;

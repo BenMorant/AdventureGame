@@ -1,6 +1,5 @@
 package view;
 
-//public class TitlePanel extends GamePanel {
 public class MainWindow extends Window {
 
     private HeroPanel heroPanel;
@@ -9,10 +8,6 @@ public class MainWindow extends Window {
 
     public MainWindow() {
         super();
-        // super(0,0, DEFAULT_WIDTH, DEFAULT_HEIGHT);
-//        setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
-//        setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
-//        setMaximumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();
         choiceButtonPanel = new ChoiceButtonPanel();

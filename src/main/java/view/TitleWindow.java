@@ -1,6 +1,5 @@
 package view;
 
-//public class TitlePanel extends GamePanel {
 public class TitleWindow extends Window {
 
     private TitleNamePanel titleNamePanel;
@@ -8,10 +7,6 @@ public class TitleWindow extends Window {
 
     public TitleWindow() {
         super();
-        // super(0,0, DEFAULT_WIDTH, DEFAULT_HEIGHT);
-//        setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
-//        setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
-//        setMaximumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel();
         createTitleWindow();
