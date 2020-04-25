@@ -1,6 +1,8 @@
 package model.entity.screens;
 
-public class Screen {
+import model.entity.AbstractModel;
+
+public class Screen extends AbstractModel {
 
     private TitleScreen titleScreen;
     private MainScreen mainScreen;
