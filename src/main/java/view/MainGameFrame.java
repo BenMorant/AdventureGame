@@ -1,6 +1,6 @@
 package view;
 
-public class MainWindow extends Window {
+public class MainGameFrame extends GameFrame {
 
     private HeroPanel heroPanel;
     private ChoiceButtonPanel choiceButtonPanel;
@@ -8,7 +8,7 @@ public class MainWindow extends Window {
 //    private ImagePanelHeroPicture imagePanelHeroPicture;
 //    private ImagePanelMain imagePanelMain;
 
-    public MainWindow() {
+    public MainGameFrame() {
         super();
         heroPanel = new HeroPanel();
         mainTextPanel = new MainTextPanel();

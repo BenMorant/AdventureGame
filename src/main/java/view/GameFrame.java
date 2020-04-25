@@ -5,12 +5,12 @@ import java.awt.*;
 
 import static model.entity.screens.TitleScreen.TITLE;
 
-public class Window extends JFrame {
+public abstract class GameFrame extends JFrame {
 
     public static final int DEFAULT_WIDTH = 1280;
     public static final int DEFAULT_HEIGHT = DEFAULT_WIDTH / 12 * 9;
 
-    public Window() {
+    public GameFrame() {
         super(TITLE);
         setMinimumSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));
         setPreferredSize(new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT));

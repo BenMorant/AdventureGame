@@ -1,11 +1,11 @@
 package view;
 
-public class TitleWindow extends Window {
+public class TitleGameFrame extends GameFrame {
 
     private TitleNamePanel titleNamePanel;
     private StartButtonPanel startButtonPanel;
 
-    public TitleWindow() {
+    public TitleGameFrame() {
         super();
         titleNamePanel = new TitleNamePanel();
         startButtonPanel = new StartButtonPanel();

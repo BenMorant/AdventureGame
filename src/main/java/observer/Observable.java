@@ -7,5 +7,5 @@ public interface Observable {
 
     void notifyObserver(String string);
 
-    void notifyObserver(int number);
+   // void notifyObserver(int number);
 }

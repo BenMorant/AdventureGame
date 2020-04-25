@@ -9,15 +9,15 @@ public final class GUI {
 
     private final Screen screen;
 
-    private TitleWindow titleWindow;
-    private MainWindow mainWindow;
+    private TitleGameFrame titleWindow;
+    private MainGameFrame mainWindow;
     private VisibilityManager visibilityManager;
 
     public GUI(Screen screen) {
         this.screen = screen;
 //        screen.addObserver(this);
-        titleWindow = new TitleWindow();
-        mainWindow = new MainWindow();
+        titleWindow = new TitleGameFrame();
+        mainWindow = new MainGameFrame();
         getAllContentPanes();
         visibilityManager = new VisibilityManager(this);
     }
@@ -68,19 +68,19 @@ public final class GUI {
         }
     }
 
-    public TitleWindow getTitleWindow() {
+    public TitleGameFrame getTitleWindow() {
         return titleWindow;
     }
 
-    public void setTitleWindow(TitleWindow titleWindow) {
+    public void setTitleWindow(TitleGameFrame titleWindow) {
         this.titleWindow = titleWindow;
     }
 
-    public MainWindow getMainWindow() {
+    public MainGameFrame getMainWindow() {
         return mainWindow;
     }
 
-    public void setMainWindow(MainWindow mainWindow) {
+    public void setMainWindow(MainGameFrame mainWindow) {
         this.mainWindow = mainWindow;
     }
 
