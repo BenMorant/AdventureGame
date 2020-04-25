@@ -20,6 +20,7 @@ public class Window extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.black);
         setLayout(null);
+        pack();
     }
 }
 

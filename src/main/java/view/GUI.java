@@ -3,10 +3,9 @@ package view;
 import model.entity.people.Hero;
 import model.entity.screens.Screen;
 
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+//public final class GUI implements PropertyChangeListener {
 
-public final class GUI implements PropertyChangeListener {
+public final class GUI {
 
     private final Screen screen;
 
@@ -16,6 +15,7 @@ public final class GUI implements PropertyChangeListener {
 
     public GUI(Screen screen) {
         this.screen = screen;
+//        screen.addObserver(this);
         titleWindow = new TitleWindow();
         mainWindow = new MainWindow();
         getAllContentPanes();
@@ -97,11 +97,11 @@ public final class GUI implements PropertyChangeListener {
     }
 
 
-    @Override
-    public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
-        System.out.println("Variation of " + propertyChangeEvent.getPropertyName());
-        System.out.println("\t(" + propertyChangeEvent.getOldValue() +
-                " -> " + propertyChangeEvent.getNewValue() + ")");
-        System.out.println("Property in object " + propertyChangeEvent.getSource());
-    }
+//    @Override
+//    public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
+//        System.out.println("Variation of " + propertyChangeEvent.getPropertyName());
+//        System.out.println("\t(" + propertyChangeEvent.getOldValue() +
+//                " -> " + propertyChangeEvent.getNewValue() + ")");
+//        System.out.println("Property in object " + propertyChangeEvent.getSource());
+//    }
 }
