@@ -1,9 +1,10 @@
 package observer;
 
 public interface Observable {
+
     void addObserver(Observer observer);
 
-    void removeObserver();
+    //  void removeObserver();
 
     void notifyObserver(String string);
 

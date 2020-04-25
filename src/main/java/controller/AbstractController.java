@@ -9,7 +9,7 @@ public abstract class AbstractController {
 
     protected AbstractModel calc;
     protected String operateur = "";
-    protected String choice = "";
+    protected String nombre = "";
     protected ArrayList<String> listOperateur = new ArrayList<String>();
 
     public AbstractController(AbstractModel cal) {
@@ -30,8 +30,8 @@ public abstract class AbstractController {
     }
 
     //Définit le nombre
-    public void setChoice(String choice) {
-        this.choice = choice;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
         control();
     }
 

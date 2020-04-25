@@ -23,10 +23,10 @@ public class CalculetteController extends AbstractController {
         }
 
         //Si le nombre est conforme
-        if (this.choice.matches("^[0-9.]+$"))
-            this.calc.setChoice(this.choice);
+        if (this.nombre.matches("^[0-9.]+$"))
+            this.calc.setNombre(this.nombre);
 
         this.operateur = "";
-        this.choice = "";
+        this.nombre = "";
     }
 }
