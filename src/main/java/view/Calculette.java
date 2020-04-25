@@ -17,7 +17,7 @@ public class Calculette extends GameFrame implements Observer {
     private final AbstractController controller;
     String[] choicesString = {"choix 1", "choix 2", "choix 3", "choix 4"};
     JButton[] choicesButton = new JButton[choicesString.length];
-    //  private JLabel mainTextLabel = new JLabel();
+    private JLabel heroHpLabel = new JLabel("Hero HP = ");
     private JTextArea mainTextArea;
     private double chiffre1;
 
@@ -30,17 +30,16 @@ public class Calculette extends GameFrame implements Observer {
 
     //Implémentation du pattern observer
     public void update(String str) {
-//        mainTextLabel.setText(str);
         mainTextArea.setText(str);
+//        HeroHpLabel.setText(str);
     }
+
 
     //Les listeners pour nos boutons
     class ChoiceListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             //On affiche le chiffre en plus dans le label
             String str = ((JButton) e.getSource()).getText();
-//            if (!mainTextLabel.getText().equals("0"))
-//                str = mainTextLabel.getText() + str;
 
             controller.setNombre(((JButton) e.getSource()).getText());
         }
@@ -59,13 +58,14 @@ public class Calculette extends GameFrame implements Observer {
     }
 
     private void initComposant() {
-//        mainTextLabel = new JLabel("0");
-//        mainTextLabel.setHorizontalAlignment(JLabel.RIGHT);
-//        mainTextLabel.setPreferredSize(new Dimension(220, 20));
+        heroHpLabel = new JLabel("0");
+        heroHpLabel.setHorizontalAlignment(JLabel.RIGHT);
+        heroHpLabel.setPreferredSize(new Dimension(220, 20));
         mainTextArea = new GameTextArea("yo", 40, 650, 500, 300);
         JPanel heroPanel = new JPanel();
         heroPanel.setPreferredSize(new Dimension(155, 265));
         heroPanel.setBackground(Color.red);
+        heroPanel.add(heroHpLabel);
         JPanel choiceButtonsPanel = new JPanel();
         choiceButtonsPanel.setPreferredSize(new Dimension(265, 265));
         choiceButtonsPanel.setBackground(Color.yellow);

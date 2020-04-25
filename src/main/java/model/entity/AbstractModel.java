@@ -9,7 +9,7 @@ public abstract class AbstractModel implements Observable {
 
     protected double result = 0;
     protected String operateur = "", operande = "";
-    private ArrayList<Observer> listObserver = new ArrayList<Observer>();
+    private final ArrayList<Observer> listObserver = new ArrayList<>();
 
     //Efface
     public abstract void reset();
@@ -32,14 +32,7 @@ public abstract class AbstractModel implements Observable {
     }
 
     public void notifyObserver(String str) {
-        if (str.matches("^0[0-9]+"))
-            str = str.substring(1);
-
         for (Observer obs : listObserver)
             obs.update(str);
-    }
-
-    public void removeObserver() {
-        listObserver = new ArrayList<Observer>();
     }
 }
