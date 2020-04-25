@@ -21,8 +21,10 @@ public class Calculette extends GameFrame implements Observer {
     private final String operateur = "";
     //L'instance de notre objet contrôleur
     private final AbstractController controller;
-    String[] tab_string = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "=", "C", "+", "-", "*", "/"};
-    JButton[] tab_button = new JButton[tab_string.length];
+    //    String[] tab_string = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "=", "C", "+", "-", "*", "/"};
+    String[] choicesString = {"choix 1", "choix 2", "choix 3", "choix 4"};
+    //    JButton[] choicesButton = new JButton[tab_string.length];
+    JButton[] choicesButton = new JButton[choicesString.length];
     private JLabel ecran = new JLabel();
     private double chiffre1;
 
@@ -84,35 +86,66 @@ public class Calculette extends GameFrame implements Observer {
         //Nous utiliserons le même listener pour tous les opérateurs
         OperateurListener opeListener = new OperateurListener();
 
-        for (int i = 0; i < tab_string.length; i++) {
-            tab_button[i] = new JButton(tab_string[i]);
-            tab_button[i].setPreferredSize(dim);
+//        for (int i = 0; i < tab_string.length; i++) {
+//            tab_button[i] = new JButton(tab_string[i]);
+//            tab_button[i].setPreferredSize(dim);
+//
+//            switch (i) {
+//                case 11:
+//                    tab_button[i].addActionListener(opeListener);
+//                    chiffre.add(tab_button[i]);
+//                    break;
+//                case 12:
+//                    tab_button[i].setForeground(Color.red);
+//                    tab_button[i].addActionListener(new ResetListener());
+//                    tab_button[i].setPreferredSize(dim2);
+//                    operateur.add(tab_button[i]);
+//                    break;
+//                case 13:
+//                case 14:
+//                case 15:
+//                case 16:
+//                    tab_button[i].setForeground(Color.red);
+//                    tab_button[i].addActionListener(opeListener);
+//                    tab_button[i].setPreferredSize(dim2);
+//                    operateur.add(tab_button[i]);
+//                    break;
+//                default:
+//                    chiffre.add(tab_button[i]);
+//                    tab_button[i].addActionListener(new ChiffreListener());
+//                    break;
+//            }
+//        }
 
-            switch (i) {
-                case 11:
-                    tab_button[i].addActionListener(opeListener);
-                    chiffre.add(tab_button[i]);
-                    break;
-                case 12:
-                    tab_button[i].setForeground(Color.red);
-                    tab_button[i].addActionListener(new ResetListener());
-                    tab_button[i].setPreferredSize(dim2);
-                    operateur.add(tab_button[i]);
-                    break;
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                    tab_button[i].setForeground(Color.red);
-                    tab_button[i].addActionListener(opeListener);
-                    tab_button[i].setPreferredSize(dim2);
-                    operateur.add(tab_button[i]);
-                    break;
-                default:
-                    chiffre.add(tab_button[i]);
-                    tab_button[i].addActionListener(new ChiffreListener());
-                    break;
-            }
+        for (int i = 0; i < choicesString.length; i++) {
+            choicesButton[i] = new JButton(choicesString[i]);
+            choicesButton[i].addActionListener(opeListener);
+            chiffre.add(choicesButton[i]);
+//            switch (i) {
+//                case 1:
+//                    choicesButton[i].addActionListener(opeListener);
+//                    chiffre.add(choicesButton[i]);
+//                    break;
+//                case 12:
+//                    choicesButton[i].setForeground(Color.red);
+//                    choicesButton[i].addActionListener(new ResetListener());
+//                    choicesButton[i].setPreferredSize(dim2);
+//                    operateur.add(choicesButton[i]);
+//                    break;
+//                case 13:
+//                case 14:
+//                case 15:
+//                case 16:
+//                    choicesButton[i].setForeground(Color.red);
+//                    choicesButton[i].addActionListener(opeListener);
+//                    choicesButton[i].setPreferredSize(dim2);
+//                    operateur.add(choicesButton[i]);
+//                    break;
+//                default:
+//                    chiffre.add(choicesButton[i]);
+//                    choicesButton[i].addActionListener(new ChiffreListener());
+//                    break;
+//            }
         }
         panEcran.add(ecran);
         panEcran.setBorder(BorderFactory.createLineBorder(Color.black));
