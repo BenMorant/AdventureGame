@@ -29,11 +29,6 @@ public class Calculette extends GameFrame implements Observer {
     private double chiffre1;
 
     public Calculette(AbstractController controller) {
-        //  this.setSize(240, 260);
-        //  this.setTitle("Calculette");
-        //    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //  this.setLocationRelativeTo(null);
-        //     this.setResizable(false);
         initComposant();
         this.controller = controller;
         this.setContentPane(container);
@@ -46,14 +41,14 @@ public class Calculette extends GameFrame implements Observer {
     }
 
     //Les listeners pour nos boutons
-    class ChiffreListener implements ActionListener {
+    class ChoiceListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //On affiche le chiffre en plus dans le label
+            //On affiche le choix en plus dans le label
             String str = ((JButton) e.getSource()).getText();
             if (!ecran.getText().equals("0"))
                 str = ecran.getText() + str;
 
-            controller.setNombre(((JButton) e.getSource()).getText());
+            controller.setChoice(((JButton) e.getSource()).getText());
         }
     }
 
@@ -119,7 +114,7 @@ public class Calculette extends GameFrame implements Observer {
 
         for (int i = 0; i < choicesString.length; i++) {
             choicesButton[i] = new JButton(choicesString[i]);
-            choicesButton[i].addActionListener(opeListener);
+            choicesButton[i].addActionListener(new ChoiceListener());
             chiffre.add(choicesButton[i]);
 //            switch (i) {
 //                case 1:

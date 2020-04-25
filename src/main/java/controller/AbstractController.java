@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public abstract class AbstractController {
 
     protected AbstractModel calc;
-    protected String operateur = "", nbre = "";
+    protected String operateur = "";
+    protected String choice = "";
     protected ArrayList<String> listOperateur = new ArrayList<String>();
 
     public AbstractController(AbstractModel cal) {
@@ -29,8 +30,8 @@ public abstract class AbstractController {
     }
 
     //Définit le nombre
-    public void setNombre(String nombre) {
-        this.nbre = nombre;
+    public void setChoice(String choice) {
+        this.choice = choice;
         control();
     }
 

@@ -24,7 +24,7 @@ public abstract class AbstractModel implements Observable {
     public abstract void setOperateur(String operateur);
 
     //Définit le nombre à utiliser pour l'opération
-    public abstract void setNombre(String nbre);
+    public abstract void setChoice(String choice);
 
     //Implémentation du pattern observer
     public void addObserver(Observer obs) {

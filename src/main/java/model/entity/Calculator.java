@@ -18,7 +18,7 @@ public class Calculator extends AbstractModel {
     }
 
     //Définit le nombre
-    public void setNombre(String result) {
+    public void setChoice(String result) {
         //On concatène le nombre
         this.operande += result;
         //On met à jour
