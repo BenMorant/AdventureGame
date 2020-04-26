@@ -2,10 +2,13 @@ package view;
 
 import model.entity.people.Hero;
 import model.entity.screens.Screen;
+import observer.Observer;
 
 //public final class GUI implements PropertyChangeListener {
 
-public final class GUI {
+//public final class GUI {
+
+public final class GUI implements Observer {
 
     private final Screen screen;
 
@@ -94,6 +97,16 @@ public final class GUI {
 
     public Screen getScreen() {
         return screen;
+    }
+
+    @Override
+    public void update(String string) {
+
+    }
+
+    @Override
+    public void update(int number) {
+
     }
 
 

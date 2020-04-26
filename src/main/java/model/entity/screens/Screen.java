@@ -1,9 +1,15 @@
 package model.entity.screens;
 
-public class Screen {
+import observer.Observable;
+import observer.Observer;
+
+import java.util.ArrayList;
+
+public class Screen implements Observable {
 
     private TitleScreen titleScreen;
     private MainScreen mainScreen;
+    private final ArrayList<Observer> listObserver = new ArrayList<Observer>();
 
     public Screen() {
         addAllScreens();
@@ -30,6 +36,18 @@ public class Screen {
 
     public void setMainScreen(MainScreen mainScreen) {
         this.mainScreen = mainScreen;
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        this.listObserver.add(observer);
+    }
+
+    @Override
+    public void notifyObserver(String string) {
+        for (Observer observer : listObserver)
+            observer.update(string);
+
     }
 
 //

@@ -34,6 +34,11 @@ public class Calculette extends GameFrame implements Observer {
 //        HeroHpLabel.setText(str);
     }
 
+    @Override
+    public void update(int number) {
+
+    }
+
 
     //Les listeners pour nos boutons
     class ChoiceListener implements ActionListener {

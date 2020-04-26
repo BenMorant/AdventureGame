@@ -4,8 +4,9 @@ import model.entity.screens.Screen;
 import view.GUI;
 
 public class Controller {
-    private final Screen screen;
-    private final GUI gui;
+    protected Screen screen;
+
+
     private TitleScreenController titleScreenController;
     private MainScreenController mainScreenController;
 
