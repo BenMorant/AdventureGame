@@ -3,7 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-    public class GameFrame extends JFrame {
+    public abstract class GameFrame extends JFrame {
 
         public static final int DEFAULT_WIDTH = 1280;
         public static final int DEFAULT_HEIGHT = DEFAULT_WIDTH / 12 * 9;
