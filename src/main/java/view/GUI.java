@@ -2,13 +2,18 @@ package view;
 
 import controller.AbstractController;
 import observer.Observer;
+import view.implementations.GameFrame;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GUI extends GameFrame implements Observer {
+public class GUI implements Observer {
+
+    public static final String GAME_TITLE = "L'aventure n'attend pas";
+
+    private JFrame gameFrame = new GameFrame(GAME_TITLE);
 
     private JPanel container = new JPanel();
     private JButton startButton = new JButton("start");
@@ -21,7 +26,7 @@ public class GUI extends GameFrame implements Observer {
     public GUI(AbstractController controller) {
 
         this.controller = controller;
-        this.setContentPane(container);
+        gameFrame.setContentPane(container);
         container.setBackground(Color.black);
         container.setLayout(cardLayout);
         titlePanel.add(startButton);
@@ -37,8 +42,8 @@ public class GUI extends GameFrame implements Observer {
             }
         });
 
-        setVisible(true);
-        pack();
+        gameFrame.setVisible(true);
+        gameFrame.pack();
 
     }
 

@@ -1,22 +1,20 @@
-package view;
+package view.implementations;
 
 import view.interfaces.GameFrameInterface;
 
 import javax.swing.*;
 import java.awt.*;
 
+public class GameFrame extends JFrame implements GameFrameInterface {
 
-import static app.Constants.MINIMUM_HEIGHT;
-import static app.Constants.MINIMUM_WIDTH;
-import static app.Constants.FRAME_COLOR;
-import static app.Constants.GAMETITLE;
+    private static final int MINIMUM_WIDTH = 1280;
+    private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
+    private static final Color FRAME_COLOR = Color.black;
 
-public abstract class GameFrame extends JFrame implements GameFrameInterface {
-
-        public GameFrame() {
-            displayFrameTitle();
-            setMinimalFrameSize();
-            displayFrameFullScreen();
+        public GameFrame(String frameTitle) {
+            displayFrameTitle(frameTitle);
+            setMinimalFrameSize(MINIMUM_WIDTH, MINIMUM_HEIGHT);
+            setFrameFullScreen();
              setFrameDefaultPositionToCenter();
            setDefaultBackgroundColorToBlack();
             setCloseBehavior();
@@ -25,17 +23,17 @@ public abstract class GameFrame extends JFrame implements GameFrameInterface {
         }
 
         @Override
-        public void displayFrameTitle() {
-            this.setTitle(GAMETITLE);
+        public void displayFrameTitle(String frameTitle) {
+            this.setTitle(frameTitle);
         }
 
     @Override
-    public void setMinimalFrameSize() {
-        this.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
+    public void setMinimalFrameSize(int width, int height) {
+        this.setMinimumSize(new Dimension(width, height));
     }
 
     @Override
-    public void displayFrameFullScreen() {
+    public void setFrameFullScreen() {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
