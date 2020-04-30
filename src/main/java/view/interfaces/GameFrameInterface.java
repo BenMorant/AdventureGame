@@ -6,9 +6,10 @@ public interface GameFrameInterface {
 
     public void displayFrameTitle();
     public void setMinimalFrameSize();
-    public void setDefaultFrameSize();
-    public void setMaxFrameSize();
+    public void displayFrameFullScreen();
     public void setFrameDefaultPosition();
     public void setDefaultBackgroundColor();
+    public void setCloseBehavior();
+    public void setFrameResizable(boolean isResizable);
 
 }
