@@ -27,8 +27,24 @@ public class TitleScreen extends JPanel implements TitleScreenInterface {
 
     @Override
     public void displayStartButton(String startButtonText) {
-        this.startButton = new JButton(startButtonText);
+        startButton = new JButton(startButtonText);
         this.add(startButton);
 
+    }
+
+    public JButton getStartButton() {
+        return startButton;
+    }
+
+    public void setStartButton(JButton startButton) {
+        this.startButton = startButton;
+    }
+
+    public JLabel getTitleLabel() {
+        return titleLabel;
+    }
+
+    public void setTitleLabel(JLabel titleLabel) {
+        this.titleLabel = titleLabel;
     }
 }
