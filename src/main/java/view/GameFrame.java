@@ -17,10 +17,10 @@ public abstract class GameFrame extends JFrame implements GameFrameInterface {
             displayFrameTitle();
             setMinimalFrameSize();
             displayFrameFullScreen();
-             setFrameDefaultPosition();
-           setDefaultBackgroundColor();
+             setFrameDefaultPositionToCenter();
+           setDefaultBackgroundColorToBlack();
             setCloseBehavior();
-            setFrameResizable(true);
+            setResizableFrame();
             pack();
         }
 
@@ -40,12 +40,12 @@ public abstract class GameFrame extends JFrame implements GameFrameInterface {
     }
 
     @Override
-    public void setFrameDefaultPosition() {
+    public void setFrameDefaultPositionToCenter() {
         this.setLocationRelativeTo(null);
     }
 
     @Override
-    public void setDefaultBackgroundColor() {
+    public void setDefaultBackgroundColorToBlack() {
         this.getContentPane().setBackground(FRAME_COLOR);
     }
 
@@ -55,8 +55,8 @@ public abstract class GameFrame extends JFrame implements GameFrameInterface {
     }
 
     @Override
-    public void setFrameResizable(boolean isResizable) {
-        this.setResizable(isResizable);
+    public void setResizableFrame() {
+        this.setResizable(true);
     }
     }
 
