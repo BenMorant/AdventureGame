@@ -9,8 +9,6 @@ public class GameFrame extends JFrame implements GameFrameInterface {
 
     private static final int MINIMUM_WIDTH = 1280;
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
-    private static final Color FRAME_COLOR = Color.black;
-
 
         public GameFrame(String frameTitle) {
             authorizeCustomWindowDecoration();
