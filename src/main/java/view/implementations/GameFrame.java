@@ -52,7 +52,7 @@ public class GameFrame extends JFrame implements GameFrameInterface {
     public void setResizableFrame() {
         this.setResizable(true);
     }
-    
+
     @Override
     public void authorizeCustomWindowDecoration() {
         setDefaultLookAndFeelDecorated(true);
