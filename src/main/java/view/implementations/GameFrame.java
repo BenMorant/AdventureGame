@@ -11,12 +11,13 @@ public class GameFrame extends JFrame implements GameFrameInterface {
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
     private static final Color FRAME_COLOR = Color.black;
 
+
         public GameFrame(String frameTitle) {
+            authorizeCustomWindowDecoration();
             displayFrameTitle(frameTitle);
             setMinimalFrameSize(MINIMUM_WIDTH, MINIMUM_HEIGHT);
             setFrameFullScreen();
              setFrameDefaultPositionToCenter();
-           setDefaultBackgroundColorToBlack();
             setCloseBehavior();
             setResizableFrame();
             pack();
@@ -43,11 +44,6 @@ public class GameFrame extends JFrame implements GameFrameInterface {
     }
 
     @Override
-    public void setDefaultBackgroundColorToBlack() {
-        this.getContentPane().setBackground(FRAME_COLOR);
-    }
-
-    @Override
     public void setCloseBehavior() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -56,5 +52,11 @@ public class GameFrame extends JFrame implements GameFrameInterface {
     public void setResizableFrame() {
         this.setResizable(true);
     }
+    
+    @Override
+    public void authorizeCustomWindowDecoration() {
+        setDefaultLookAndFeelDecorated(true);
     }
+}
+
 
