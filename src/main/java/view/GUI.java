@@ -1,16 +1,13 @@
 package view;
 
-import app.Launcher;
 import controller.AbstractController;
 import observer.Observer;
-import view.implementations.GameFrame;
-import view.implementations.TitleScreen;
+import view.implementations.GameFrameImpl;
+import view.implementations.TitleScreenImpl;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class GUI implements Observer {
@@ -18,7 +15,7 @@ public class GUI implements Observer {
     public static final String GAME_TITLE = "L'aventure n'attend pas";
 
 
-    private JFrame gameFrame = new GameFrame(GAME_TITLE);
+    private JFrame gameFrame = new GameFrameImpl(GAME_TITLE);
 
     private JPanel container = new JPanel();
 //private JButton startButton = new JButton("start");
@@ -34,7 +31,7 @@ public class GUI implements Observer {
 
         initLookAndFeel();
 
-        titleScreen = new TitleScreen(GAME_TITLE);
+        titleScreen = new TitleScreenImpl(GAME_TITLE);
         this.controller = controller;
         gameFrame.setContentPane(container);
         container.setLayout(cardLayout);

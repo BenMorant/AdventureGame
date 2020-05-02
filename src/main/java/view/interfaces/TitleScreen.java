@@ -1,6 +1,6 @@
 package view.interfaces;
 
-public interface TitleScreenInterface extends GenericScreenInterface {
+public interface TitleScreen extends GenericScreen {
 
 
     public void displayTitle(String title);

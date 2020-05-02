@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<synth>
-<style id="backingStyle">
-    <!-- Make all the regions opaque-->
-    <opaque value="TRUE"/>
-    <font name="Dialog" size="14"/>
-    <state>
-        <color value="BLACK" type="BACKGROUND"/>
-        <color value="RED" type="FOREGROUND"/>
-    </state>
-</style>
-<bind style="backingStyle" type="region" key=".*"/>
-</synth>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<synth>-->
+<!--<style id="backingStyle">-->
+<!--    &lt;!&ndash; Make all the regions opaque&ndash;&gt;-->
+<!--    <opaque value="TRUE"/>-->
+<!--    <font name="Dialog" size="14"/>-->
+<!--    <state>-->
+<!--        <color value="BLACK" type="BACKGROUND"/>-->
+<!--        <color value="RED" type="FOREGROUND"/>-->
+<!--    </state>-->
+<!--</style>-->
+<!--<bind style="backingStyle" type="region" key=".*"/>-->
+<!--</synth>-->

@@ -1,14 +1,13 @@
 package view.implementations;
 
 import net.miginfocom.swing.MigLayout;
-import view.interfaces.TitleScreenInterface;
 
 import javax.swing.*;
 import java.awt.*;
 
 //public class TitleScreen extends JPanel implements TitleScreenInterface {
 
-    public class TitleScreen extends JPanel {
+    public class TitleScreenImpl extends JPanel {
 
     private static final String START_BUTTON_TEXT = "C'est parti !";
 
@@ -17,7 +16,7 @@ import java.awt.*;
     private JLabel titleLabel;
     private LayoutManager migLayout;
 
-    public TitleScreen(String title) {
+    public TitleScreenImpl(String title) {
         super();
         this.setLayout(new MigLayout("", "[grow]", "[grow]"));
         titleLabel = new JLabel(title);

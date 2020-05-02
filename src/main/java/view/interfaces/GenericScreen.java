@@ -1,6 +1,6 @@
 package view.interfaces;
 
-public interface GenericScreenInterface {
+public interface GenericScreen {
 
 void setLayout();
 }
