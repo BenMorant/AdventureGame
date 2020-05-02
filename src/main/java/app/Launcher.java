@@ -17,35 +17,27 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 
-public final class Launcher implements Runnable {
+public final class Launcher {
 
     public static void main(String[] args) {
-
-
-
-        new Launcher().run();
-
-
-    }
-
-    public static void runGame() {
-
-
+SwingUtilities.invokeLater(new Runnable() {
+    @Override
+    public void run() {
         AbstractModel model = new ModelImpl();
         AbstractController controller = new ControllerImpl(model);
         GUI gui = new GUI(controller);
 
         model.addObserver(gui);
+    }
+});
+
+
 
 
 
     }
 
-    @Override
-    public void run() {
-        runGame();
-    }
 
-
+    
 
 }
