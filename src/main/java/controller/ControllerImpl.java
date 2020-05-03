@@ -1,12 +1,13 @@
 package controller;
 
 import model.AbstractModel;
+import view.GUI;
 
 public class ControllerImpl extends AbstractController {
 
 
-    public ControllerImpl(AbstractModel model) {
-        super(model);
+    public ControllerImpl(AbstractModel model, GUI gui) {
+        super(model, gui);
     }
 
     @Override

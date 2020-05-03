@@ -23,21 +23,27 @@ public final class Launcher {
 SwingUtilities.invokeLater(new Runnable() {
     @Override
     public void run() {
-        AbstractModel model = new ModelImpl();
-        AbstractController controller = new ControllerImpl(model);
-        GUI gui = new GUI(controller);
-
-        model.addObserver(gui);
+        runGame();
     }
 });
 
+    }
 
+    private static void runGame() {
+
+
+
+        AbstractModel model = new ModelImpl();
+        GUI gui = new GUI(model);
+        AbstractController controller = new ControllerImpl(model, gui);
+
+
+     //   model.addObserver(gui);
 
 
 
     }
 
 
-    
 
 }

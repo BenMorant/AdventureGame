@@ -1,6 +1,7 @@
 package view;
 
 import controller.AbstractController;
+import model.AbstractModel;
 import observer.Observer;
 import view.implementations.GameFrameImpl;
 import view.implementations.TitleScreenImpl;
@@ -25,14 +26,17 @@ public class GUI implements Observer {
     private CardLayout cardLayout = new CardLayout();
 
 
-    private AbstractController controller;
+   // private AbstractController controller;
 
-    public GUI(AbstractController controller) {
+    private AbstractModel model;
 
+//    public GUI(AbstractController controller) {
+public GUI(AbstractModel model) {
         initLookAndFeel();
 
         titleScreen = new TitleScreenImpl(GAME_TITLE);
-        this.controller = controller;
+    //    this.controller = controller;
+    this.model = model;
         gameFrame.setContentPane(container);
         container.setLayout(cardLayout);
 //         titleScreen.add(startButton);
