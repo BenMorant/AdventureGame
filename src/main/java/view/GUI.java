@@ -15,7 +15,7 @@ public class GUI extends JFrame {
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
 
     private JPanel container = new JPanel();
-    private JPanel titleScreen;
+    private JPanel titleScreen = new JPanel();
     private JPanel mainPanel = new JPanel();
     private CardLayout cardLayout = new CardLayout();
 
