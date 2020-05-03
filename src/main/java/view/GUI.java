@@ -1,19 +1,19 @@
 package view;
 
 import model.Model;
-import view.implementations.GameFrameImpl;
-import view.implementations.TitleScreenImpl;
+
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.awt.*;
 import java.text.ParseException;
 
-public class GUI {
+public class GUI extends JFrame {
 
     public static final String GAME_TITLE = "L'aventure n'attend pas";
+    private static final int MINIMUM_WIDTH = 1280;
+    private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
 
-    private JFrame gameFrame = new GameFrameImpl(GAME_TITLE);
     private JPanel container = new JPanel();
     private JPanel titleScreen;
     private JPanel mainPanel = new JPanel();
@@ -22,28 +22,26 @@ public class GUI {
     private Model model;
 
 public GUI(Model model) {
-        initLookAndFeel();
-
- titleScreen = new TitleScreenImpl(GAME_TITLE);
     this.model = model;
-        gameFrame.setContentPane(container);
+        initLookAndFeel();
+    this.setTitle(GAME_TITLE);
+    this.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
+    this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    this.setLocationRelativeTo(null);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setResizable(true);
+    setDefaultLookAndFeelDecorated(true);
+    setContentPane(container);
         container.setLayout(cardLayout);
-//         titleScreen.add(startButton);
+
 
 
         mainPanel.setBackground(Color.pink);
         container.add(titleScreen, "1");
         container.add(mainPanel, "2");
         cardLayout.show(container, "1");
-//        startButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent actionEvent) {
-//                cardLayout.show(container, "2");
-//            }
-//        });
-
-        gameFrame.setVisible(true);
-        gameFrame.pack();
+        setVisible(true);
+        pack();
 
     }
 
