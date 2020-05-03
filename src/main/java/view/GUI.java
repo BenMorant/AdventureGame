@@ -1,7 +1,6 @@
 package view;
 
-import model.AbstractModel;
-import observer.Observer;
+import model.Model;
 import view.implementations.GameFrameImpl;
 import view.implementations.TitleScreenImpl;
 
@@ -10,32 +9,27 @@ import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.awt.*;
 import java.text.ParseException;
 
-public class GUI implements Observer {
+public class GUI {
 
     public static final String GAME_TITLE = "L'aventure n'attend pas";
 
-
     private JFrame gameFrame = new GameFrameImpl(GAME_TITLE);
-
     private JPanel container = new JPanel();
-//private JButton startButton = new JButton("start");
-
     private JPanel titleScreen;
     private JPanel mainPanel = new JPanel();
     private CardLayout cardLayout = new CardLayout();
 
+    private Model model;
 
-
-    private AbstractModel model;
-
-public GUI(AbstractModel model) {
+public GUI(Model model) {
         initLookAndFeel();
 
-        titleScreen = new TitleScreenImpl(GAME_TITLE);
+ titleScreen = new TitleScreenImpl(GAME_TITLE);
     this.model = model;
         gameFrame.setContentPane(container);
         container.setLayout(cardLayout);
 //         titleScreen.add(startButton);
+
 
         mainPanel.setBackground(Color.pink);
         container.add(titleScreen, "1");
@@ -63,8 +57,5 @@ public void initLookAndFeel() {
         e.printStackTrace();
     }
 }
-    @Override
-    public void update(String string) {
 
-    }
 }

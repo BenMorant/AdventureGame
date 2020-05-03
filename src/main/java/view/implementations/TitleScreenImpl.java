@@ -12,6 +12,7 @@ import java.awt.*;
     private static final String START_BUTTON_TEXT = "C'est parti !";
 
     private JPanel titleNamePanel = new JPanel();
+    private JPanel startButtonPanel = new JPanel();
     private JButton startButton;
     private JLabel titleLabel;
     private LayoutManager migLayout;
@@ -20,10 +21,12 @@ import java.awt.*;
         super();
         this.setLayout(new MigLayout("", "[grow]", "[grow]"));
         titleLabel = new JLabel(title);
+        startButton = new JButton(START_BUTTON_TEXT);
         titleNamePanel.add(titleLabel);
-        this.startButton = new JButton(START_BUTTON_TEXT );
-        this.add(titleNamePanel, "wrap, center");
-        this.add(startButton, "center");
+        startButtonPanel.add(startButton);
+//        this.startButton = new JButton(START_BUTTON_TEXT );
+       add(titleNamePanel, "wrap, center");
+      add(startButtonPanel, "center");
 //        displayTitle(title);
 //        displayStartButton(START_BUTTON_TEXT);
     }
@@ -63,4 +66,37 @@ import java.awt.*;
 //        migLayout = new MigLayout("[grow]", "[grow]");
 //
 //    }
-}
+
+
+        public JPanel getTitleNamePanel() {
+            return titleNamePanel;
+        }
+
+        public void setTitleNamePanel(JPanel titleNamePanel) {
+            this.titleNamePanel = titleNamePanel;
+        }
+
+        public JPanel getStartButtonPanel() {
+            return startButtonPanel;
+        }
+
+        public void setStartButtonPanel(JPanel startButtonPanel) {
+            this.startButtonPanel = startButtonPanel;
+        }
+
+        public JButton getStartButton() {
+            return startButton;
+        }
+
+        public void setStartButton(JButton startButton) {
+            this.startButton = startButton;
+        }
+
+        public JLabel getTitleLabel() {
+            return titleLabel;
+        }
+
+        public void setTitleLabel(JLabel titleLabel) {
+            this.titleLabel = titleLabel;
+        }
+    }

@@ -1,9 +1,7 @@
 package app;
 
-import controller.AbstractController;
-import controller.ControllerImpl;
-import model.AbstractModel;
-import model.ModelImpl;
+import controller.Controller;
+import model.Model;
 import view.GUI;
 
 import javax.swing.*;
@@ -20,10 +18,9 @@ SwingUtilities.invokeLater(() -> runGame());
 
 
 
-        AbstractModel model = new ModelImpl();
+        Model model = new Model();
         GUI gui = new GUI(model);
-        AbstractController controller = new ControllerImpl(model, gui);
-        //model.addObserver(gui);
+    Controller controller = new Controller(gui, model);
 
 
 
