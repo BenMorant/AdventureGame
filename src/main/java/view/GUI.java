@@ -1,14 +1,15 @@
 package view;
 
 import model.Model;
-import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements ActionListener {
 
     public static final String GAME_TITLE = "L'aventure n'attend pas";
     private static final int MINIMUM_WIDTH = 1280;
@@ -74,11 +75,23 @@ public GUI(Model model) {
     startButtonPanel = new JPanel();
     startButton = new JButton("start");
     startButtonPanel.add(startButton);
-    titleScreen = new JPanel();
-    titleScreen.setLayout(new MigLayout("", "[grow]", "[grow]"));
-    titleScreen.add(titleNamePanel, "wrap, center");
-    titleScreen.add(startButtonPanel, "center");
 
+    titleScreen = new JPanel();
+    titleScreen.setLayout(new GridBagLayout());
+    GridBagConstraints gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 0;
+    gridBagConstraints.gridwidth = 2;
+    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
+
+    titleScreen.add(titleNamePanel, gridBagConstraints);
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 1;
+    gridBagConstraints.gridwidth = 2;
+    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
+    titleScreen.add(startButtonPanel, gridBagConstraints);
+
+    startButton.addActionListener(this);
 
     mainScreen = new JPanel();
     mainTextPanel = new JPanel();
@@ -146,4 +159,9 @@ public void initLookAndFeel() {
         e.printStackTrace();
     }
 }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        cardLayout.show(container, "2");
+    }
 }

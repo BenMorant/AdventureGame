@@ -40,12 +40,6 @@
             <version>${assertj.core.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.miglayout/miglayout-swing -->
-        <dependency>
-            <groupId>com.miglayout</groupId>
-            <artifactId>miglayout-swing</artifactId>
-            <version>${miglayout.swing.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
