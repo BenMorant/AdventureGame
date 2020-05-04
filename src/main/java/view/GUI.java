@@ -72,28 +72,36 @@ public GUI(Model model) {
     titleNamePanel = new JPanel();
     titleNameLabel = new JLabel("title");
     titleNamePanel.add(titleNameLabel);
+    titleNamePanel.setBackground(Color.pink);
+    titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
     startButtonPanel = new JPanel();
     startButton = new JButton("start");
     startButtonPanel.add(startButton);
+    startButtonPanel.setBackground(Color.green);
 
     titleScreen = new JPanel();
     titleScreen.setLayout(new GridBagLayout());
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridwidth = 2;
-    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-
-    titleScreen.add(titleNamePanel, gridBagConstraints);
-    gridBagConstraints.gridx = 0;
+    gridBagConstraints.weightx = 1;
+    gridBagConstraints.weighty = 1;
+    gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 2;
+    gridBagConstraints.gridwidth = 3;
+    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
+    titleScreen.add(titleNamePanel, gridBagConstraints);
+
+    gridBagConstraints.fill = GridBagConstraints.NONE;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 2;
+    gridBagConstraints.gridwidth = 1;
     gridBagConstraints.insets = new Insets(10, 10, 10, 10);
     titleScreen.add(startButtonPanel, gridBagConstraints);
 
     startButton.addActionListener(this);
 
     mainScreen = new JPanel();
+
     mainTextPanel = new JPanel();
     mainTextArea = new JTextArea("once upon a time...");
     mainTextArea.setLineWrap(true);
@@ -124,12 +132,11 @@ public GUI(Model model) {
     portraitPanel = new JPanel();
     portraitLabel = new JLabel("portrait label");
     portraitPanel.add(portraitLabel);
-
-    mainScreen.add(choicesPanel);
     mainScreen.add(mainImagePanel);
+    mainScreen.add(mainTextPanel);
     mainScreen.add(portraitPanel);
     mainScreen.add(attributesPanel);
-    mainScreen.add(mainTextPanel);
+    mainScreen.add(choicesPanel);
 
 gameOverScreen = new JPanel();
 gameOverPanel = new JPanel();
@@ -148,8 +155,8 @@ gameOverScreen.add(newGamePanel);
         container.add(mainScreen, "2");
         container.add(gameOverScreen, "3");
         cardLayout.show(container, "1");
-        setVisible(true);
         pack();
+        setVisible(true);
 
     }
 
