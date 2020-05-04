@@ -53,8 +53,10 @@ public class GUI extends JFrame {
     private Model model;
 
 public GUI(Model model) {
+    this.model = model;
 
     initLookAndFeel();
+
     this.setTitle(GAME_TITLE);
     this.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
     this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -62,34 +64,67 @@ public GUI(Model model) {
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setResizable(true);
     setDefaultLookAndFeelDecorated(true);
-    this.model = model;
+
     setContentPane(container);
     container.setLayout(cardLayout);
 
     titleScreen = new JPanel();
     titleNamePanel = new JPanel();
-    startButtonPanel = new JPanel();
     titleNameLabel = new JLabel("title");
+    titleNamePanel.add(titleNameLabel);
+    startButtonPanel = new JPanel();
     startButton = new JButton("start");
+    startButtonPanel.add(startButton);
+    titleScreen.add(titleNamePanel);
+    titleScreen.add(startButtonPanel);
+
 
     mainScreen = new JPanel();
     mainTextPanel = new JPanel();
-    choicesPanel = new JPanel();
-    attributesPanel = new JPanel();
     mainTextArea = new JTextArea("once upon a time...");
+    mainTextPanel.add(mainTextArea);
+    choicesPanel = new JPanel();
     choice1 = new JButton("choice 1");
     choice2 = new JButton("choice 2");
     choice3 = new JButton("choice 3");
     choice4 = new JButton("choice 4");
+    choicesPanel.add(choice1);
+    choicesPanel.add(choice2);
+    choicesPanel.add(choice3);
+    choicesPanel.add(choice4);
+
+    attributesPanel = new JPanel();
     peopleHpLabel = new JLabel("HP : ");
     peopleHpLabelNumber = new JLabel("how much buddy ?");
+    attributesPanel.add(peopleHpLabel);
+    attributesPanel.add(peopleHpLabelNumber);
+
+    mainImagePanel = new JPanel();
+    mainImageLabel = new JLabel("main image label");
+    mainImagePanel.add(mainImageLabel);
+
+    portraitPanel = new JPanel();
+    portraitLabel = new JLabel("portrait label");
+    portraitPanel.add(portraitLabel);
+
+    mainScreen.add(choicesPanel);
+    mainScreen.add(mainImagePanel);
+    mainScreen.add(portraitPanel);
+    mainScreen.add(attributesPanel);
+    mainScreen.add(mainTextPanel);
 
 gameOverScreen = new JPanel();
 gameOverPanel = new JPanel();
+    gameOverLabel = new JLabel("GAME OVER");
+    gameOverPanel.add(gameOverLabel);
 newGamePanel = new JPanel();
-
-gameOverLabel = new JLabel("GAME OVER");
 newGameButton = new JButton("New Game");
+newGamePanel.add(newGameButton);
+
+gameOverScreen.add(gameOverPanel);
+gameOverScreen.add(newGamePanel);
+
+
 
         container.add(titleScreen, "1");
         container.add(mainScreen, "2");
