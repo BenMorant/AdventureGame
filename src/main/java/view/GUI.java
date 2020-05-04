@@ -112,7 +112,7 @@ public GUI(Model model) {
 
     attributesPanel = new JPanel(new GridLayout(1,2));
     peopleHpLabel = new JLabel("HP : ");
-    peopleHpLabelNumber = new JLabel("how much buddy ?");
+    peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
     attributesPanel.add(peopleHpLabel);
     attributesPanel.add(peopleHpLabelNumber);
 
