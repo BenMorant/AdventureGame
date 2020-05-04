@@ -12,6 +12,6 @@ public class Controller {
         this.gui = gui;
         this.model = model;
 
-
     }
+
 }

@@ -168,4 +168,228 @@ public void initLookAndFeel() {
     public void actionPerformed(ActionEvent actionEvent) {
         cardLayout.show(container, "2");
     }
+
+    public JPanel getContainer() {
+        return container;
+    }
+
+    public void setContainer(JPanel container) {
+        this.container = container;
+    }
+
+    public CardLayout getCardLayout() {
+        return cardLayout;
+    }
+
+    public void setCardLayout(CardLayout cardLayout) {
+        this.cardLayout = cardLayout;
+    }
+
+    public JPanel getTitleScreen() {
+        return titleScreen;
+    }
+
+    public void setTitleScreen(JPanel titleScreen) {
+        this.titleScreen = titleScreen;
+    }
+
+    public JPanel getTitleNamePanel() {
+        return titleNamePanel;
+    }
+
+    public void setTitleNamePanel(JPanel titleNamePanel) {
+        this.titleNamePanel = titleNamePanel;
+    }
+
+    public JPanel getStartButtonPanel() {
+        return startButtonPanel;
+    }
+
+    public void setStartButtonPanel(JPanel startButtonPanel) {
+        this.startButtonPanel = startButtonPanel;
+    }
+
+    public JPanel getMainScreen() {
+        return mainScreen;
+    }
+
+    public void setMainScreen(JPanel mainScreen) {
+        this.mainScreen = mainScreen;
+    }
+
+    public JPanel getAttributesPanel() {
+        return attributesPanel;
+    }
+
+    public void setAttributesPanel(JPanel attributesPanel) {
+        this.attributesPanel = attributesPanel;
+    }
+
+    public JPanel getChoicesPanel() {
+        return choicesPanel;
+    }
+
+    public void setChoicesPanel(JPanel choicesPanel) {
+        this.choicesPanel = choicesPanel;
+    }
+
+    public JPanel getMainTextPanel() {
+        return mainTextPanel;
+    }
+
+    public void setMainTextPanel(JPanel mainTextPanel) {
+        this.mainTextPanel = mainTextPanel;
+    }
+
+    public JPanel getMainImagePanel() {
+        return mainImagePanel;
+    }
+
+    public void setMainImagePanel(JPanel mainImagePanel) {
+        this.mainImagePanel = mainImagePanel;
+    }
+
+    public JPanel getPortraitPanel() {
+        return portraitPanel;
+    }
+
+    public void setPortraitPanel(JPanel portraitPanel) {
+        this.portraitPanel = portraitPanel;
+    }
+
+    public JPanel getGameOverScreen() {
+        return gameOverScreen;
+    }
+
+    public void setGameOverScreen(JPanel gameOverScreen) {
+        this.gameOverScreen = gameOverScreen;
+    }
+
+    public JPanel getGameOverPanel() {
+        return gameOverPanel;
+    }
+
+    public void setGameOverPanel(JPanel gameOverPanel) {
+        this.gameOverPanel = gameOverPanel;
+    }
+
+    public JPanel getNewGamePanel() {
+        return newGamePanel;
+    }
+
+    public void setNewGamePanel(JPanel newGamePanel) {
+        this.newGamePanel = newGamePanel;
+    }
+
+    public JLabel getTitleNameLabel() {
+        return titleNameLabel;
+    }
+
+    public void setTitleNameLabel(JLabel titleNameLabel) {
+        this.titleNameLabel = titleNameLabel;
+    }
+
+    public JButton getStartButton() {
+        return startButton;
+    }
+
+    public void setStartButton(JButton startButton) {
+        this.startButton = startButton;
+    }
+
+    public JTextArea getMainTextArea() {
+        return mainTextArea;
+    }
+
+    public void setMainTextArea(JTextArea mainTextArea) {
+        this.mainTextArea = mainTextArea;
+    }
+
+    public JButton getChoice1() {
+        return choice1;
+    }
+
+    public void setChoice1(JButton choice1) {
+        this.choice1 = choice1;
+    }
+
+    public JButton getChoice2() {
+        return choice2;
+    }
+
+    public void setChoice2(JButton choice2) {
+        this.choice2 = choice2;
+    }
+
+    public JButton getChoice3() {
+        return choice3;
+    }
+
+    public void setChoice3(JButton choice3) {
+        this.choice3 = choice3;
+    }
+
+    public JButton getChoice4() {
+        return choice4;
+    }
+
+    public void setChoice4(JButton choice4) {
+        this.choice4 = choice4;
+    }
+
+    public JLabel getPeopleHpLabel() {
+        return peopleHpLabel;
+    }
+
+    public void setPeopleHpLabel(JLabel peopleHpLabel) {
+        this.peopleHpLabel = peopleHpLabel;
+    }
+
+    public JLabel getPeopleHpLabelNumber() {
+        return peopleHpLabelNumber;
+    }
+
+    public void setPeopleHpLabelNumber(JLabel peopleHpLabelNumber) {
+        this.peopleHpLabelNumber = peopleHpLabelNumber;
+    }
+
+    public JLabel getPortraitLabel() {
+        return portraitLabel;
+    }
+
+    public void setPortraitLabel(JLabel portraitLabel) {
+        this.portraitLabel = portraitLabel;
+    }
+
+    public JLabel getMainImageLabel() {
+        return mainImageLabel;
+    }
+
+    public void setMainImageLabel(JLabel mainImageLabel) {
+        this.mainImageLabel = mainImageLabel;
+    }
+
+    public JLabel getGameOverLabel() {
+        return gameOverLabel;
+    }
+
+    public void setGameOverLabel(JLabel gameOverLabel) {
+        this.gameOverLabel = gameOverLabel;
+    }
+
+    public JButton getNewGameButton() {
+        return newGameButton;
+    }
+
+    public void setNewGameButton(JButton newGameButton) {
+        this.newGameButton = newGameButton;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+    }
 }
