@@ -81,34 +81,45 @@ public GUI(Model model) {
 
     titleScreen = new JPanel();
     titleScreen.setLayout(new GridBagLayout());
-    GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    gridBagConstraints.weightx = 1;
-    gridBagConstraints.weighty = 1;
-    gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-    gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 3;
-    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-    titleScreen.add(titleNamePanel, gridBagConstraints);
+    GridBagConstraints gbcTitleScreen = new GridBagConstraints();
+    gbcTitleScreen.weightx = 1;
+    gbcTitleScreen.weighty = 1;
+    gbcTitleScreen.fill = GridBagConstraints.HORIZONTAL;
+    gbcTitleScreen.gridx = 1;
+    gbcTitleScreen.gridy = 1;
+    gbcTitleScreen.gridwidth = 3;
+    gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
+    titleScreen.add(titleNamePanel, gbcTitleScreen);
 
-    gridBagConstraints.fill = GridBagConstraints.NONE;
-    gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 2;
-    gridBagConstraints.gridwidth = 1;
-    gridBagConstraints.insets = new Insets(10, 10, 10, 10);
-    titleScreen.add(startButtonPanel, gridBagConstraints);
+    gbcTitleScreen.fill = GridBagConstraints.NONE;
+    gbcTitleScreen.gridx = 1;
+    gbcTitleScreen.gridy = 2;
+    gbcTitleScreen.gridwidth = 1;
+    gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
+    titleScreen.add(startButtonPanel, gbcTitleScreen);
 
     startButton.addActionListener(this);
 
     mainScreen = new JPanel();
+    mainScreen.setLayout(new GridBagLayout());
+    GridBagConstraints gbcMainScreen = new GridBagConstraints();
+    gbcMainScreen.weightx = 1;
+    gbcMainScreen.weighty = 1;
+
+    mainImagePanel = new JPanel();
+    mainImagePanel.setBackground(Color.lightGray);
+    mainImageLabel = new JLabel("main image label");
+    mainImagePanel.add(mainImageLabel);
 
     mainTextPanel = new JPanel();
+    mainTextPanel.setBackground(Color.orange);
     mainTextArea = new JTextArea("once upon a time...");
     mainTextArea.setLineWrap(true);
     mainTextArea.setWrapStyleWord(true);
     mainTextArea.setEditable(false);
     mainTextPanel.add(mainTextArea);
-    choicesPanel = new JPanel(new GridLayout(4, 1));
+    choicesPanel = new JPanel(new GridLayout(4, 1,10,10));
+    choicesPanel.setBackground(Color.yellow);
     choice1 = new JButton("choice 1");
     choice2 = new JButton("choice 2");
     choice3 = new JButton("choice 3");
@@ -118,36 +129,73 @@ public GUI(Model model) {
     choicesPanel.add(choice3);
     choicesPanel.add(choice4);
 
-    attributesPanel = new JPanel(new GridLayout(1,2));
+    attributesPanel = new JPanel(new GridLayout(1,2, 5, 5));
+    attributesPanel.setBackground(Color.blue);
     peopleHpLabel = new JLabel("HP : ");
     peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
     attributesPanel.add(peopleHpLabel);
     attributesPanel.add(peopleHpLabelNumber);
 
 
-    mainImagePanel = new JPanel();
-    mainImageLabel = new JLabel("main image label");
-    mainImagePanel.add(mainImageLabel);
+
 
     portraitPanel = new JPanel();
+    portraitPanel.setBackground(Color.black);
     portraitLabel = new JLabel("portrait label");
     portraitPanel.add(portraitLabel);
-    mainScreen.add(mainImagePanel);
-    mainScreen.add(mainTextPanel);
-    mainScreen.add(portraitPanel);
-    mainScreen.add(attributesPanel);
-    mainScreen.add(choicesPanel);
+
+    gbcMainScreen.gridx = 0;
+    gbcMainScreen.gridy = 0;
+    gbcMainScreen.gridwidth = 4;
+    gbcMainScreen.gridheight = 4;
+    gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
+    mainScreen.add(mainImagePanel, gbcMainScreen);
+
+    gbcMainScreen.gridx = 0;
+    gbcMainScreen.gridy = 4;
+    gbcMainScreen.gridwidth = 4;
+    gbcMainScreen.gridheight = 2;
+    gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
+    mainScreen.add(mainTextPanel, gbcMainScreen);
+
+    gbcMainScreen.gridx = 5;
+    gbcMainScreen.gridy = 0;
+    gbcMainScreen.gridwidth = 1;
+    gbcMainScreen.gridheight = 1;
+    gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
+    mainScreen.add(portraitPanel, gbcMainScreen);
+
+    gbcMainScreen.gridx = 4;
+    gbcMainScreen.gridy = 1;
+    gbcMainScreen.gridwidth = 3;
+    gbcMainScreen.gridheight = 3;
+    mainScreen.add(attributesPanel, gbcMainScreen);
+
+    gbcMainScreen.gridx = 4;
+    gbcMainScreen.gridy = 4;
+    gbcMainScreen.gridwidth = 3;
+    gbcMainScreen.gridheight = 2;
+    gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
+    mainScreen.add(choicesPanel, gbcMainScreen);
 
 gameOverScreen = new JPanel();
+gameOverScreen.setLayout(new GridBagLayout());
+    GridBagConstraints gbcGameOverScreen = new GridBagConstraints();
+    gbcGameOverScreen.weightx = 1;
+    gbcGameOverScreen.weighty = 1;
+
 gameOverPanel = new JPanel();
     gameOverLabel = new JLabel("GAME OVER");
     gameOverPanel.add(gameOverLabel);
+    gameOverPanel.setBackground(Color.pink);
+    gameOverLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
 newGamePanel = new JPanel();
 newGameButton = new JButton("New Game");
 newGamePanel.add(newGameButton);
+    newGamePanel.setBackground(Color.green);
 
-gameOverScreen.add(gameOverPanel);
-gameOverScreen.add(newGamePanel);
+gameOverScreen.add(gameOverPanel, gbcGameOverScreen);
+gameOverScreen.add(newGamePanel, gbcGameOverScreen);
 
 
 
