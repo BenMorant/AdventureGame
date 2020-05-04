@@ -1,8 +1,7 @@
 package view;
 
 import model.Model;
-import view.implementations.TitleScreen;
-
+import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
@@ -68,15 +67,17 @@ public GUI(Model model) {
     setContentPane(container);
     container.setLayout(cardLayout);
 
-    titleScreen = new JPanel();
+
     titleNamePanel = new JPanel();
     titleNameLabel = new JLabel("title");
     titleNamePanel.add(titleNameLabel);
     startButtonPanel = new JPanel();
     startButton = new JButton("start");
     startButtonPanel.add(startButton);
-    titleScreen.add(titleNamePanel);
-    titleScreen.add(startButtonPanel);
+    titleScreen = new JPanel();
+    titleScreen.setLayout(new MigLayout("", "[grow]", "[grow]"));
+    titleScreen.add(titleNamePanel, "wrap, center");
+    titleScreen.add(startButtonPanel, "center");
 
 
     mainScreen = new JPanel();
