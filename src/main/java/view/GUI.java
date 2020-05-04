@@ -96,8 +96,11 @@ public GUI(Model model) {
     mainScreen = new JPanel();
     mainTextPanel = new JPanel();
     mainTextArea = new JTextArea("once upon a time...");
+    mainTextArea.setLineWrap(true);
+    mainTextArea.setWrapStyleWord(true);
+    mainTextArea.setEditable(false);
     mainTextPanel.add(mainTextArea);
-    choicesPanel = new JPanel();
+    choicesPanel = new JPanel(new GridLayout(4, 1));
     choice1 = new JButton("choice 1");
     choice2 = new JButton("choice 2");
     choice3 = new JButton("choice 3");
@@ -107,11 +110,12 @@ public GUI(Model model) {
     choicesPanel.add(choice3);
     choicesPanel.add(choice4);
 
-    attributesPanel = new JPanel();
+    attributesPanel = new JPanel(new GridLayout(1,2));
     peopleHpLabel = new JLabel("HP : ");
     peopleHpLabelNumber = new JLabel("how much buddy ?");
     attributesPanel.add(peopleHpLabel);
     attributesPanel.add(peopleHpLabelNumber);
+
 
     mainImagePanel = new JPanel();
     mainImageLabel = new JLabel("main image label");
