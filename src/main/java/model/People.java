@@ -7,4 +7,8 @@ public class People {
     public int getCurrentHp() {
         return currentHp;
     }
+
+    public void setCurrentHp(int currentHp) {
+        this.currentHp = currentHp;
+    }
 }
