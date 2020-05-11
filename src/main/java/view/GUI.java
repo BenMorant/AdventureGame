@@ -47,9 +47,6 @@ public class GUI extends JFrame implements ActionListener {
     private JLabel gameOverLabel;
     private JButton newGameButton;
 
-
-
-
     private Model model;
 
 public GUI(Model model) {
@@ -136,9 +133,6 @@ public GUI(Model model) {
     attributesPanel.add(peopleHpLabel);
     attributesPanel.add(peopleHpLabelNumber);
 
-
-
-
     portraitPanel = new JPanel();
     portraitPanel.setBackground(Color.black);
     portraitLabel = new JLabel("portrait label");
@@ -221,8 +215,10 @@ public void initLookAndFeel() {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        cardLayout.show(container, "2");
+
+cardLayout.show(container, "2");
     }
+
 
     public JPanel getContainer() {
         return container;
@@ -447,4 +443,6 @@ public void initLookAndFeel() {
     public void setModel(Model model) {
         this.model = model;
     }
+
+
 }

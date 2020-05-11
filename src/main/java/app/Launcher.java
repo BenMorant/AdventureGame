@@ -22,6 +22,8 @@ SwingUtilities.invokeLater(() -> runGame());
         GUI gui = new GUI(model);
     Controller controller = new Controller(gui, model);
 
+
+
     }
 
 
