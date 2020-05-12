@@ -112,7 +112,7 @@ public class GUI extends JFrame implements Observer {
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBackground(Color.orange);
-        mainTextArea = new JTextArea("once upon a time...");
+        mainTextArea = new JTextArea(model.getStoryBlock().getText());
         mainTextArea.setLineWrap(true);
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
@@ -132,7 +132,7 @@ public class GUI extends JFrame implements Observer {
         attributesPanel = new JPanel(new GridLayout(1, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         peopleHpLabel = new JLabel("HP : ");
-        peopleHpLabelNumber = new JLabel("yo");
+        peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
         attributesPanel.add(peopleHpLabel);
         attributesPanel.add(peopleHpLabelNumber);
 

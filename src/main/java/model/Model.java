@@ -11,6 +11,10 @@ public class Model extends AbstractModel {
     private List<String> choices = new ArrayList<>();
 
     public Model() {
+        this.people = new People();
+        this.storyBlock = new StoryBlock();
+
+        townGate();
 
     }
 

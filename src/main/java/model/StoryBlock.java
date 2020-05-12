@@ -4,8 +4,8 @@ public class StoryBlock {
 
     String text;
 
-    public StoryBlock(String text) {
-        this.text = text;
+    public StoryBlock() {
+
     }
 
     public String getText() {
