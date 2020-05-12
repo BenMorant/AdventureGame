@@ -4,6 +4,10 @@ public class People {
 
     int currentHp;
 
+    public void startHp() {
+        setCurrentHp(13);
+    }
+
     public int getCurrentHp() {
         return currentHp;
     }

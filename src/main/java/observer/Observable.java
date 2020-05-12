@@ -4,7 +4,7 @@ public interface Observable {
     void addObserver(Observer observer);
 
     //void notifyObserver(String newValue);
-    void notifyPeopleHp(String newValue);
+    void notifyPeopleHp(int newValue);
 
     void notifyStoryBlock(String storyBlock);
 

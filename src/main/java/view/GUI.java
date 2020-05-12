@@ -132,7 +132,7 @@ public class GUI extends JFrame implements Observer {
         attributesPanel = new JPanel(new GridLayout(1, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         peopleHpLabel = new JLabel("HP : ");
-        peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
+        peopleHpLabelNumber = new JLabel("yo");
         attributesPanel.add(peopleHpLabel);
         attributesPanel.add(peopleHpLabelNumber);
 
@@ -216,8 +216,8 @@ public void initLookAndFeel() {
 }
 
 
-    public void updatePeopleHp(String newValue) {
-        peopleHpLabelNumber.setText(newValue);
+    public void updatePeopleHp(int newValue) {
+        peopleHpLabelNumber.setText(String.valueOf(newValue));
     }
 
     public void updateStoryBlock(String newStoryBlock) {

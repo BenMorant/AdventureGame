@@ -1,7 +1,7 @@
 package observer;
 
 public interface Observer {
-   void updatePeopleHp(String newValue);
+   void updatePeopleHp(int newValue);
 
    void updateStoryBlock(String storyBlock);
 
