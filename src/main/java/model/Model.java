@@ -1,13 +1,18 @@
 package model;
 
-public class Model {
+public class Model extends AbstractModel {
 
-    String modelName;
-    People people;
+    private String modelName;
+    private People people;
+
 
     public Model() {
         people = new People();
         people.setCurrentHp(13);
+    }
+
+    public void townGate() {
+        System.out.println("vous êtes à townGate");
     }
 
     public String getModelName() {

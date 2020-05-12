@@ -10,5 +10,8 @@ public class People {
 
     public void setCurrentHp(int currentHp) {
         this.currentHp = currentHp;
+        if (currentHp < 1) {
+            this.currentHp = 0;
+        }
     }
 }

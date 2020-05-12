@@ -1,6 +1,7 @@
 package view;
 
 import model.Model;
+import observer.Observer;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
@@ -9,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
-public class GUI extends JFrame implements ActionListener {
+public class GUI extends JFrame implements Observer {
 
     public static final String GAME_TITLE = "L'aventure n'attend pas";
     private static final int MINIMUM_WIDTH = 1280;
@@ -35,10 +36,7 @@ public class GUI extends JFrame implements ActionListener {
     private JButton startButton;
 
     private JTextArea mainTextArea;
-    private JButton choice1;
-    private JButton choice2;
-    private JButton choice3;
-    private JButton choice4;
+    private JButton[] choiceButtons;
     private JLabel peopleHpLabel;
     private JLabel peopleHpLabelNumber;
     private JLabel portraitLabel;
@@ -49,32 +47,36 @@ public class GUI extends JFrame implements ActionListener {
 
     private Model model;
 
-public GUI(Model model) {
-    this.model = model;
+    private ScreenHandler screenHandler;
+    private ChoiceHandler choiceHandler;
 
-    initLookAndFeel();
+    public GUI(Model model) {
+        this.model = model;
 
-    this.setTitle(GAME_TITLE);
-    this.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
-    this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-    this.setLocationRelativeTo(null);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setResizable(true);
-    setDefaultLookAndFeelDecorated(true);
+        initLookAndFeel();
 
-    setContentPane(container);
-    container.setLayout(cardLayout);
+        this.setTitle(GAME_TITLE);
+        this.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(true);
+        setDefaultLookAndFeelDecorated(true);
 
+        setContentPane(container);
+        container.setLayout(cardLayout);
 
-    titleNamePanel = new JPanel();
-    titleNameLabel = new JLabel("title");
-    titleNamePanel.add(titleNameLabel);
-    titleNamePanel.setBackground(Color.pink);
-    titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
-    startButtonPanel = new JPanel();
-    startButton = new JButton("start");
-    startButtonPanel.add(startButton);
-    startButtonPanel.setBackground(Color.green);
+        screenHandler = new ScreenHandler();
+        choiceHandler = new ChoiceHandler();
+        titleNamePanel = new JPanel();
+        titleNameLabel = new JLabel("title");
+        titleNamePanel.add(titleNameLabel);
+        titleNamePanel.setBackground(Color.pink);
+        titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
+        startButtonPanel = new JPanel();
+        startButton = new JButton("start");
+        startButtonPanel.add(startButton);
+        startButtonPanel.setBackground(Color.green);
 
     titleScreen = new JPanel();
     titleScreen.setLayout(new GridBagLayout());
@@ -95,7 +97,7 @@ public GUI(Model model) {
     gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
     titleScreen.add(startButtonPanel, gbcTitleScreen);
 
-    startButton.addActionListener(this);
+        startButton.addActionListener(screenHandler);
 
     mainScreen = new JPanel();
     mainScreen.setLayout(new GridBagLayout());
@@ -108,33 +110,34 @@ public GUI(Model model) {
     mainImageLabel = new JLabel("main image label");
     mainImagePanel.add(mainImageLabel);
 
-    mainTextPanel = new JPanel();
-    mainTextPanel.setBackground(Color.orange);
-    mainTextArea = new JTextArea("once upon a time...");
-    mainTextArea.setLineWrap(true);
-    mainTextArea.setWrapStyleWord(true);
-    mainTextArea.setEditable(false);
-    mainTextPanel.add(mainTextArea);
-    choicesPanel = new JPanel(new GridLayout(4, 1,10,10));
-    choicesPanel.setBackground(Color.yellow);
-    choice1 = new JButton("choice 1");
-    choice2 = new JButton("choice 2");
-    choice3 = new JButton("choice 3");
-    choice4 = new JButton("choice 4");
-    choicesPanel.add(choice1);
-    choicesPanel.add(choice2);
-    choicesPanel.add(choice3);
-    choicesPanel.add(choice4);
+        mainTextPanel = new JPanel();
+        mainTextPanel.setBackground(Color.orange);
+        mainTextArea = new JTextArea("once upon a time...");
+        mainTextArea.setLineWrap(true);
+        mainTextArea.setWrapStyleWord(true);
+        mainTextArea.setEditable(false);
+        mainTextPanel.add(mainTextArea);
+        choicesPanel = new JPanel(new GridLayout(4, 1, 10, 10));
+        choicesPanel.setBackground(Color.yellow);
 
-    attributesPanel = new JPanel(new GridLayout(1,2, 5, 5));
-    attributesPanel.setBackground(Color.blue);
-    peopleHpLabel = new JLabel("HP : ");
-    peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
-    attributesPanel.add(peopleHpLabel);
-    attributesPanel.add(peopleHpLabelNumber);
+        choiceButtons = new JButton[4];
+        for (int i = 0; i < choiceButtons.length; i++) {
+            choiceButtons[i] = new JButton("Choice " + (i + 1));
+            choiceButtons[i].addActionListener(choiceHandler);
+            choiceButtons[i].setActionCommand("c" + (i + 1));
 
-    portraitPanel = new JPanel();
-    portraitPanel.setBackground(Color.black);
+            choicesPanel.add(choiceButtons[i]);
+        }
+
+        attributesPanel = new JPanel(new GridLayout(1, 2, 5, 5));
+        attributesPanel.setBackground(Color.blue);
+        peopleHpLabel = new JLabel("HP : ");
+        peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
+        attributesPanel.add(peopleHpLabel);
+        attributesPanel.add(peopleHpLabelNumber);
+
+        portraitPanel = new JPanel();
+        portraitPanel.setBackground(Color.black);
     portraitLabel = new JLabel("portrait label");
     portraitPanel.add(portraitLabel);
 
@@ -183,20 +186,19 @@ gameOverPanel = new JPanel();
     gameOverPanel.add(gameOverLabel);
     gameOverPanel.setBackground(Color.pink);
     gameOverLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
-newGamePanel = new JPanel();
-newGameButton = new JButton("New Game");
-newGamePanel.add(newGameButton);
-    newGamePanel.setBackground(Color.green);
+        newGamePanel = new JPanel();
+        newGameButton = new JButton("New Game");
+        newGamePanel.add(newGameButton);
+        newGamePanel.setBackground(Color.green);
 
-gameOverScreen.add(gameOverPanel, gbcGameOverScreen);
-gameOverScreen.add(newGamePanel, gbcGameOverScreen);
+        gameOverScreen.add(gameOverPanel, gbcGameOverScreen);
+        gameOverScreen.add(newGamePanel, gbcGameOverScreen);
 
 
-
-        container.add(titleScreen, "1");
-        container.add(mainScreen, "2");
-        container.add(gameOverScreen, "3");
-        cardLayout.show(container, "1");
+        container.add(titleScreen, "titleScreen");
+        container.add(mainScreen, "mainScreen");
+        container.add(gameOverScreen, "gameOverScreen");
+        cardLayout.show(container, "titleScreen");
         pack();
         setVisible(true);
 
@@ -213,10 +215,56 @@ public void initLookAndFeel() {
     }
 }
 
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
 
-cardLayout.show(container, "2");
+    public void updatePeopleHp(String newValue) {
+        peopleHpLabelNumber.setText(newValue);
+    }
+
+    public void updateStoryBlock(String newStoryBlock) {
+        mainTextArea.setText(newStoryBlock);
+    }
+
+    public void updateChoices(String newChoice1, String newChoice2, String newChoice3, String newChoice4) {
+        choiceButtons[0].setText(newChoice1);
+        choiceButtons[1].setText(newChoice2);
+        choiceButtons[2].setText(newChoice3);
+        choiceButtons[3].setText(newChoice4);
+    }
+
+    private class ScreenHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent actionEvent) {
+            Object source = actionEvent.getSource();
+            if (startButton.equals(source)) {
+                cardLayout.show(container, "mainScreen");
+                model.townGate();
+            }
+            if (newGameButton.equals(source)) {
+                cardLayout.show(container, "mainScreen");
+            }
+
+
+        }
+    }
+
+    private class ChoiceHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent actionEvent) {
+            Object action = actionEvent.getActionCommand();
+//            switch (action) {
+//                case "c1" : null;
+//                break;
+//                case "c2" : null;
+//                    break;
+//                case "c3" : null;
+//                    break;
+//                case "c4" : null;
+//                    break;
+//
+//            }
+
+
+        }
     }
 
 
@@ -356,38 +404,6 @@ cardLayout.show(container, "2");
         this.mainTextArea = mainTextArea;
     }
 
-    public JButton getChoice1() {
-        return choice1;
-    }
-
-    public void setChoice1(JButton choice1) {
-        this.choice1 = choice1;
-    }
-
-    public JButton getChoice2() {
-        return choice2;
-    }
-
-    public void setChoice2(JButton choice2) {
-        this.choice2 = choice2;
-    }
-
-    public JButton getChoice3() {
-        return choice3;
-    }
-
-    public void setChoice3(JButton choice3) {
-        this.choice3 = choice3;
-    }
-
-    public JButton getChoice4() {
-        return choice4;
-    }
-
-    public void setChoice4(JButton choice4) {
-        this.choice4 = choice4;
-    }
-
     public JLabel getPeopleHpLabel() {
         return peopleHpLabel;
     }
@@ -443,6 +459,4 @@ cardLayout.show(container, "2");
     public void setModel(Model model) {
         this.model = model;
     }
-
-
 }
