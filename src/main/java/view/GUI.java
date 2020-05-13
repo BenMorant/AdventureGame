@@ -112,7 +112,7 @@ public class GUI extends JFrame implements Observer {
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBackground(Color.orange);
-        mainTextArea = new JTextArea(model.getStoryBlock().getText());
+        mainTextArea = new JTextArea("texte");
         mainTextArea.setLineWrap(true);
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
@@ -132,7 +132,7 @@ public class GUI extends JFrame implements Observer {
         attributesPanel = new JPanel(new GridLayout(1, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         peopleHpLabel = new JLabel("HP : ");
-        peopleHpLabelNumber = new JLabel(String.valueOf(model.getPeople().getCurrentHp()));
+        peopleHpLabelNumber = new JLabel("13");
         attributesPanel.add(peopleHpLabel);
         attributesPanel.add(peopleHpLabelNumber);
 
@@ -237,7 +237,6 @@ public void initLookAndFeel() {
             Object source = actionEvent.getSource();
             if (startButton.equals(source)) {
                 cardLayout.show(container, "mainScreen");
-                model.townGate();
             }
             if (newGameButton.equals(source)) {
                 cardLayout.show(container, "mainScreen");
