@@ -4,6 +4,10 @@ public class People {
 
     int currentHp;
 
+    public People(int currentHp) {
+        this.currentHp = currentHp;
+    }
+
     public void startHp() {
         setCurrentHp(13);
     }
