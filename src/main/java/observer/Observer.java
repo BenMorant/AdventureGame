@@ -5,7 +5,7 @@ import model.People;
 import java.util.List;
 
 public interface Observer {
-   //   void updatePeopleAttributes(People peopleToUpdate);
+//   void updatePeopleAttributes(People peopleToUpdate);
 //
 //   void updateStoryBlock(String storyBlock);
 //

@@ -20,7 +20,6 @@ public class Model extends AbstractModel {
 
     }
 
-
     public String getPosition() {
         return position;
     }

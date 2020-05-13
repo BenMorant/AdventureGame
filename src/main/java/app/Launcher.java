@@ -18,12 +18,11 @@ public final class Launcher {
     private static void runGame() {
 
 
-
         Model model = new Model();
         GUI gui = new GUI(model);
-    Controller controller = new Controller(gui, model);
+        //GuiConsole gui = new GuiConsole(model);
+        Controller controller = new Controller(gui, model);
         model.addObserver(gui);
-
 
 
     }
