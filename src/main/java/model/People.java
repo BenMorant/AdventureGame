@@ -2,15 +2,24 @@ package model;
 
 public class People {
 
-    int currentHp;
+    private int currentHp;
+    private String currentWeapon;
 
-    public People(int currentHp) {
+
+    public People(int currentHp, String currentWeapon) {
         this.currentHp = currentHp;
+        this.currentWeapon = currentWeapon;
+
     }
 
-    public void startHp() {
-        setCurrentHp(13);
+    public void getDamage(int damage) {
+        currentHp -= damage;
     }
+
+    public void getHealing(int healing) {
+        currentHp += healing;
+    }
+
 
     public int getCurrentHp() {
         return currentHp;
@@ -22,4 +31,13 @@ public class People {
             this.currentHp = 0;
         }
     }
+
+    public String getCurrentWeapon() {
+        return currentWeapon;
+    }
+
+    public void setCurrentWeapon(String weapon) {
+        this.currentWeapon = weapon;
+    }
+
 }

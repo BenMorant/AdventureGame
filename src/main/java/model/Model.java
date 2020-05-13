@@ -1,30 +1,17 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Model extends AbstractModel {
 
-    private People people;
-    private StoryBlock storyBlock;
+    private People player = new People(13, "Couteau");
+    private People goblin = new People(20, "Baton");
     private String position;
-    private List<String> choices = new ArrayList<>();
 
     public Model() {
-        this.people = new People();
-        this.storyBlock = new StoryBlock();
-
-        townGate();
+        this.position = null;
 
     }
 
-    public void townGate() {
-        position = "townGate";
-        people.startHp();
-        storyBlock.setText("Bienvenue dans notre monde");
-        choices.add("ohoho");
-        choices.add("haha");
-    }
 
     public String getPosition() {
         return position;
@@ -34,27 +21,6 @@ public class Model extends AbstractModel {
         this.position = position;
     }
 
-    public List<String> getChoices() {
-        return choices;
-    }
 
-    public void setChoices(List<String> choices) {
-        this.choices = choices;
-    }
 
-    public People getPeople() {
-        return people;
-    }
-
-    public void setPeople(People people) {
-        this.people = people;
-    }
-
-    public StoryBlock getStoryBlock() {
-        return storyBlock;
-    }
-
-    public void setStoryBlock(StoryBlock storyBlock) {
-        this.storyBlock = storyBlock;
-    }
 }
