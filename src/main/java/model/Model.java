@@ -1,6 +1,9 @@
 package model;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Model extends AbstractModel {
 
     private People player = new People(13, "couteau");
@@ -8,6 +11,9 @@ public class Model extends AbstractModel {
     private boolean hasSilverRing = false;
 
     private String position;
+
+    private List<String> choices = new ArrayList<>();
+
 
     public Model() {
         this.position = null;

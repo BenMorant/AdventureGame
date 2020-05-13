@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.List;
 
 public class GUI extends JFrame implements Observer {
 
@@ -223,20 +224,24 @@ public void initLookAndFeel() {
 }
 
 
-    public void updatePeopleAttributes(People peopleToUpdate) {
+    public void update(People peopleToUpdate) {
         getPeopleHpLabelNumber().setText(Integer.toString(peopleToUpdate.getCurrentHp()));
         getPeopleWeaponLabelName().setText(peopleToUpdate.getCurrentWeapon());
     }
 
-    public void updateStoryBlock(String newStoryBlock) {
+    public void update(String newStoryBlock) {
         mainTextArea.setText(newStoryBlock);
     }
 
-    public void updateChoices(String newChoice1, String newChoice2, String newChoice3, String newChoice4) {
-        choiceButtons[0].setText(newChoice1);
-        choiceButtons[1].setText(newChoice2);
-        choiceButtons[2].setText(newChoice3);
-        choiceButtons[3].setText(newChoice4);
+    public void update(List<String> newChoices) {
+        for (int i = 0; i < newChoices.size(); i++) {
+            choiceButtons[i].setText(newChoices.get(i));
+
+        }
+//        choiceButtons[0].setText(newChoices.get(0));
+//        choiceButtons[1].setText(newChoice2);
+//        choiceButtons[2].setText(newChoice3);
+//        choiceButtons[3].setText(newChoice4);
     }
 
     private class ScreenHandler implements ActionListener {

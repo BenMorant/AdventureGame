@@ -4,6 +4,7 @@ import observer.Observable;
 import observer.Observer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractModel implements Observable {
     private ArrayList<Observer> observers = new ArrayList<>();
@@ -19,21 +20,21 @@ public abstract class AbstractModel implements Observable {
 //        }
 //}
 
-    public void notifyPeopleAttributes(People people) {
+    public void notifyObserver(People people) {
         for (Observer observer : observers) {
-            observer.updatePeopleAttributes(people);
+            observer.update(people);
         }
     }
 
-    public void notifyStoryBlock(String newStoryBlock) {
+    public void notifyObserver(String newString) {
         for (Observer observer : observers) {
-            observer.updateStoryBlock(newStoryBlock);
+            observer.update(newString);
         }
     }
 
-    public void notifyChoices(String newChoice1, String newChoice2, String newChoice3, String newChoice4) {
+    public void notifyObserver(List<String> newStrings) {
         for (Observer observer : observers) {
-            observer.updateChoices(newChoice1, newChoice2, newChoice3, newChoice4);
+            observer.update(newStrings);
         }
 
     }
