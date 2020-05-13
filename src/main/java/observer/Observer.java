@@ -1,7 +1,9 @@
 package observer;
 
+import model.People;
+
 public interface Observer {
-   void updatePeopleHp(int newValue);
+   void updatePeopleAttributes(People peopleToUpdate);
 
    void updateStoryBlock(String storyBlock);
 

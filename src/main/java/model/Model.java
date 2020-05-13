@@ -3,8 +3,10 @@ package model;
 
 public class Model extends AbstractModel {
 
-    private People player = new People(13, "Couteau");
-    private People goblin = new People(20, "Baton");
+    private People player = new People(13, "couteau");
+    private People goblin = new People(20, "baton");
+    private boolean hasSilverRing = false;
+
     private String position;
 
     public Model() {

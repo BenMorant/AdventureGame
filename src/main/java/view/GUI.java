@@ -1,6 +1,7 @@
 package view;
 
 import model.Model;
+import model.People;
 import observer.Observer;
 
 import javax.swing.*;
@@ -41,6 +42,8 @@ public class GUI extends JFrame implements Observer {
     private JLabel peopleHpLabelNumber;
     private JLabel portraitLabel;
     private JLabel mainImageLabel;
+    private JLabel peopleWeaponLabel;
+    private JLabel peopleWeaponLabelName;
 
     private JLabel gameOverLabel;
     private JButton newGameButton;
@@ -129,22 +132,26 @@ public class GUI extends JFrame implements Observer {
             choicesPanel.add(choiceButtons[i]);
         }
 
-        attributesPanel = new JPanel(new GridLayout(1, 2, 5, 5));
+        attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         peopleHpLabel = new JLabel("HP : ");
         peopleHpLabelNumber = new JLabel("13");
+        peopleWeaponLabel = new JLabel("Arme : ");
+        peopleWeaponLabelName = new JLabel("bazooka");
         attributesPanel.add(peopleHpLabel);
         attributesPanel.add(peopleHpLabelNumber);
+        attributesPanel.add(peopleWeaponLabel);
+        attributesPanel.add(peopleWeaponLabelName);
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
-    portraitLabel = new JLabel("portrait label");
-    portraitPanel.add(portraitLabel);
+        portraitLabel = new JLabel("portrait label");
+        portraitPanel.add(portraitLabel);
 
-    gbcMainScreen.gridx = 0;
-    gbcMainScreen.gridy = 0;
-    gbcMainScreen.gridwidth = 4;
-    gbcMainScreen.gridheight = 4;
+        gbcMainScreen.gridx = 0;
+        gbcMainScreen.gridy = 0;
+        gbcMainScreen.gridwidth = 4;
+        gbcMainScreen.gridheight = 4;
     gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
     mainScreen.add(mainImagePanel, gbcMainScreen);
 
@@ -216,8 +223,9 @@ public void initLookAndFeel() {
 }
 
 
-    public void updatePeopleHp(int newValue) {
-        peopleHpLabelNumber.setText(String.valueOf(newValue));
+    public void updatePeopleAttributes(People peopleToUpdate) {
+        getPeopleHpLabelNumber().setText(Integer.toString(peopleToUpdate.getCurrentHp()));
+        getPeopleWeaponLabelName().setText(peopleToUpdate.getCurrentWeapon());
     }
 
     public void updateStoryBlock(String newStoryBlock) {
@@ -417,6 +425,22 @@ public void initLookAndFeel() {
 
     public void setPeopleHpLabelNumber(JLabel peopleHpLabelNumber) {
         this.peopleHpLabelNumber = peopleHpLabelNumber;
+    }
+
+    public JLabel getPeopleWeaponLabel() {
+        return peopleWeaponLabel;
+    }
+
+    public void setPeopleWeaponLabel(JLabel peopleWeaponLabel) {
+        this.peopleWeaponLabel = peopleWeaponLabel;
+    }
+
+    public JLabel getPeopleWeaponLabelName() {
+        return peopleWeaponLabelName;
+    }
+
+    public void setPeopleWeaponLabelName(JLabel peopleWeaponLabelName) {
+        this.peopleWeaponLabelName = peopleWeaponLabelName;
     }
 
     public JLabel getPortraitLabel() {

@@ -19,9 +19,9 @@ public abstract class AbstractModel implements Observable {
 //        }
 //}
 
-    public void notifyPeopleHp(int newValue) {
+    public void notifyPeopleAttributes(People people) {
         for (Observer observer : observers) {
-            observer.updatePeopleHp(newValue);
+            observer.updatePeopleAttributes(people);
         }
     }
 

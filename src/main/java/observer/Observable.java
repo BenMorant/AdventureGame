@@ -1,10 +1,12 @@
 package observer;
 
+import model.People;
+
 public interface Observable {
     void addObserver(Observer observer);
 
     //void notifyObserver(String newValue);
-    void notifyPeopleHp(int newValue);
+    void notifyPeopleAttributes(People people);
 
     void notifyStoryBlock(String storyBlock);
 
