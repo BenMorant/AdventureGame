@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Model extends AbstractModel {
 
-    private People player = new People(13, "couteau");
+    private People hero = new People(13, "couteau");
     private People goblin = new People(20, "baton");
     private boolean hasSilverRing = false;
 
@@ -29,5 +29,8 @@ public class Model extends AbstractModel {
     }
 
 
-
+    @Override
+    public void notifyHero(People newValue) {
+        System.out.println("à compléter");
+    }
 }

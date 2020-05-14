@@ -21,7 +21,7 @@ public class People {
     }
 
 
-    public int getCurrentHp() {
+    public int getHp() {
         return currentHp;
     }
 
@@ -32,7 +32,7 @@ public class People {
         }
     }
 
-    public String getCurrentWeapon() {
+    public String getWeapon() {
         return currentWeapon;
     }
 

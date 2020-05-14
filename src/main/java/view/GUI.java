@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.util.List;
 
 public class GUI extends JFrame implements Observer {
 
@@ -38,13 +37,13 @@ public class GUI extends JFrame implements Observer {
     private JButton startButton;
 
     private JTextArea mainTextArea;
-    private JButton[] choiceButtons;
-    private JLabel peopleHpLabel;
-    private JLabel peopleHpLabelNumber;
+    private JButton choiceButton;
+    private JLabel HpLabel;
+    private JLabel HpLabelNumber;
     private JLabel portraitLabel;
     private JLabel mainImageLabel;
-    private JLabel peopleWeaponLabel;
-    private JLabel peopleWeaponLabelName;
+    private JLabel WeaponLabel;
+    private JLabel WeaponLabelName;
 
     private JLabel gameOverLabel;
     private JButton newGameButton;
@@ -124,25 +123,20 @@ public class GUI extends JFrame implements Observer {
         choicesPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         choicesPanel.setBackground(Color.yellow);
 
-        choiceButtons = new JButton[4];
-        for (int i = 0; i < choiceButtons.length; i++) {
-            choiceButtons[i] = new JButton("Choice " + (i + 1));
-            choiceButtons[i].addActionListener(choiceHandler);
-            choiceButtons[i].setActionCommand("c" + (i + 1));
+        choiceButton = new JButton("choice 1 and only");
+        choicesPanel.add(choiceButton);
 
-            choicesPanel.add(choiceButtons[i]);
-        }
 
         attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
-        peopleHpLabel = new JLabel("HP : ");
-        peopleHpLabelNumber = new JLabel("13");
-        peopleWeaponLabel = new JLabel("Arme : ");
-        peopleWeaponLabelName = new JLabel("bazooka");
-        attributesPanel.add(peopleHpLabel);
-        attributesPanel.add(peopleHpLabelNumber);
-        attributesPanel.add(peopleWeaponLabel);
-        attributesPanel.add(peopleWeaponLabelName);
+        HpLabel = new JLabel("HP : ");
+        HpLabelNumber = new JLabel("13");
+        WeaponLabel = new JLabel("Arme : ");
+        WeaponLabelName = new JLabel("bazooka");
+        attributesPanel.add(HpLabel);
+        attributesPanel.add(HpLabelNumber);
+        attributesPanel.add(WeaponLabel);
+        attributesPanel.add(WeaponLabelName);
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
@@ -224,25 +218,11 @@ public void initLookAndFeel() {
 }
 
 
-    public void update(People peopleToUpdate) {
-        getPeopleHpLabelNumber().setText(Integer.toString(peopleToUpdate.getCurrentHp()));
-        getPeopleWeaponLabelName().setText(peopleToUpdate.getCurrentWeapon());
+    public void updateHero(People hero) {
+        getHpLabelNumber().setText(Integer.toString(hero.getHp()));
+        getWeaponLabelName().setText(hero.getWeapon());
     }
 
-    public void update(String newStoryBlock) {
-        mainTextArea.setText(newStoryBlock);
-    }
-
-    public void update(List<String> newChoices) {
-        for (int i = 0; i < newChoices.size(); i++) {
-            choiceButtons[i].setText(newChoices.get(i));
-
-        }
-//        choiceButtons[0].setText(newChoices.get(0));
-//        choiceButtons[1].setText(newChoice2);
-//        choiceButtons[2].setText(newChoice3);
-//        choiceButtons[3].setText(newChoice4);
-    }
 
     private class ScreenHandler implements ActionListener {
 
@@ -416,36 +396,36 @@ public void initLookAndFeel() {
         this.mainTextArea = mainTextArea;
     }
 
-    public JLabel getPeopleHpLabel() {
-        return peopleHpLabel;
+    public JLabel getHpLabel() {
+        return HpLabel;
     }
 
-    public void setPeopleHpLabel(JLabel peopleHpLabel) {
-        this.peopleHpLabel = peopleHpLabel;
+    public void setHpLabel(JLabel hpLabel) {
+        this.HpLabel = hpLabel;
     }
 
-    public JLabel getPeopleHpLabelNumber() {
-        return peopleHpLabelNumber;
+    public JLabel getHpLabelNumber() {
+        return HpLabelNumber;
     }
 
-    public void setPeopleHpLabelNumber(JLabel peopleHpLabelNumber) {
-        this.peopleHpLabelNumber = peopleHpLabelNumber;
+    public void setHpLabelNumber(JLabel hpLabelNumber) {
+        this.HpLabelNumber = hpLabelNumber;
     }
 
-    public JLabel getPeopleWeaponLabel() {
-        return peopleWeaponLabel;
+    public JLabel getWeaponLabel() {
+        return WeaponLabel;
     }
 
-    public void setPeopleWeaponLabel(JLabel peopleWeaponLabel) {
-        this.peopleWeaponLabel = peopleWeaponLabel;
+    public void setWeaponLabel(JLabel weaponLabel) {
+        this.WeaponLabel = weaponLabel;
     }
 
-    public JLabel getPeopleWeaponLabelName() {
-        return peopleWeaponLabelName;
+    public JLabel getWeaponLabelName() {
+        return WeaponLabelName;
     }
 
-    public void setPeopleWeaponLabelName(JLabel peopleWeaponLabelName) {
-        this.peopleWeaponLabelName = peopleWeaponLabelName;
+    public void setWeaponLabelName(JLabel weaponLabelName) {
+        this.WeaponLabelName = weaponLabelName;
     }
 
     public JLabel getPortraitLabel() {
