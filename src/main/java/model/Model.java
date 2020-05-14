@@ -2,7 +2,7 @@ package model;
 
 public class Model {
 
-    private People hero = new People(13, "couteau");
+    private People player = new People(13, "couteau");
     private People goblin = new People(20, "baton");
     private boolean hasSilverRing = false;
 
