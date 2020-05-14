@@ -48,9 +48,6 @@ public class GUI extends JFrame {
 
     private Model model;
 
-//    private SceneChangeListener sceneChangeListener;
-//    private ChoiceListener choiceListener;
-
     public GUI(Model model) {
         this.model = model;
 
@@ -66,9 +63,7 @@ public class GUI extends JFrame {
 
         setContentPane(container);
         container.setLayout(cardLayout);
-
-//        sceneChangeListener = new SceneChangeListener();
-//        choiceListener = new ChoiceListener();
+        
         titleNamePanel = new JPanel();
         titleNameLabel = new JLabel("title");
         titleNamePanel.add(titleNameLabel);
