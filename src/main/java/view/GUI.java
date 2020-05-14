@@ -49,8 +49,8 @@ public class GUI extends JFrame {
 
     private Model model;
 
-    private ScreenHandler screenHandler;
-    private ChoiceHandler choiceHandler;
+    private SceneChangeListener sceneChangeListener;
+    private ChoiceListener choiceListener;
 
     public GUI(Model model) {
         this.model = model;
@@ -68,8 +68,8 @@ public class GUI extends JFrame {
         setContentPane(container);
         container.setLayout(cardLayout);
 
-        screenHandler = new ScreenHandler();
-        choiceHandler = new ChoiceHandler();
+        sceneChangeListener = new SceneChangeListener();
+        choiceListener = new ChoiceListener();
         titleNamePanel = new JPanel();
         titleNameLabel = new JLabel("title");
         titleNamePanel.add(titleNameLabel);
@@ -99,7 +99,7 @@ public class GUI extends JFrame {
     gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
     titleScreen.add(startButtonPanel, gbcTitleScreen);
 
-        startButton.addActionListener(screenHandler);
+        startButton.addActionListener(sceneChangeListener);
 
     mainScreen = new JPanel();
     mainScreen.setLayout(new GridBagLayout());
@@ -223,7 +223,7 @@ public void initLookAndFeel() {
     }
 
 
-    private class ScreenHandler implements ActionListener {
+    private class SceneChangeListener implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
             Object source = actionEvent.getSource();
@@ -238,7 +238,7 @@ public void initLookAndFeel() {
         }
     }
 
-    private class ChoiceHandler implements ActionListener {
+    private class ChoiceListener implements ActionListener {
 
         public void actionPerformed(ActionEvent actionEvent) {
             Object action = actionEvent.getActionCommand();
