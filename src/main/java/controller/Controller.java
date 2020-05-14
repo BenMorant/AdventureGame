@@ -3,9 +3,6 @@ package controller;
 import model.Model;
 import view.GUI;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class Controller {
 
     private GUI gui;
