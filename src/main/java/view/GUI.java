@@ -2,7 +2,6 @@ package view;
 
 import model.Model;
 import model.People;
-import observer.Observer;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
@@ -11,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
-public class GUI extends JFrame implements Observer {
+public class GUI extends JFrame {
 
     public static final String GAME_TITLE = "L'aventure n'attend pas";
     private static final int MINIMUM_WIDTH = 1280;
@@ -38,12 +37,12 @@ public class GUI extends JFrame implements Observer {
 
     private JTextArea mainTextArea;
     private JButton choiceButton;
-    private JLabel HpLabel;
-    private JLabel HpLabelNumber;
+    private JLabel hpLabel;
+    private JLabel hpLabelNumber;
     private JLabel portraitLabel;
     private JLabel mainImageLabel;
-    private JLabel WeaponLabel;
-    private JLabel WeaponLabelName;
+    private JLabel weaponLabel;
+    private JLabel weaponLabelName;
 
     private JLabel gameOverLabel;
     private JButton newGameButton;
@@ -129,14 +128,14 @@ public class GUI extends JFrame implements Observer {
 
         attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
-        HpLabel = new JLabel("HP : ");
-        HpLabelNumber = new JLabel("13");
-        WeaponLabel = new JLabel("Arme : ");
-        WeaponLabelName = new JLabel("bazooka");
-        attributesPanel.add(HpLabel);
-        attributesPanel.add(HpLabelNumber);
-        attributesPanel.add(WeaponLabel);
-        attributesPanel.add(WeaponLabelName);
+        hpLabel = new JLabel("HP : ");
+        hpLabelNumber = new JLabel("13");
+        weaponLabel = new JLabel("Arme : ");
+        weaponLabelName = new JLabel("bazooka");
+        attributesPanel.add(hpLabel);
+        attributesPanel.add(hpLabelNumber);
+        attributesPanel.add(weaponLabel);
+        attributesPanel.add(weaponLabelName);
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
@@ -219,8 +218,8 @@ public void initLookAndFeel() {
 
 
     public void updateHero(People hero) {
-        getHpLabelNumber().setText(Integer.toString(hero.getHp()));
-        getWeaponLabelName().setText(hero.getWeapon());
+        hpLabelNumber.setText(Integer.toString(hero.getHp()));
+        weaponLabelName.setText(hero.getWeapon());
     }
 
 
@@ -257,214 +256,5 @@ public void initLookAndFeel() {
 
 
         }
-    }
-
-
-    public JPanel getContainer() {
-        return container;
-    }
-
-    public void setContainer(JPanel container) {
-        this.container = container;
-    }
-
-    public CardLayout getCardLayout() {
-        return cardLayout;
-    }
-
-    public void setCardLayout(CardLayout cardLayout) {
-        this.cardLayout = cardLayout;
-    }
-
-    public JPanel getTitleScreen() {
-        return titleScreen;
-    }
-
-    public void setTitleScreen(JPanel titleScreen) {
-        this.titleScreen = titleScreen;
-    }
-
-    public JPanel getTitleNamePanel() {
-        return titleNamePanel;
-    }
-
-    public void setTitleNamePanel(JPanel titleNamePanel) {
-        this.titleNamePanel = titleNamePanel;
-    }
-
-    public JPanel getStartButtonPanel() {
-        return startButtonPanel;
-    }
-
-    public void setStartButtonPanel(JPanel startButtonPanel) {
-        this.startButtonPanel = startButtonPanel;
-    }
-
-    public JPanel getMainScreen() {
-        return mainScreen;
-    }
-
-    public void setMainScreen(JPanel mainScreen) {
-        this.mainScreen = mainScreen;
-    }
-
-    public JPanel getAttributesPanel() {
-        return attributesPanel;
-    }
-
-    public void setAttributesPanel(JPanel attributesPanel) {
-        this.attributesPanel = attributesPanel;
-    }
-
-    public JPanel getChoicesPanel() {
-        return choicesPanel;
-    }
-
-    public void setChoicesPanel(JPanel choicesPanel) {
-        this.choicesPanel = choicesPanel;
-    }
-
-    public JPanel getMainTextPanel() {
-        return mainTextPanel;
-    }
-
-    public void setMainTextPanel(JPanel mainTextPanel) {
-        this.mainTextPanel = mainTextPanel;
-    }
-
-    public JPanel getMainImagePanel() {
-        return mainImagePanel;
-    }
-
-    public void setMainImagePanel(JPanel mainImagePanel) {
-        this.mainImagePanel = mainImagePanel;
-    }
-
-    public JPanel getPortraitPanel() {
-        return portraitPanel;
-    }
-
-    public void setPortraitPanel(JPanel portraitPanel) {
-        this.portraitPanel = portraitPanel;
-    }
-
-    public JPanel getGameOverScreen() {
-        return gameOverScreen;
-    }
-
-    public void setGameOverScreen(JPanel gameOverScreen) {
-        this.gameOverScreen = gameOverScreen;
-    }
-
-    public JPanel getGameOverPanel() {
-        return gameOverPanel;
-    }
-
-    public void setGameOverPanel(JPanel gameOverPanel) {
-        this.gameOverPanel = gameOverPanel;
-    }
-
-    public JPanel getNewGamePanel() {
-        return newGamePanel;
-    }
-
-    public void setNewGamePanel(JPanel newGamePanel) {
-        this.newGamePanel = newGamePanel;
-    }
-
-    public JLabel getTitleNameLabel() {
-        return titleNameLabel;
-    }
-
-    public void setTitleNameLabel(JLabel titleNameLabel) {
-        this.titleNameLabel = titleNameLabel;
-    }
-
-    public JButton getStartButton() {
-        return startButton;
-    }
-
-    public void setStartButton(JButton startButton) {
-        this.startButton = startButton;
-    }
-
-    public JTextArea getMainTextArea() {
-        return mainTextArea;
-    }
-
-    public void setMainTextArea(JTextArea mainTextArea) {
-        this.mainTextArea = mainTextArea;
-    }
-
-    public JLabel getHpLabel() {
-        return HpLabel;
-    }
-
-    public void setHpLabel(JLabel hpLabel) {
-        this.HpLabel = hpLabel;
-    }
-
-    public JLabel getHpLabelNumber() {
-        return HpLabelNumber;
-    }
-
-    public void setHpLabelNumber(JLabel hpLabelNumber) {
-        this.HpLabelNumber = hpLabelNumber;
-    }
-
-    public JLabel getWeaponLabel() {
-        return WeaponLabel;
-    }
-
-    public void setWeaponLabel(JLabel weaponLabel) {
-        this.WeaponLabel = weaponLabel;
-    }
-
-    public JLabel getWeaponLabelName() {
-        return WeaponLabelName;
-    }
-
-    public void setWeaponLabelName(JLabel weaponLabelName) {
-        this.WeaponLabelName = weaponLabelName;
-    }
-
-    public JLabel getPortraitLabel() {
-        return portraitLabel;
-    }
-
-    public void setPortraitLabel(JLabel portraitLabel) {
-        this.portraitLabel = portraitLabel;
-    }
-
-    public JLabel getMainImageLabel() {
-        return mainImageLabel;
-    }
-
-    public void setMainImageLabel(JLabel mainImageLabel) {
-        this.mainImageLabel = mainImageLabel;
-    }
-
-    public JLabel getGameOverLabel() {
-        return gameOverLabel;
-    }
-
-    public void setGameOverLabel(JLabel gameOverLabel) {
-        this.gameOverLabel = gameOverLabel;
-    }
-
-    public JButton getNewGameButton() {
-        return newGameButton;
-    }
-
-    public void setNewGameButton(JButton newGameButton) {
-        this.newGameButton = newGameButton;
-    }
-
-    public Model getModel() {
-        return model;
-    }
-
-    public void setModel(Model model) {
-        this.model = model;
     }
 }
