@@ -6,7 +6,6 @@ import model.People;
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
@@ -49,8 +48,8 @@ public class GUI extends JFrame {
 
     private Model model;
 
-    private SceneChangeListener sceneChangeListener;
-    private ChoiceListener choiceListener;
+//    private SceneChangeListener sceneChangeListener;
+//    private ChoiceListener choiceListener;
 
     public GUI(Model model) {
         this.model = model;
@@ -68,8 +67,8 @@ public class GUI extends JFrame {
         setContentPane(container);
         container.setLayout(cardLayout);
 
-        sceneChangeListener = new SceneChangeListener();
-        choiceListener = new ChoiceListener();
+//        sceneChangeListener = new SceneChangeListener();
+//        choiceListener = new ChoiceListener();
         titleNamePanel = new JPanel();
         titleNameLabel = new JLabel("title");
         titleNamePanel.add(titleNameLabel);
@@ -98,8 +97,6 @@ public class GUI extends JFrame {
     gbcTitleScreen.gridwidth = 1;
     gbcTitleScreen.insets = new Insets(10, 10, 10, 10);
     titleScreen.add(startButtonPanel, gbcTitleScreen);
-
-        startButton.addActionListener(sceneChangeListener);
 
     mainScreen = new JPanel();
     mainScreen.setLayout(new GridBagLayout());
@@ -223,38 +220,220 @@ public void initLookAndFeel() {
     }
 
 
-    private class SceneChangeListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent actionEvent) {
-            Object source = actionEvent.getSource();
-            if (startButton.equals(source)) {
-                cardLayout.show(container, "mainScreen");
-            }
-            if (newGameButton.equals(source)) {
-                cardLayout.show(container, "mainScreen");
-            }
-
-
-        }
+    public void addSceneChangeListener(ActionListener sceneChangeListener) {
+        startButton.addActionListener(sceneChangeListener);
     }
 
-    private class ChoiceListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent actionEvent) {
-            Object action = actionEvent.getActionCommand();
-//            switch (action) {
-//                case "c1" : null;
-//                break;
-//                case "c2" : null;
-//                    break;
-//                case "c3" : null;
-//                    break;
-//                case "c4" : null;
-//                    break;
-//
-//            }
+    public void addChoiceListener(ActionListener choiceListener) {
+        choiceButton.addActionListener(choiceListener);
+    }
 
 
-        }
+    public JPanel getContainer() {
+        return container;
+    }
+
+    public void setContainer(JPanel container) {
+        this.container = container;
+    }
+
+    public CardLayout getCardLayout() {
+        return cardLayout;
+    }
+
+    public void setCardLayout(CardLayout cardLayout) {
+        this.cardLayout = cardLayout;
+    }
+
+    public JPanel getTitleScreen() {
+        return titleScreen;
+    }
+
+    public void setTitleScreen(JPanel titleScreen) {
+        this.titleScreen = titleScreen;
+    }
+
+    public JPanel getTitleNamePanel() {
+        return titleNamePanel;
+    }
+
+    public void setTitleNamePanel(JPanel titleNamePanel) {
+        this.titleNamePanel = titleNamePanel;
+    }
+
+    public JPanel getStartButtonPanel() {
+        return startButtonPanel;
+    }
+
+    public void setStartButtonPanel(JPanel startButtonPanel) {
+        this.startButtonPanel = startButtonPanel;
+    }
+
+    public JPanel getMainScreen() {
+        return mainScreen;
+    }
+
+    public void setMainScreen(JPanel mainScreen) {
+        this.mainScreen = mainScreen;
+    }
+
+    public JPanel getAttributesPanel() {
+        return attributesPanel;
+    }
+
+    public void setAttributesPanel(JPanel attributesPanel) {
+        this.attributesPanel = attributesPanel;
+    }
+
+    public JPanel getChoicesPanel() {
+        return choicesPanel;
+    }
+
+    public void setChoicesPanel(JPanel choicesPanel) {
+        this.choicesPanel = choicesPanel;
+    }
+
+    public JPanel getMainTextPanel() {
+        return mainTextPanel;
+    }
+
+    public void setMainTextPanel(JPanel mainTextPanel) {
+        this.mainTextPanel = mainTextPanel;
+    }
+
+    public JPanel getMainImagePanel() {
+        return mainImagePanel;
+    }
+
+    public void setMainImagePanel(JPanel mainImagePanel) {
+        this.mainImagePanel = mainImagePanel;
+    }
+
+    public JPanel getPortraitPanel() {
+        return portraitPanel;
+    }
+
+    public void setPortraitPanel(JPanel portraitPanel) {
+        this.portraitPanel = portraitPanel;
+    }
+
+    public JPanel getGameOverScreen() {
+        return gameOverScreen;
+    }
+
+    public void setGameOverScreen(JPanel gameOverScreen) {
+        this.gameOverScreen = gameOverScreen;
+    }
+
+    public JPanel getGameOverPanel() {
+        return gameOverPanel;
+    }
+
+    public void setGameOverPanel(JPanel gameOverPanel) {
+        this.gameOverPanel = gameOverPanel;
+    }
+
+    public JPanel getNewGamePanel() {
+        return newGamePanel;
+    }
+
+    public void setNewGamePanel(JPanel newGamePanel) {
+        this.newGamePanel = newGamePanel;
+    }
+
+    public JLabel getTitleNameLabel() {
+        return titleNameLabel;
+    }
+
+    public void setTitleNameLabel(JLabel titleNameLabel) {
+        this.titleNameLabel = titleNameLabel;
+    }
+
+    public JButton getStartButton() {
+        return startButton;
+    }
+
+    public void setStartButton(JButton startButton) {
+        this.startButton = startButton;
+    }
+
+    public JTextArea getMainTextArea() {
+        return mainTextArea;
+    }
+
+    public void setMainTextArea(JTextArea mainTextArea) {
+        this.mainTextArea = mainTextArea;
+    }
+
+    public JButton getChoiceButton() {
+        return choiceButton;
+    }
+
+    public void setChoiceButton(JButton choiceButton) {
+        this.choiceButton = choiceButton;
+    }
+
+    public JLabel getHpLabel() {
+        return hpLabel;
+    }
+
+    public void setHpLabel(JLabel hpLabel) {
+        this.hpLabel = hpLabel;
+    }
+
+    public JLabel getHpLabelNumber() {
+        return hpLabelNumber;
+    }
+
+    public void setHpLabelNumber(JLabel hpLabelNumber) {
+        this.hpLabelNumber = hpLabelNumber;
+    }
+
+    public JLabel getPortraitLabel() {
+        return portraitLabel;
+    }
+
+    public void setPortraitLabel(JLabel portraitLabel) {
+        this.portraitLabel = portraitLabel;
+    }
+
+    public JLabel getMainImageLabel() {
+        return mainImageLabel;
+    }
+
+    public void setMainImageLabel(JLabel mainImageLabel) {
+        this.mainImageLabel = mainImageLabel;
+    }
+
+    public JLabel getWeaponLabel() {
+        return weaponLabel;
+    }
+
+    public void setWeaponLabel(JLabel weaponLabel) {
+        this.weaponLabel = weaponLabel;
+    }
+
+    public JLabel getWeaponLabelName() {
+        return weaponLabelName;
+    }
+
+    public void setWeaponLabelName(JLabel weaponLabelName) {
+        this.weaponLabelName = weaponLabelName;
+    }
+
+    public JLabel getGameOverLabel() {
+        return gameOverLabel;
+    }
+
+    public void setGameOverLabel(JLabel gameOverLabel) {
+        this.gameOverLabel = gameOverLabel;
+    }
+
+    public JButton getNewGameButton() {
+        return newGameButton;
+    }
+
+    public void setNewGameButton(JButton newGameButton) {
+        this.newGameButton = newGameButton;
     }
 }
