@@ -2,42 +2,42 @@ package model;
 
 public class People {
 
-    private int currentHp;
-    private String currentWeapon;
+    private int hp;
+    private String weapon;
 
 
     public People(int currentHp, String currentWeapon) {
-        this.currentHp = currentHp;
-        this.currentWeapon = currentWeapon;
+        this.hp = currentHp;
+        this.weapon = currentWeapon;
 
     }
 
     public void getDamage(int damage) {
-        currentHp -= damage;
+        hp -= damage;
     }
 
     public void getHealing(int healing) {
-        currentHp += healing;
+        hp += healing;
     }
 
 
     public int getHp() {
-        return currentHp;
+        return hp;
     }
 
-    public void setCurrentHp(int currentHp) {
-        this.currentHp = currentHp;
-        if (currentHp < 1) {
-            this.currentHp = 0;
+    public void setHp(int hp) {
+        this.hp = hp;
+        if (hp < 1) {
+            this.hp = 0;
         }
     }
 
     public String getWeapon() {
-        return currentWeapon;
+        return weapon;
     }
 
-    public void setCurrentWeapon(String weapon) {
-        this.currentWeapon = weapon;
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
     }
 
 }
