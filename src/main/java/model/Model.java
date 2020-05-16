@@ -37,6 +37,11 @@ public class Model implements Observable {
         ((MainScene) mainScene).townGate();
     }
 
+    public void talkGuard() {
+        ((Player) player).movePosition("talkGuard");
+        ((MainScene) mainScene).talkGuard();
+    }
+
     public Scene getGameOverScene() {
         return gameOverScene;
     }

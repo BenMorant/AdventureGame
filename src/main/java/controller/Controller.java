@@ -1,5 +1,6 @@
 package controller;
 
+import model.MainScene;
 import model.Model;
 import model.Player;
 import view.GUI;
@@ -18,7 +19,9 @@ public class Controller {
         gui.addSceneChangeListener(new SceneChangeListener());
         gui.addChoiceListener(new ChoiceListener());
 
-         gui.update(model.getPlayer());
+        gui.update(model.getPlayer());
+        gui.update(((MainScene) model.getMainScene()).getChoice());
+
     }
 
 
@@ -46,6 +49,10 @@ public class Controller {
                 case "townGate":
                     switch (choice) {
                         case "c1":
+                            model.talkGuard();
+                            gui.update(((MainScene) model.getMainScene()).getChoice());
+                            gui.update(((MainScene) model.getMainScene()).getStoryBlock());
+                            break;
 //                            if (!model.playerHasSilverRing()) {
 //                                model.talkToGuard();
 //                            }

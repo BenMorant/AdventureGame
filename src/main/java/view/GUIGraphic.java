@@ -119,7 +119,7 @@ public class GUIGraphic extends GUI {
         choicesPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         choicesPanel.setBackground(Color.yellow);
 
-        choiceButton = new JButton(((MainScene) model.getMainScene()).getChoice());
+        choiceButton = new JButton();
         choiceButton.setActionCommand("c1");
         choicesPanel.add(choiceButton);
 
@@ -434,7 +434,7 @@ public class GUIGraphic extends GUI {
 
     @Override
     public void update(String str) {
-
+        choiceButton.setText(((MainScene) model.getMainScene()).getChoice());
     }
 
     @Override

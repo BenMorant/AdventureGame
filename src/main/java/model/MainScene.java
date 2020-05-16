@@ -19,6 +19,11 @@ public class MainScene extends Scene {
         choice = "tu veux quoi ?";
     }
 
+    public void talkGuard() {
+        storyBlock = "Je parle au garde";
+        choice = "et maintenant ?";
+    }
+
     public People getPlayer() {
         return player;
     }
