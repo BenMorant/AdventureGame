@@ -126,9 +126,9 @@ public class GUIGraphic extends GUI {
         attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         hpLabel = new JLabel("HP : ");
-        hpLabelNumber = new JLabel(String.valueOf(model.getPlayer().getHp()));
+        hpLabelNumber = new JLabel();
         weaponLabel = new JLabel("Arme : ");
-        weaponLabelName = new JLabel(model.getPlayer().getWeapon());
+        weaponLabelName = new JLabel();
         attributesPanel.add(hpLabel);
         attributesPanel.add(hpLabelNumber);
         attributesPanel.add(weaponLabel);

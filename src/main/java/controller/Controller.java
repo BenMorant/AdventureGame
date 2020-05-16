@@ -17,7 +17,7 @@ public class Controller {
         gui.addSceneChangeListener(new SceneChangeListener());
         gui.addChoiceListener(new ChoiceListener());
 
-        //  gui.update(model.getPlayer());
+         gui.update(model.getPlayer());
     }
 
 
