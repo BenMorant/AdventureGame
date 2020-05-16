@@ -4,26 +4,17 @@ public class Model {
 
     private Scene titleScene = new TitleScene();
 
-    private People player = new People(13, "couteau");
-    private People goblin = new People(20, "baton");
+    private People player = new Player(13, "couteau");
+    private People goblin = new Monster(20, "baton", "Le gobelin vous frappe avec son baton !");
     private boolean hasSilverRing = false;
-
-    private String position;
 
 
     public Model() {
-        this.position = null;
 
 
     }
 
-    public String getPosition() {
-        return position;
-    }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
 
     public Scene getTitleScene() {
         return titleScene;

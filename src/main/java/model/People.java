@@ -1,24 +1,22 @@
 package model;
 
-public class People {
+public abstract class People {
 
-    private int hp;
-    private String weapon;
+    protected int hp;
+    protected String weapon;
 
 
-    public People(int currentHp, String currentWeapon) {
-        this.hp = currentHp;
-        this.weapon = currentWeapon;
+    public People(int hp, String weapon) {
+        this.hp = hp;
+        this.weapon = weapon;
 
     }
 
-    public void getDamage(int damage) {
+    public void receiveDamage(int damage) {
         hp -= damage;
     }
 
-    public void getHealing(int healing) {
-        hp += healing;
-    }
+
 
 
     public int getHp() {
