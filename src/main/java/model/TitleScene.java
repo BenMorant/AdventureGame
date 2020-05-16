@@ -3,19 +3,19 @@ package model;
 public class TitleScene extends Scene {
 
 
-    private String start;
+    private String startStr;
 
     public TitleScene() {
         super();
-        this.start = "C'est parti !";
+        this.startStr = "C'est parti !";
 
     }
 
-    public String getStart() {
-        return start;
+    public String getStartStr() {
+        return startStr;
     }
 
-    public void setStart(String start) {
-        this.start = start;
+    public void setStartStr(String startStr) {
+        this.startStr = startStr;
     }
 }

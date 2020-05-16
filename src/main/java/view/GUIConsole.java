@@ -1,7 +1,8 @@
 package view;
 
+import model.GameOverScene;
 import model.Model;
-import model.TitleScene;
+import model.People;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -15,9 +16,10 @@ public class GUIConsole extends GUI {
 
     public GUIConsole(Model model) {
         super(model);
-        System.out.println(model.getTitleScene().getTitle());
-        System.out.println(((TitleScene) model.getTitleScene()).getStart());
-
+//        System.out.println(model.getTitleScene().getTitle());
+//        System.out.println(((TitleScene) model.getTitleScene()).getStart());
+        System.out.println(((GameOverScene) model.getGameOverScene()).getGameOverStr());
+        System.out.println(((GameOverScene) model.getGameOverScene()).getNewGameStr());
 
     }
 
@@ -50,5 +52,20 @@ public class GUIConsole extends GUI {
     @Override
     public Object getNewGameButton() {
         return null;
+    }
+
+    @Override
+    public void update(String str) {
+
+    }
+
+    @Override
+    public void update(int number) {
+
+    }
+
+    @Override
+    public void update(People people) {
+
     }
 }

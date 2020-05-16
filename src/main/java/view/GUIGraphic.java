@@ -1,7 +1,9 @@
 package view;
 
+import model.GameOverScene;
 import model.Model;
 import model.People;
+import model.TitleScene;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
@@ -11,7 +13,7 @@ import java.text.ParseException;
 
 public class GUIGraphic extends GUI {
 
-    public static final String GAME_TITLE = "L'aventure n'attend pas";
+    //  public static final String GAME_TITLE = "L'aventure n'attend pas";
     private static final int MINIMUM_WIDTH = 1280;
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
 
@@ -55,7 +57,7 @@ public class GUIGraphic extends GUI {
 
         initLookAndFeel();
 
-        gameFrame.setTitle(GAME_TITLE);
+        gameFrame.setTitle(model.getTitleScene().getTitle());
         gameFrame.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
         gameFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         gameFrame.setLocationRelativeTo(null);
@@ -67,12 +69,12 @@ public class GUIGraphic extends GUI {
         container.setLayout(cardLayout);
 
         titleNamePanel = new JPanel();
-        titleNameLabel = new JLabel("title");
+        titleNameLabel = new JLabel(model.getTitleScene().getTitle().toUpperCase());
         titleNamePanel.add(titleNameLabel);
         titleNamePanel.setBackground(Color.pink);
-        titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
+        titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 142));
         startButtonPanel = new JPanel();
-        startButton = new JButton("start");
+        startButton = new JButton(((TitleScene) model.getTitleScene()).getStartStr());
         startButtonPanel.add(startButton);
         startButtonPanel.setBackground(Color.green);
 
@@ -177,12 +179,12 @@ public class GUIGraphic extends GUI {
         gbcGameOverScreen.weighty = 1;
 
         gameOverPanel = new JPanel();
-        gameOverLabel = new JLabel("GAME OVER");
+        gameOverLabel = new JLabel(((GameOverScene) model.getGameOverScene()).getGameOverStr().toUpperCase());
         gameOverPanel.add(gameOverLabel);
         gameOverPanel.setBackground(Color.pink);
         gameOverLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
         newGamePanel = new JPanel();
-        newGameButton = new JButton("New Game");
+        newGameButton = new JButton(((GameOverScene) model.getGameOverScene()).getNewGameStr());
         newGamePanel.add(newGameButton);
         newGamePanel.setBackground(Color.green);
 
@@ -212,8 +214,7 @@ public class GUIGraphic extends GUI {
 
 
     public void updateHero(People hero) {
-        hpLabelNumber.setText(Integer.toString(hero.getHp()));
-        weaponLabelName.setText(hero.getWeapon());
+
     }
 
 
@@ -432,5 +433,22 @@ public class GUIGraphic extends GUI {
 
     public void setNewGameButton(JButton newGameButton) {
         this.newGameButton = newGameButton;
+    }
+
+    @Override
+    public void update(String str) {
+
+    }
+
+    @Override
+    public void update(int number) {
+
+    }
+
+    @Override
+    public void update(People people) {
+        hpLabelNumber.setText(Integer.toString(people.getHp()));
+        weaponLabelName.setText(people.getWeapon());
+
     }
 }

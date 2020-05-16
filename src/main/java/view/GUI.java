@@ -1,11 +1,12 @@
 package view;
 
+import app.Observer.Observer;
 import model.Model;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public abstract class GUI {
+public abstract class GUI implements Observer {
 
     protected Model model;
 
