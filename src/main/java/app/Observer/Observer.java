@@ -8,6 +8,6 @@ public interface Observer {
     void update(int number);
 
     void update(People people);
-    
 
+    void updateMainText(String str);
 }

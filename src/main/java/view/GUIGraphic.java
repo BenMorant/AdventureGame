@@ -111,7 +111,7 @@ public class GUIGraphic extends GUI {
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBackground(Color.orange);
-        mainTextArea = new JTextArea(((MainScene) model.getMainScene()).getStoryBlock());
+        mainTextArea = new JTextArea();
         mainTextArea.setLineWrap(true);
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
@@ -448,4 +448,11 @@ public class GUIGraphic extends GUI {
         weaponLabelName.setText(people.getWeapon());
 
     }
+
+    @Override
+    public void updateMainText(String str) {
+        mainTextArea.setText(((MainScene) model.getMainScene()).getStoryBlock());
+    }
+
+
 }

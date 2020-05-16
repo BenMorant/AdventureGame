@@ -68,4 +68,9 @@ public class GUIConsole extends GUI {
     public void update(People people) {
 
     }
+
+    @Override
+    public void updateMainText(String str) {
+
+    }
 }

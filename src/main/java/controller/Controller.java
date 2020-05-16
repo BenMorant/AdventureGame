@@ -21,6 +21,8 @@ public class Controller {
 
         gui.update(model.getPlayer());
         gui.update(((MainScene) model.getMainScene()).getChoice());
+        gui.updateMainText(((MainScene) model.getMainScene()).getStoryBlock());
+
 
     }
 
@@ -51,7 +53,8 @@ public class Controller {
                         case "c1":
                             model.talkGuard();
                             gui.update(((MainScene) model.getMainScene()).getChoice());
-                            gui.update(((MainScene) model.getMainScene()).getStoryBlock());
+                            gui.updateMainText(((MainScene) model.getMainScene()).getStoryBlock());
+
                             break;
 //                            if (!model.playerHasSilverRing()) {
 //                                model.talkToGuard();
