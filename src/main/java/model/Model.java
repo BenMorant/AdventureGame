@@ -5,7 +5,7 @@ import app.Observer.Observer;
 
 public class Model implements Observable {
 
-    private People player = new Player(13, "couteau");
+    private People player = new Player();
     private Scene titleScene = new TitleScene(player);
     private Scene gameOverScene = new GameOverScene(player);
     private Scene mainScene = new MainScene(player);
@@ -16,8 +16,14 @@ public class Model implements Observable {
 
 
     public Model() {
+        initPlayer();
 
+    }
 
+    public void initPlayer() {
+        player.setHp(13);
+        player.setWeapon("couteau");
+        ((Player) player).setPicture("./src/main/resources/pix/people/player/rambo.jpg");
     }
 
     public Scene getGameOverScene() {

@@ -6,9 +6,10 @@ public class Player extends People {
     private String position;
     private String picture;
 
-    public Player(int hp, String weapon) {
-        super(hp, weapon);
+    public Player() {
+        super();
         this.position = null;
+
     }
 
     public String getPicture() {

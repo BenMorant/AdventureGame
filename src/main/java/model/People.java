@@ -6,18 +6,9 @@ public abstract class People {
     protected String weapon;
 
 
-    public People(int hp, String weapon) {
-        this.hp = hp;
-        this.weapon = weapon;
-
-    }
-
     public void receiveDamage(int damage) {
         hp -= damage;
     }
-
-
-
 
     public int getHp() {
         return hp;

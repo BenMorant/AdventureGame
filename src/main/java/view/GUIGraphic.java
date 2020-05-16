@@ -136,7 +136,7 @@ public class GUIGraphic extends GUI {
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
-        portraitLabel = new JLabel(((Player) model.getPlayer()).getPicture());
+        portraitLabel = new JLabel(new ImageIcon(((Player) model.getPlayer()).getPicture()));
         portraitPanel.add(portraitLabel);
 
         gbcMainScreen.gridx = 0;
