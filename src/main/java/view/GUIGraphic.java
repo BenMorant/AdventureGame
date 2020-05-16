@@ -4,6 +4,7 @@ import model.GameOverScene;
 import model.MainScene;
 import model.Model;
 import model.People;
+import model.Player;
 import model.TitleScene;
 
 import javax.swing.*;
@@ -135,7 +136,7 @@ public class GUIGraphic extends GUI {
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
-        portraitLabel = new JLabel("portrait label");
+        portraitLabel = new JLabel(((Player) model.getPlayer()).getPicture());
         portraitPanel.add(portraitLabel);
 
         gbcMainScreen.gridx = 0;

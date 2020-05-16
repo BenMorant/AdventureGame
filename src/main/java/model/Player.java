@@ -19,6 +19,7 @@ public class Player extends People {
         this.picture = picture;
     }
 
+
     public void receiveHealing(int healing) {
         hp += healing;
     }
