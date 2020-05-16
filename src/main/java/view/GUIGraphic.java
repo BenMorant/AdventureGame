@@ -12,8 +12,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class GUIGraphic extends GUI {
-
-    //  public static final String GAME_TITLE = "L'aventure n'attend pas";
+    
     private static final int MINIMUM_WIDTH = 1280;
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
 
