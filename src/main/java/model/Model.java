@@ -14,6 +14,7 @@ public class Model {
     public Model() {
         this.position = null;
 
+
     }
 
     public String getPosition() {

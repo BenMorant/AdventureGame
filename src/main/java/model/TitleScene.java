@@ -6,7 +6,9 @@ public class TitleScene extends Scene {
     private String start;
 
     public TitleScene() {
-        this.start = "C'est parti";
+        super();
+        this.start = "C'est parti !";
+
     }
 
     public String getStart() {

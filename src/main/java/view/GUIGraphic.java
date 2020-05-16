@@ -47,10 +47,11 @@ public class GUIGraphic extends GUI {
     private JLabel gameOverLabel;
     private JButton newGameButton;
 
-    private Model model;
+
 
     public GUIGraphic(Model model) {
-        this.model = model;
+        super(model);
+
 
         initLookAndFeel();
 

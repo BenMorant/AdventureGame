@@ -1,17 +1,26 @@
 package view;
 
 import model.Model;
+import model.TitleScene;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class GUIConsole extends GUI {
 
-    private Model model;
+    Scanner myScanner = new Scanner(System.in);
+    Scanner enterScanner = new Scanner(System.in);
+
 
     public GUIConsole(Model model) {
-        this.model = model;
+        super(model);
+        System.out.println(model.getTitleScene().getTitle());
+        System.out.println(((TitleScene) model.getTitleScene()).getStart());
+
+
     }
+
 
     @Override
     public void addSceneChangeListener(ActionListener sceneChangeListener) {
