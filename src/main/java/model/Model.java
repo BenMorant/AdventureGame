@@ -5,11 +5,12 @@ import app.Observer.Observer;
 
 public class Model implements Observable {
 
-    private Scene titleScene = new TitleScene();
-    private Scene gameOverScene = new GameOverScene();
-    private Scene mainScene = new MainScene();
-
     private People player = new Player(13, "couteau");
+    private Scene titleScene = new TitleScene(player);
+    private Scene gameOverScene = new GameOverScene(player);
+    private Scene mainScene = new MainScene(player);
+
+
     private People goblin = new Monster(20, "baton", "Le gobelin vous frappe avec son baton !");
     private boolean hasSilverRing = false;
 
@@ -30,6 +31,14 @@ public class Model implements Observable {
 
     public People getPlayer() {
         return player;
+    }
+
+    public Scene getMainScene() {
+        return mainScene;
+    }
+
+    public void setMainScene(Scene mainScene) {
+        this.mainScene = mainScene;
     }
 
     @Override

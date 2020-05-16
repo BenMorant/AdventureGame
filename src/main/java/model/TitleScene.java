@@ -5,8 +5,8 @@ public class TitleScene extends Scene {
 
     private String startStr;
 
-    public TitleScene() {
-        super();
+    public TitleScene(People player) {
+        super(player);
         this.startStr = "C'est parti !";
 
     }

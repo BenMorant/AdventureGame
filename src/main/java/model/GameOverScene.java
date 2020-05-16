@@ -6,8 +6,8 @@ public class GameOverScene extends Scene {
     private String gameOverStr;
     private String newGameStr;
 
-    public GameOverScene() {
-        super();
+    public GameOverScene(People player) {
+        super(player);
         this.gameOverStr = "Game Over";
         this.newGameStr = "Nouvelle partie ?";
 

@@ -1,6 +1,7 @@
 package view;
 
 import model.GameOverScene;
+import model.MainScene;
 import model.Model;
 import model.People;
 import model.TitleScene;
@@ -12,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class GUIGraphic extends GUI {
-    
+
     private static final int MINIMUM_WIDTH = 1280;
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
 
@@ -109,7 +110,7 @@ public class GUIGraphic extends GUI {
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBackground(Color.orange);
-        mainTextArea = new JTextArea("texte");
+        mainTextArea = new JTextArea(((MainScene) model.getMainScene()).getStoryBlock());
         mainTextArea.setLineWrap(true);
         mainTextArea.setWrapStyleWord(true);
         mainTextArea.setEditable(false);
@@ -117,16 +118,16 @@ public class GUIGraphic extends GUI {
         choicesPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         choicesPanel.setBackground(Color.yellow);
 
-        choiceButton = new JButton("choice 1 and only");
+        choiceButton = new JButton(((MainScene) model.getMainScene()).getChoice());
         choicesPanel.add(choiceButton);
 
 
         attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         hpLabel = new JLabel("HP : ");
-        hpLabelNumber = new JLabel("13");
+        hpLabelNumber = new JLabel(String.valueOf(model.getPlayer().getHp()));
         weaponLabel = new JLabel("Arme : ");
-        weaponLabelName = new JLabel("bazooka");
+        weaponLabelName = new JLabel(model.getPlayer().getWeapon());
         attributesPanel.add(hpLabel);
         attributesPanel.add(hpLabelNumber);
         attributesPanel.add(weaponLabel);
@@ -209,11 +210,6 @@ public class GUIGraphic extends GUI {
         } catch (ParseException | UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-    }
-
-
-    public void updateHero(People hero) {
-
     }
 
 
