@@ -7,6 +7,7 @@ public class Model implements Observable {
 
     private Scene titleScene = new TitleScene();
     private Scene gameOverScene = new GameOverScene();
+    private Scene mainScene = new MainScene();
 
     private People player = new Player(13, "couteau");
     private People goblin = new Monster(20, "baton", "Le gobelin vous frappe avec son baton !");
