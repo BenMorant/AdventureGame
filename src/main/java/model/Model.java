@@ -28,7 +28,13 @@ public class Model implements Observable {
         player.setHp(13);
         player.setWeapon("couteau");
         ((Player) player).setPicture("./src/main/resources/pix/people/player/rambo.jpg");
+        ((Player) player).movePosition("townGate");
 
+    }
+
+    public void townGate() {
+        ((Player) player).movePosition("townGate");
+        ((MainScene) mainScene).townGate();
     }
 
     public Scene getGameOverScene() {

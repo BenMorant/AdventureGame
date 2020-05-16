@@ -8,7 +8,15 @@ public class MainScene extends Scene {
 
     public MainScene(People player) {
         super(player);
+        townGate();
 
+    }
+
+
+    public void townGate() {
+
+        storyBlock = "Yoooooo";
+        choice = "tu veux quoi ?";
     }
 
     public People getPlayer() {

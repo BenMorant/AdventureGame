@@ -120,6 +120,7 @@ public class GUIGraphic extends GUI {
         choicesPanel.setBackground(Color.yellow);
 
         choiceButton = new JButton(((MainScene) model.getMainScene()).getChoice());
+        choiceButton.setActionCommand("c1");
         choicesPanel.add(choiceButton);
 
 

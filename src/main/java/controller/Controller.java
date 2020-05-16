@@ -1,6 +1,7 @@
 package controller;
 
 import model.Model;
+import model.Player;
 import view.GUI;
 
 import java.awt.event.ActionEvent;
@@ -41,10 +42,10 @@ public class Controller {
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
 
-//            switch (((Player)model.getPlayer()).getPosition()) {
-//                case "townGate":
-//                    switch (choice) {
-//                        case "c1":
+            switch (((Player) model.getPlayer()).getPosition()) {
+                case "townGate":
+                    switch (choice) {
+                        case "c1":
 //                            if (!model.playerHasSilverRing()) {
 //                                model.talkToGuard();
 //                            }
@@ -166,8 +167,8 @@ public class Controller {
 //                            break;
 //                    }
 //                    break;
-//            }
-//        }
+                    }
+            }
 
         }
     }
