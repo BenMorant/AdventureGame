@@ -40,7 +40,7 @@ public class Model implements Observable {
         ((MainScene) mainScene).talkGuard();
     }
 
-    
+
     public People getPlayer() {
         return player;
     }
