@@ -53,7 +53,6 @@ public class Controller {
                             model.talkGuard();
                             gui.updateChoices(model.getMainScene().getChoice1(), model.getMainScene().getChoice2(), model.getMainScene().getChoice3(), model.getMainScene().getChoice4());
                             gui.updateMainText(model.getMainScene().getStoryBlock());
-
                             break;
 //                            if (!model.playerHasSilverRing()) {
 //                                model.talkToGuard();

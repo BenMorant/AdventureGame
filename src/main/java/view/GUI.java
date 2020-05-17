@@ -55,17 +55,8 @@ public class GUI implements Observer {
 
     public GUI(Model model) {
         this.model = model;
-
         initLookAndFeel();
-
-        gameFrame.setTitle(GAME_TITLE);
-        gameFrame.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
-        gameFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        gameFrame.setLocationRelativeTo(null);
-        gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gameFrame.setResizable(true);
-        gameFrame.setDefaultLookAndFeelDecorated(true);
-
+        initGameFrame();
         gameFrame.setContentPane(container);
         container.setLayout(cardLayout);
 
@@ -208,7 +199,17 @@ public class GUI implements Observer {
 
     }
 
-    public void initLookAndFeel() {
+    private void initGameFrame() {
+        gameFrame.setTitle(GAME_TITLE);
+        gameFrame.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
+        gameFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        gameFrame.setLocationRelativeTo(null);
+        gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gameFrame.setResizable(true);
+        gameFrame.setDefaultLookAndFeelDecorated(true);
+    }
+
+    private void initLookAndFeel() {
         SynthLookAndFeel synth = new SynthLookAndFeel();
         try {
             synth.load(this.getClass()
