@@ -3,12 +3,12 @@ package model;
 public class Player extends People {
 
 
-    private String position;
+//    private String position;
     private String picture;
 
     public Player() {
         super();
-        this.position = null;
+        //  this.position = null;
 
     }
 
@@ -25,11 +25,11 @@ public class Player extends People {
         hp += healing;
     }
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void movePosition(String position) {
-        this.position = position;
-    }
+//    public String getPosition() {
+//        return position;
+//    }
+//
+//    public void setPosition(String position) {
+//        this.position = position;
+//    }
 }

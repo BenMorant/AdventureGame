@@ -10,6 +10,7 @@ public class Model implements Observable {
 
     private List<Observer> Observers = new ArrayList<>();
 
+    private String position;
     private People player = new Player();
     private MainScene mainScene = new MainScene(player);
 
@@ -18,7 +19,9 @@ public class Model implements Observable {
 
 
     public Model() {
+        this.position = position;
         initPlayer(player);
+
 
     }
 
@@ -26,17 +29,17 @@ public class Model implements Observable {
         player.setHp(13);
         player.setWeapon("couteau");
         ((Player) player).setPicture("./src/main/resources/pix/people/player/rambo.jpg");
-        ((Player) player).movePosition("townGate");
+        setPosition("townGate");
 
     }
 
     public void townGate() {
-        ((Player) player).movePosition("townGate");
+        setPosition("townGate");
         mainScene.townGate();
     }
 
     public void talkGuard() {
-        ((Player) player).movePosition("talkGuard");
+        setPosition("talkGuard");
         mainScene.talkGuard();
     }
 
@@ -51,6 +54,14 @@ public class Model implements Observable {
 
     public void setMainScene(MainScene mainScene) {
         this.mainScene = mainScene;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     @Override
