@@ -11,8 +11,6 @@ public class Model implements Observable {
     private List<Observer> Observers = new ArrayList<>();
 
     private People player = new Player();
-    private Scene titleScene = new TitleScene(player);
-    private Scene gameOverScene = new GameOverScene(player);
     private Scene mainScene = new MainScene(player);
 
     private People goblin = new Monster(20, "baton", "Le gobelin vous frappe avec son baton !");
@@ -42,15 +40,7 @@ public class Model implements Observable {
         ((MainScene) mainScene).talkGuard();
     }
 
-    public Scene getGameOverScene() {
-        return gameOverScene;
-    }
-
-    public Scene getTitleScene() {
-        return titleScene;
-    }
-
-
+    
     public People getPlayer() {
         return player;
     }

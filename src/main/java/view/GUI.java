@@ -1,12 +1,10 @@
 package view;
 
 import app.Observer.Observer;
-import model.GameOverScene;
 import model.MainScene;
 import model.Model;
 import model.People;
 import model.Player;
-import model.TitleScene;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
@@ -15,6 +13,8 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class GUI implements Observer {
+
+    private static final String GAME_TITLE = "L'aventure n'attend pas";
 
     private static final int MINIMUM_WIDTH = 1280;
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
@@ -59,7 +59,7 @@ public class GUI implements Observer {
 
         initLookAndFeel();
 
-        gameFrame.setTitle(model.getTitleScene().getTitle());
+        gameFrame.setTitle(GAME_TITLE);
         gameFrame.setMinimumSize(new Dimension(MINIMUM_WIDTH, MINIMUM_HEIGHT));
         gameFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         gameFrame.setLocationRelativeTo(null);
@@ -71,12 +71,12 @@ public class GUI implements Observer {
         container.setLayout(cardLayout);
 
         titleNamePanel = new JPanel();
-        titleNameLabel = new JLabel(model.getTitleScene().getTitle().toUpperCase());
+        titleNameLabel = new JLabel(GAME_TITLE.toUpperCase());
         titleNamePanel.add(titleNameLabel);
         titleNamePanel.setBackground(Color.pink);
         titleNameLabel.setFont(new Font("Times New Roman", Font.PLAIN, 142));
         startButtonPanel = new JPanel();
-        startButton = new JButton(((TitleScene) model.getTitleScene()).getStartStr());
+        startButton = new JButton("C'est parti !");
         startButtonPanel.add(startButton);
         startButtonPanel.setBackground(Color.green);
 
@@ -182,12 +182,12 @@ public class GUI implements Observer {
         gbcGameOverScreen.weighty = 1;
 
         gameOverPanel = new JPanel();
-        gameOverLabel = new JLabel(((GameOverScene) model.getGameOverScene()).getGameOverStr().toUpperCase());
+        gameOverLabel = new JLabel("GAME OVER !");
         gameOverPanel.add(gameOverLabel);
         gameOverPanel.setBackground(Color.pink);
         gameOverLabel.setFont(new Font("Times New Roman", Font.PLAIN, 167));
         newGamePanel = new JPanel();
-        newGameButton = new JButton(((GameOverScene) model.getGameOverScene()).getNewGameStr());
+        newGameButton = new JButton("Nouvelle partie ?");
         newGamePanel.add(newGameButton);
         newGamePanel.setBackground(Color.green);
 
