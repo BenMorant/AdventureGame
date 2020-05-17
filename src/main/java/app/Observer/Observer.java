@@ -9,5 +9,7 @@ public interface Observer {
 
     void update(People people);
 
-    void updateMainText(String str);
+    void updateMainText(String newMainText);
+
+    void updateChoices(String newChoice1, String newChoice2, String newChoice3, String newChoice4);
 }

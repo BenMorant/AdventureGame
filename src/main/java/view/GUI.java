@@ -1,7 +1,6 @@
 package view;
 
 import app.Observer.Observer;
-import model.MainScene;
 import model.Model;
 import model.People;
 import model.Player;
@@ -42,7 +41,7 @@ public class GUI implements Observer {
     private JButton startButton;
 
     private JTextArea mainTextArea;
-    private JButton choiceButton;
+    private JButton[] choiceButtons;
     private JLabel hpLabel;
     private JLabel hpLabelNumber;
     private JLabel portraitLabel;
@@ -120,9 +119,17 @@ public class GUI implements Observer {
         choicesPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         choicesPanel.setBackground(Color.yellow);
 
-        choiceButton = new JButton();
-        choiceButton.setActionCommand("c1");
-        choicesPanel.add(choiceButton);
+//        choiceButton = new JButton();
+//        choiceButton.setActionCommand("c1");
+//        choicesPanel.add(choiceButton);
+        choiceButtons = new JButton[4];
+        for (int i = 0; i < choiceButtons.length; i++) {
+            choiceButtons[i] = new JButton("Choice " + (i + 1));
+
+            choiceButtons[i].setActionCommand("c" + (i + 1));
+
+            choicesPanel.add(choiceButtons[i]);
+        }
 
 
         attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
@@ -221,7 +228,9 @@ public class GUI implements Observer {
     }
 
     public void addChoiceListener(ActionListener choiceListener) {
-        choiceButton.addActionListener(choiceListener);
+        for (JButton choiceButton : choiceButtons) {
+            choiceButton.addActionListener(choiceListener);
+        }
     }
 
 
@@ -361,12 +370,21 @@ public class GUI implements Observer {
         this.mainTextArea = mainTextArea;
     }
 
-    public JButton getChoiceButton() {
-        return choiceButton;
+//    public JButton getChoiceButton() {
+//        return choiceButton;
+//    }
+//
+//    public void setChoiceButton(JButton choiceButton) {
+//        this.choiceButton = choiceButton;
+//    }
+
+
+    public JButton[] getChoiceButtons() {
+        return choiceButtons;
     }
 
-    public void setChoiceButton(JButton choiceButton) {
-        this.choiceButton = choiceButton;
+    public void setChoiceButtons(JButton[] choiceButtons) {
+        this.choiceButtons = choiceButtons;
     }
 
     public JLabel getHpLabel() {
@@ -435,7 +453,7 @@ public class GUI implements Observer {
 
     @Override
     public void update(String str) {
-        choiceButton.setText(((MainScene) model.getMainScene()).getChoice());
+
     }
 
     @Override
@@ -452,7 +470,15 @@ public class GUI implements Observer {
 
     @Override
     public void updateMainText(String str) {
-        mainTextArea.setText(((MainScene) model.getMainScene()).getStoryBlock());
+        mainTextArea.setText(model.getMainScene().getStoryBlock());
+    }
+
+    @Override
+    public void updateChoices(String newChoice1, String newChoice2, String newChoice3, String newChoice4) {
+        choiceButtons[0].setText(newChoice1);
+        choiceButtons[1].setText(newChoice2);
+        choiceButtons[2].setText(newChoice3);
+        choiceButtons[3].setText(newChoice4);
     }
 
 
