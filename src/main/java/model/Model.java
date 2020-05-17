@@ -11,10 +11,10 @@ public class Model implements Observable {
     private List<Observer> Observers = new ArrayList<>();
 
     private String position;
-    private People player = new Player();
+    private People player = new People();
     private MainScene mainScene = new MainScene(player);
 
-    private People goblin = new Monster(20, "baton", "Le gobelin vous frappe avec son baton !");
+    private People goblin = new People(20, "baton", "Le gobelin vous frappe avec son baton !");
     private boolean hasSilverRing = false;
 
 
@@ -28,10 +28,10 @@ public class Model implements Observable {
     public void initPlayer(People player) {
         player.setHp(13);
         player.setWeapon("couteau");
-        ((Player) player).setPicture("./src/main/resources/pix/people/player/rambo.jpg");
+        player.setPicture("./src/main/resources/pix/people/player/rambo.jpg");
         setPosition("townGate");
-
     }
+
 
     public void townGate() {
         setPosition("townGate");

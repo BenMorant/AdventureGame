@@ -3,7 +3,6 @@ package view;
 import app.Observer.Observer;
 import model.Model;
 import model.People;
-import model.Player;
 
 import javax.swing.*;
 import javax.swing.plaf.synth.SynthLookAndFeel;
@@ -133,7 +132,7 @@ public class GUI implements Observer {
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
-        portraitLabel = new JLabel(new ImageIcon(((Player) model.getPlayer()).getPicture()));
+        portraitLabel = new JLabel(new ImageIcon(model.getPlayer().getPicture()));
         portraitPanel.add(portraitLabel);
 
         gbcMainScreen.gridx = 0;
