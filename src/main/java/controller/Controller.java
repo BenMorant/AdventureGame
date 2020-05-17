@@ -3,17 +3,17 @@ package controller;
 import model.MainScene;
 import model.Model;
 import model.Player;
-import view.GUIGraphic;
+import view.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Controller {
 
-    private GUIGraphic gui;
+    private GUI gui;
     private Model model;
 
-    public Controller(GUIGraphic gui, Model model) {
+    public Controller(GUI gui, Model model) {
         this.gui = gui;
         this.model = model;
         gui.addSceneChangeListener(new SceneChangeListener());

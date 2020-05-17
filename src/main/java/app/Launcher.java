@@ -2,7 +2,7 @@ package app;
 
 import controller.Controller;
 import model.Model;
-import view.GUIGraphic;
+import view.GUI;
 
 import javax.swing.*;
 
@@ -19,8 +19,7 @@ public final class Launcher {
 
 
         Model model = new Model();
-        GUIGraphic gui = new GUIGraphic(model);
-//GUI gui = new GUIConsole(model);
+        GUI gui = new GUI(model);
         Controller controller = new Controller(gui, model);
         model.addObserver(gui);
 
