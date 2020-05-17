@@ -20,8 +20,8 @@ public class Controller {
         gui.addChoiceListener(new ChoiceListener());
 
         gui.update(model.getPlayer());
-        gui.update(((MainScene) model.getMainScene()).getChoice());
-        gui.updateMainText(((MainScene) model.getMainScene()).getStoryBlock());
+        gui.update(model.getMainScene().getChoice());
+        gui.updateMainText(model.getMainScene().getStoryBlock());
 
 
     }

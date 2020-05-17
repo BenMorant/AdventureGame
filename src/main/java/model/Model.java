@@ -11,7 +11,7 @@ public class Model implements Observable {
     private List<Observer> Observers = new ArrayList<>();
 
     private People player = new Player();
-    private Scene mainScene = new MainScene(player);
+    private MainScene mainScene = new MainScene(player);
 
     private People goblin = new Monster(20, "baton", "Le gobelin vous frappe avec son baton !");
     private boolean hasSilverRing = false;
@@ -32,12 +32,12 @@ public class Model implements Observable {
 
     public void townGate() {
         ((Player) player).movePosition("townGate");
-        ((MainScene) mainScene).townGate();
+        mainScene.townGate();
     }
 
     public void talkGuard() {
         ((Player) player).movePosition("talkGuard");
-        ((MainScene) mainScene).talkGuard();
+        mainScene.talkGuard();
     }
 
 
@@ -45,11 +45,11 @@ public class Model implements Observable {
         return player;
     }
 
-    public Scene getMainScene() {
+    public MainScene getMainScene() {
         return mainScene;
     }
 
-    public void setMainScene(Scene mainScene) {
+    public void setMainScene(MainScene mainScene) {
         this.mainScene = mainScene;
     }
 

@@ -1,13 +1,13 @@
 package model;
 
-public class MainScene extends Scene {
+public class MainScene {
 
     private People player;
     private String storyBlock;
     private String choice;
 
     public MainScene(People player) {
-        super(player);
+        this.player = player;
         townGate();
 
     }
