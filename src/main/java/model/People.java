@@ -1,20 +1,20 @@
 package model;
 
-public abstract class People {
+public class People {
 
-    protected int hp;
-    protected String weapon;
+    private Integer hp;
+    private String weapon;
 
 
     public void receiveDamage(int damage) {
         hp -= damage;
     }
 
-    public int getHp() {
+    public Integer getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
+    public void setHp(Integer hp) {
         this.hp = hp;
         if (hp < 1) {
             this.hp = 0;
