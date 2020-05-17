@@ -18,14 +18,21 @@ public class MainScene {
 
     public void townGate() {
 
-        storyBlock = "Yoooooo";
-        choice1 = "tu veux quoi ?";
-        choice2 = "bim";
+        storyBlock = "Vous êtes aux portes de la Cité. \n Un garde se tient debout devant vous. \n Que voulez vous faire ? \n \n \n ";
+        choice1 = "Parler au garde";
+        choice2 = "Attaquer le garde";
+        choice3 = "Partir de là ?";
+        choice4 = "";
     }
 
     public void talkGuard() {
-        storyBlock = "Je parle au garde";
-        choice1 = "et maintenant ?";
+
+        storyBlock = "Garde : Bonjour, étranger. Je ne vous ai jamais vu avant. \n Désolé mais je ne peux pas laisser entrer un étranger dans notre Cité.";
+        choice1 = "Parler au garde";
+        choice2 = "Attaquer le garde";
+        choice3 = "partir";
+        choice4 = "";
+
     }
 
     public void attackGuard() {
