@@ -119,9 +119,6 @@ public class GUI implements Observer {
         choicesPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         choicesPanel.setBackground(Color.yellow);
 
-//        choiceButton = new JButton();
-//        choiceButton.setActionCommand("c1");
-//        choicesPanel.add(choiceButton);
         choiceButtons = new JButton[4];
         for (int i = 0; i < choiceButtons.length; i++) {
             choiceButtons[i] = new JButton("Choice " + (i + 1));
@@ -370,15 +367,6 @@ public class GUI implements Observer {
         this.mainTextArea = mainTextArea;
     }
 
-//    public JButton getChoiceButton() {
-//        return choiceButton;
-//    }
-//
-//    public void setChoiceButton(JButton choiceButton) {
-//        this.choiceButton = choiceButton;
-//    }
-
-
     public JButton[] getChoiceButtons() {
         return choiceButtons;
     }
@@ -452,17 +440,7 @@ public class GUI implements Observer {
     }
 
     @Override
-    public void update(String str) {
-
-    }
-
-    @Override
-    public void update(int number) {
-
-    }
-
-    @Override
-    public void update(People people) {
+    public void updatePeople(People people) {
         hpLabelNumber.setText(Integer.toString(people.getHp()));
         weaponLabelName.setText(people.getWeapon());
 

@@ -59,24 +59,27 @@ public class Model implements Observable {
 
     }
 
-    @Override
-    public void notifyObserver(String str) {
-        for (Observer obs : Observers)
-            obs.update(str);
-
-    }
-
-    @Override
-    public void notifyObservers(int number) {
-        for (Observer obs : Observers)
-            obs.update(number);
-
-    }
 
     @Override
     public void notifyObservers(People people) {
-        for (Observer obs : Observers)
-            obs.update(people);
+        for (Observer obs : Observers) {
+            obs.updatePeople(people);
+        }
+
+    }
+
+    @Override
+    public void notifyObservers(String storyBlock) {
+        for (Observer obs : Observers) {
+            obs.updateMainText(storyBlock);
+        }
+    }
+
+    @Override
+    public void notifyObservers(String choice1, String choice2, String choice3, String choice4) {
+        for (Observer obs : Observers) {
+            obs.updateChoices(choice1, choice2, choice3, choice4);
+        }
 
     }
 
