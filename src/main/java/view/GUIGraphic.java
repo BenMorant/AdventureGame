@@ -1,5 +1,6 @@
 package view;
 
+import app.Observer.Observer;
 import model.GameOverScene;
 import model.MainScene;
 import model.Model;
@@ -13,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
-public class GUIGraphic extends GUI {
+public class GUIGraphic implements Observer {
 
     private static final int MINIMUM_WIDTH = 1280;
     private static final int MINIMUM_HEIGHT = MINIMUM_WIDTH / 12 * 9;
@@ -21,6 +22,8 @@ public class GUIGraphic extends GUI {
     private JFrame gameFrame = new JFrame();
     private JPanel container = new JPanel();
     private CardLayout cardLayout = new CardLayout();
+
+    private Model model;
 
     private JPanel titleScreen;
     private JPanel titleNamePanel;
@@ -53,8 +56,7 @@ public class GUIGraphic extends GUI {
 
 
     public GUIGraphic(Model model) {
-        super(model);
-
+        this.model = model;
 
         initLookAndFeel();
 
