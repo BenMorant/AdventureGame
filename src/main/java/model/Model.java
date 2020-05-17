@@ -43,6 +43,11 @@ public class Model implements Observable {
         mainScene.talkGuard();
     }
 
+    public void attackGuard() {
+        setPosition("attackGuard");
+        mainScene.attackGuard();
+    }
+
 
     public People getPlayer() {
         return player;

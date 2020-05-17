@@ -20,11 +20,16 @@ public class MainScene {
 
         storyBlock = "Yoooooo";
         choice1 = "tu veux quoi ?";
+        choice2 = "bim";
     }
 
     public void talkGuard() {
         storyBlock = "Je parle au garde";
         choice1 = "et maintenant ?";
+    }
+
+    public void attackGuard() {
+        storyBlock = "J'attaque le garde";
     }
 
     public People getPlayer() {
