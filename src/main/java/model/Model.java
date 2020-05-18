@@ -14,13 +14,14 @@ public class Model implements Observable {
     private People player = new People();
     private MainScene mainScene = new MainScene(player);
 
-    private People goblin = new People(20, "baton", "Le gobelin vous frappe avec son baton !");
+    private People goblin = new People();
     private boolean hasSilverRing = false;
 
 
     public Model() {
         this.position = position;
         initPlayer(player);
+        goblin.initMonster(20, "baton", "Le gobelin vous frappe avec son baton !");
 
 
     }

@@ -12,7 +12,7 @@ public class People {
 
     }
 
-    public People(Integer hp, String weapon, String attackMessage) {
+    public void initMonster(Integer hp, String weapon, String attackMessage) {
         this.hp = hp;
         this.weapon = weapon;
         this.attackMessage = attackMessage;
