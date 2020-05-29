@@ -36,7 +36,40 @@ public class MainScene {
     }
 
     public void attackGuard() {
-        storyBlock = "J'attaque le garde";
+        storyBlock = "Hey ! Ne soyez pas stupide ! \n Le garde vous attaque à son tour et vous frappe fort. \n Vous recevez 3 points de dommage.";
+        choice1 = ">";
+        choice2 = "";
+        choice3 = "";
+        choice4 = "";
+    }
+
+    public void crossRoad() {
+        storyBlock = "Vous êtes à un carrefour. \n Si vous allez au Sud, vous retournez aux portes de la Cité";
+        choice1 = "aller au Nord";
+        choice2 = "allez à l'Est";
+        choice3 = "aller à l'Ouest";
+        choice4 = "aller au Sud";
+    }
+
+    public void north() {
+        storyBlock = "Il y a une rivière. \n Vous buvez l'eau et vous vous reposez sur la rive. \n Vous retrouvez 2 points de vie";
+        choice1 = "aller au Sud";
+        choice2 = "";
+        choice3 = "";
+        choice4 = "";
+    }
+
+    public void east() {
+        storyBlock = "Vous marchez dans la forêt et trouvez une Longue Epée ! \n\n (Vous obtenez une Longue Epée)";
+        choice1 = "aller à l'Ouest";
+        choice2 = "";
+        choice3 = "";
+        choice4 = "";
+    }
+
+    public void west() {
+        storyBlock = "Vous tombez nez à nez sur un Gobelin !";
+        
     }
 
     public People getPlayer() {
