@@ -69,7 +69,34 @@ public class MainScene {
 
     public void west() {
         storyBlock = "Vous tombez nez à nez sur un Gobelin !";
-        
+        choice1 = "combattre";
+        choice2 = "fuir";
+        choice3 = "";
+        choice4 = "";
+    }
+
+    public void fightGoblin() {
+        storyBlock = "HP du Gobelin : xxxx \n Que voulez vous faire ?";
+        choice1 = "combattre";
+        choice2 = "fuir";
+        choice3 = "";
+        choice4 = "";
+    }
+
+    public void attackGoblin() {
+        storyBlock = "Vous attaquez le gobelin et lui donnez xxxx de dommage";
+        choice1 = ">";
+        choice2 = "";
+        choice3 = "";
+        choice4 = "";
+    }
+
+    public void goblinAttacks() {
+        storyBlock = "le Gobelin vous attaque et vous donne xxxx de dommage";
+        choice1 = ">";
+        choice2 = "";
+        choice3 = "";
+        choice4 = "";
     }
 
     public People getPlayer() {
