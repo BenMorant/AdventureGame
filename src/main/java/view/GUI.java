@@ -1,14 +1,27 @@
 package view;
 
 import app.Observer.Observer;
-import model.Model;
-import model.People;
-
-import javax.swing.*;
-import javax.swing.plaf.synth.SynthLookAndFeel;
-import java.awt.*;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.synth.SynthLookAndFeel;
+import model.People;
+import model.Story;
 
 public class GUI implements Observer {
 
@@ -21,7 +34,7 @@ public class GUI implements Observer {
     private JPanel container = new JPanel();
     private CardLayout cardLayout = new CardLayout();
 
-    private Model model;
+    private Story story;
 
     private JPanel titleScreen;
     private JPanel titleNamePanel;
@@ -52,8 +65,8 @@ public class GUI implements Observer {
     private JButton newGameButton;
 
 
-    public GUI(Model model) {
-        this.model = model;
+    public GUI(Story story) {
+        this.story = story;
         initLookAndFeel();
         initGameFrame();
         gameFrame.setContentPane(container);
@@ -118,7 +131,6 @@ public class GUI implements Observer {
             choicesPanel.add(choiceButtons[i]);
         }
 
-
         attributesPanel = new JPanel(new GridLayout(2, 2, 5, 5));
         attributesPanel.setBackground(Color.blue);
         hpLabel = new JLabel("HP : ");
@@ -132,7 +144,7 @@ public class GUI implements Observer {
 
         portraitPanel = new JPanel();
         portraitPanel.setBackground(Color.black);
-        portraitLabel = new JLabel(new ImageIcon(model.getPlayer().getPicture()));
+        portraitLabel = new JLabel(new ImageIcon(story.getPlayer().getPicture()));
         portraitPanel.add(portraitLabel);
 
         gbcMainScreen.gridx = 0;
@@ -188,7 +200,6 @@ public class GUI implements Observer {
         gameOverScreen.add(gameOverPanel, gbcGameOverScreen);
         gameOverScreen.add(newGamePanel, gbcGameOverScreen);
 
-
         container.add(titleScreen, "titleScreen");
         container.add(mainScreen, "mainScreen");
         container.add(gameOverScreen, "gameOverScreen");
@@ -212,7 +223,7 @@ public class GUI implements Observer {
         SynthLookAndFeel synth = new SynthLookAndFeel();
         try {
             synth.load(this.getClass()
-                    .getResourceAsStream("/laf.xml"), this.getClass());
+                .getResourceAsStream("/laf.xml"), this.getClass());
             UIManager.setLookAndFeel(synth);
         } catch (ParseException | UnsupportedLookAndFeelException e) {
             e.printStackTrace();
@@ -448,11 +459,12 @@ public class GUI implements Observer {
 
     @Override
     public void updateMainText(String str) {
-        mainTextArea.setText(model.getMainScene().getStoryBlock());
+        mainTextArea.setText(story.getMainScene().getStoryBlock());
     }
 
     @Override
-    public void updateChoices(String newChoice1, String newChoice2, String newChoice3, String newChoice4) {
+    public void updateChoices(String newChoice1, String newChoice2, String newChoice3,
+        String newChoice4) {
         choiceButtons[0].setText(newChoice1);
         choiceButtons[1].setText(newChoice2);
         choiceButtons[2].setText(newChoice3);

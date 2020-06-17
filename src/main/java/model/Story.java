@@ -2,11 +2,10 @@ package model;
 
 import app.Observer.Observable;
 import app.Observer.Observer;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Model implements Observable {
+public class Story implements Observable {
 
     private List<Observer> Observers = new ArrayList<>();
 
@@ -18,7 +17,7 @@ public class Model implements Observable {
     private boolean hasSilverRing = false;
 
 
-    public Model() {
+    public Story() {
         this.position = position;
         initPlayer(player);
         goblin.initMonster(20, "baton", "Le gobelin vous frappe avec son baton !");

@@ -4,7 +4,7 @@ import model.People;
 
 public interface Observer {
 
-    void updatePeople(People people);
+  void updatePeople(People people);
 
     void updateMainText(String newStoryBlock);
 

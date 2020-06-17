@@ -1,25 +1,25 @@
 package controller;
 
-import model.Model;
-import view.GUI;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.Story;
+import view.GUI;
 
 public class Controller {
 
     private GUI gui;
-    private Model model;
+    private Story story;
 
-    public Controller(GUI gui, Model model) {
+    public Controller(GUI gui, Story story) {
         this.gui = gui;
-        this.model = model;
+        this.story = story;
         gui.addSceneChangeListener(new SceneChangeListener());
         gui.addChoiceListener(new ChoiceListener());
 
-        gui.updatePeople(model.getPlayer());
-        gui.updateChoices(model.getMainScene().getChoice1(), model.getMainScene().getChoice2(), model.getMainScene().getChoice3(), model.getMainScene().getChoice4());
-        gui.updateMainText(model.getMainScene().getStoryBlock());
+        gui.updatePeople(story.getPlayer());
+        gui.updateChoices(story.getMainScene().getChoice1(), story.getMainScene().getChoice2(),
+            story.getMainScene().getChoice3(), story.getMainScene().getChoice4());
+        gui.updateMainText(story.getMainScene().getStoryBlock());
 
 
     }
@@ -45,18 +45,24 @@ public class Controller {
         public void actionPerformed(ActionEvent actionEvent) {
             String choice = actionEvent.getActionCommand();
 
-            switch (model.getPosition()) {
+            switch (story.getPosition()) {
                 case "townGate":
                     switch (choice) {
                         case "c1":
-                            model.talkGuard();
-                            gui.updateChoices(model.getMainScene().getChoice1(), model.getMainScene().getChoice2(), model.getMainScene().getChoice3(), model.getMainScene().getChoice4());
-                            gui.updateMainText(model.getMainScene().getStoryBlock());
+                            story.talkGuard();
+                            gui.updateChoices(story.getMainScene().getChoice1(),
+                                story.getMainScene().getChoice2(),
+                                story.getMainScene().getChoice3(),
+                                story.getMainScene().getChoice4());
+                            gui.updateMainText(story.getMainScene().getStoryBlock());
                             break;
                         case "c2":
-                            model.attackGuard();
-                            gui.updateChoices(model.getMainScene().getChoice1(), model.getMainScene().getChoice2(), model.getMainScene().getChoice3(), model.getMainScene().getChoice4());
-                            gui.updateMainText(model.getMainScene().getStoryBlock());
+                            story.attackGuard();
+                            gui.updateChoices(story.getMainScene().getChoice1(),
+                                story.getMainScene().getChoice2(),
+                                story.getMainScene().getChoice3(),
+                                story.getMainScene().getChoice4());
+                            gui.updateMainText(story.getMainScene().getStoryBlock());
                             break;
 
 //                            if (!model.playerHasSilverRing()) {

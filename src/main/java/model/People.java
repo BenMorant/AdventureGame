@@ -18,7 +18,6 @@ public class People {
         this.attackMessage = attackMessage;
     }
 
-
     public void receiveDamage(int damage) {
         hp -= damage;
     }
